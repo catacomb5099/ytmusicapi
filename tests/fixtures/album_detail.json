@@ -1,0 +1,698 @@
+{
+  "title": "Definitely Maybe",
+  "type": "Album",
+  "thumbnails": [
+    {
+      "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w60-h60-l90-rj",
+      "width": 60,
+      "height": 60
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w120-h120-l90-rj",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w226-h226-l90-rj",
+      "width": 226,
+      "height": 226
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w544-h544-l90-rj",
+      "width": 544,
+      "height": 544
+    }
+  ],
+  "isExplicit": false,
+  "description": "Definitely Maybe is the debut studio album by the English rock band Oasis, released on 29 August 1994 by Creation Records. The album features Noel Gallagher on lead guitar, backing vocals and as chief songwriter, Liam Gallagher on lead vocals, Paul \"Bonehead\" Arthurs on rhythm guitar, Paul \"Guigsy\" McGuigan on bass guitar and Tony McCarroll on drums.\nThe band booked Monnow Valley Studio near Rockfield in January 1994 to record the album; they worked with producer Dave Batchelor, whom Noel Gallagher knew from his time working as a roadie for the Inspiral Carpets. However, sessions were unsatisfactory, and Batchelor was subsequently fired. In February 1994, the group began re-recording the album at Sawmills Studios in Cornwall, where Noel produced sessions alongside Mark Coyle. The results were still deemed unsatisfactory; in desperation, Creation's Marcus Russell contacted engineer and producer Owen Morris, who eventually worked on mixing the album at Johnny Marr's studio in Manchester.\n\nFrom Wikipedia (https://en.wikipedia.org/wiki/Definit...) under Creative Commons Attribution CC-BY-SA 3.0 (https://creativecommons.org/licenses/...)",
+  "descriptionRuns": [
+    {
+      "text": "Definitely Maybe is the debut studio album by the English rock band Oasis, released on 29 August 1994 by Creation Records. The album features Noel Gallagher on lead guitar, backing vocals and as chief songwriter, Liam Gallagher on lead vocals, Paul \"Bonehead\" Arthurs on rhythm guitar, Paul \"Guigsy\" McGuigan on bass guitar and Tony McCarroll on drums.\nThe band booked Monnow Valley Studio near Rockfield in January 1994 to record the album; they worked with producer Dave Batchelor, whom Noel Gallagher knew from his time working as a roadie for the Inspiral Carpets. However, sessions were unsatisfactory, and Batchelor was subsequently fired. In February 1994, the group began re-recording the album at Sawmills Studios in Cornwall, where Noel produced sessions alongside Mark Coyle. The results were still deemed unsatisfactory; in desperation, Creation's Marcus Russell contacted engineer and producer Owen Morris, who eventually worked on mixing the album at Johnny Marr's studio in Manchester.\n\nFrom Wikipedia ("
+    },
+    {
+      "text": "https://en.wikipedia.org/wiki/Definit...",
+      "url": "https://en.wikipedia.org/wiki/Definitely_Maybe"
+    },
+    {
+      "text": ") under Creative Commons Attribution CC-BY-SA 3.0 ("
+    },
+    {
+      "text": "https://creativecommons.org/licenses/...",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode"
+    },
+    {
+      "text": ")"
+    }
+  ],
+  "year": "1994",
+  "artists": [
+    {
+      "name": "Oasis",
+      "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+  ],
+  "trackCount": 11,
+  "duration": "52 minutes",
+  "audioPlaylistId": "OLAK5uy_m--RCG58SjXLvgRiw0pASnMY6YjE8q3NU",
+  "likeStatus": "INDIFFERENT",
+  "tracks": [
+    {
+      "videoId": "3aatEBIZHNU",
+      "title": "Rock 'n' Roll Star",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpKw57fhTWESE_C7C2U2p2Y-bTB1xJaqcUEojCM0byrjUlgYOuLp3tibWELjOEKZuK-kszpKCybQYSbyzvARw7H60vkdkA"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "27M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 1,
+      "duration": "5:24",
+      "duration_seconds": 324,
+      "creditsBrowseId": "MPTCtoHOnObXAbo"
+    },
+    {
+      "videoId": "3FpNw3286y8",
+      "title": "Shakermaker",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpJuNZJ7gXHKqVdGLCW__S0j31kDmDWnQXRifD0dDAeagtjKuFsTOc8Y3W4NRTIVyugzNVTjOjclq46qapmPSyHMslqmhQ"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "10M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 2,
+      "duration": "5:09",
+      "duration_seconds": 309,
+      "creditsBrowseId": "MPTC1R5csVw339I"
+    },
+    {
+      "videoId": "TDe1DqxwJoc",
+      "title": "Live Forever",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpLxPp7FePne5MFgyFJOIC3gvSqWXtvCuSqJFhDBB6hLmlBk1h6d3W8dkCKEdm5mpJjUH7HZluiW_n9OPsKn2m_RwrxWfg"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "125M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 3,
+      "duration": "4:37",
+      "duration_seconds": 277,
+      "creditsBrowseId": "MPTCH84aozFKz1Y"
+    },
+    {
+      "videoId": "wKkgoi8_mgE",
+      "title": "Up in the Sky",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpJVXNxeV_TbgcFxaajJc3eik3ZLD3zCldNpJ91Rvr3FTTQbz-zfqKQZi9IstEN3yrhh4-3uEA92x8i_--CZEH4FeH6LOA"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "4.8M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 4,
+      "duration": "4:29",
+      "duration_seconds": 269,
+      "creditsBrowseId": "MPTCDLcEY0l8IzA"
+    },
+    {
+      "videoId": "7QyF5UdhBJI",
+      "title": "Columbia",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpIYNK4Xj9lpiAxTyLDGAI-MBa_OhyrK4c5kqX6U4O0hZ4oKKODrSuen7IKPiUSZyT8gM1swmd2U3QlD0RC8wpXGqkK7pA"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "10M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 5,
+      "duration": "6:17",
+      "duration_seconds": 377,
+      "creditsBrowseId": "MPTCLtnbI5VStVY"
+    },
+    {
+      "videoId": "BJKpUH2kJQg",
+      "title": "Supersonic",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpKR4EfIKHAaJTrDNo-a5l1hzD4yDyR_i8tDKizCSS_TjImICXJXZjB4ESv-vBN6qH89xVWBAF1KWms2UehIgxHHB1J9Hw"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "149M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 6,
+      "duration": "4:44",
+      "duration_seconds": 284,
+      "creditsBrowseId": "MPTC2n5OwsJtrfg"
+    },
+    {
+      "videoId": "GQbT1CqlLvo",
+      "title": "Bring It on Down",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpJBqDxfyDN3bUA7p_jjDSNGC3pRQe2M0WJRAPJxQ1pZXlHQwivuXG9c4P_rk2mKim5Zqy_Q6Z0M5ujbisjzwm9Tp0AFvA"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "6.5M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 7,
+      "duration": "4:18",
+      "duration_seconds": 258,
+      "creditsBrowseId": "MPTCdqOAzxpkXrA"
+    },
+    {
+      "videoId": "SaeLKhRnkhQ",
+      "title": "Cigarettes & Alcohol",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpI0_jGkn0z1iz4GhT3xXr4yoWEnlpewtncE37P6-mMyt83CEHy2foPJzp7j9m0NrJMB6jEwFS4FEdfPv8jZQ8k-GhtXmw"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": true,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "40M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 8,
+      "duration": "4:50",
+      "duration_seconds": 290,
+      "creditsBrowseId": "MPTCGNNzO061BQg"
+    },
+    {
+      "videoId": "t7U2opOC2p8",
+      "title": "Digsy's Dinner",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpKhjxe1nZDueY2LzGeF7L6ydwVBGvZAYbumg1kPvYhKb9E5jMhomdaEnLj2r7ppfPYcl8ZGMWF-Kqoev8avTa7RkKSoTw"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "3.8M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 9,
+      "duration": "2:33",
+      "duration_seconds": 153,
+      "creditsBrowseId": "MPTCGo7izxUSQ9Y"
+    },
+    {
+      "videoId": "X5QBFoDhaH4",
+      "title": "Slide Away",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpKdLc1ETZpNXrVed_4lqmwiQB-fl7hNIoTsNsX-KI2Mf51WKK2aHnn6--GxRVIKM1S5_Cw8bvZC_V8I2W6Ka8iLDpix4g"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "54M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 10,
+      "duration": "6:33",
+      "duration_seconds": 393,
+      "creditsBrowseId": "MPTCyW3oYN7Fvj0"
+    },
+    {
+      "videoId": "EOoidN2s5qY",
+      "title": "Married with Children",
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "album": "Definitely Maybe",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpL6yhAuveBHUb6wGpOJSUA_UUz8kk7w9XYC_lPrKMTQ5o_SidSUDLQIWDJuL1drj8uUd_z8-Ic3pRUjlCB5BmU-tnyXgw"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": true,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "38M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 11,
+      "duration": "3:13",
+      "duration_seconds": 193,
+      "creditsBrowseId": "MPTCnWknkhFzmM8"
+    }
+  ],
+  "other_versions": [
+    {
+      "title": "Definitely Maybe (30th Anniversary Deluxe Edition)",
+      "artists": [
+        {
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA",
+          "name": "Oasis"
+        }
+      ],
+      "browseId": "MPREb_rAj03C3fO0c",
+      "audioPlaylistId": "OLAK5uy_kReb2T0xmcylkA8g23JoAbUhfSXIaZ02M",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/1-_oC_dlyjvjIGxNSMgjm-Zk6eeuxBcV6NuOzFU3mA2IHeRDkNZGNj0a-yvmx9_eS9cwqR2r5jpZxl8UgA=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/1-_oC_dlyjvjIGxNSMgjm-Zk6eeuxBcV6NuOzFU3mA2IHeRDkNZGNj0a-yvmx9_eS9cwqR2r5jpZxl8UgA=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": true,
+      "type": "Album"
+    },
+    {
+      "title": "Definitely Maybe (Deluxe Edition Remastered)",
+      "artists": [
+        {
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA",
+          "name": "Oasis"
+        }
+      ],
+      "browseId": "MPREb_VXk6OaxfNsY",
+      "audioPlaylistId": "OLAK5uy_lkfwNBFhENGHZADW2g9X8mzOb6l-JVGR4",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Definitely Maybe (Deluxe Edition Remastered)",
+      "artists": [
+        {
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA",
+          "name": "Oasis"
+        }
+      ],
+      "browseId": "MPREb_8k7WQz36zgN",
+      "audioPlaylistId": "OLAK5uy_lgURfTUqo3ZWXMrQwM6CJiG1__xCrAnyc",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/BHxw1yBoaAtiJjeNt43TsU1R-DUX22xYmvvobw9PEhIRVzH3gUV8WHEhZwil-vvkF5INhqAQ-Nw4D1OxHQ=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/BHxw1yBoaAtiJjeNt43TsU1R-DUX22xYmvvobw9PEhIRVzH3gUV8WHEhZwil-vvkF5INhqAQ-Nw4D1OxHQ=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": true,
+      "type": "Album"
+    }
+  ],
+  "related_recommendations": [
+    {
+      "title": "Whatever People Say I Am, That's What I'm Not",
+      "artists": [
+        {
+          "id": "UC8Yu1_yfN5qPh601Y4btsYw",
+          "name": "Arctic Monkeys"
+        }
+      ],
+      "browseId": "MPREb_1X7jgKSpSz7",
+      "audioPlaylistId": "OLAK5uy_kTE8sGzw4dGtlt3uuQIHGyNat2mdWfO2M",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/i8eYmkRz5V9eVQYKLFYxlOFU4HGgRjfCQsZf51ytdbiYTFuSiVU0MmoKEuFr5leNIngdq9i8LRLbBI9eqQ=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/i8eYmkRz5V9eVQYKLFYxlOFU4HGgRjfCQsZf51ytdbiYTFuSiVU0MmoKEuFr5leNIngdq9i8LRLbBI9eqQ=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Acoustic Hymns, Vol. 1",
+      "artists": [
+        {
+          "id": "UC7kF6YLmdR5qCyJ5eLCKEnA",
+          "name": "Richard Ashcroft"
+        }
+      ],
+      "browseId": "MPREb_pK2SYuK37TM",
+      "audioPlaylistId": "OLAK5uy_nJLHdhdBE7RYE4phnqT_7kX3wE4Z0ql3U",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/-fzjrkGBsuZ82x3HjqCVH_fYUuobFvlIoacYj0FeTgWVBLrevAw3uSKiY_WK-4qjKS4wcHLVdrYiWB_u=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/-fzjrkGBsuZ82x3HjqCVH_fYUuobFvlIoacYj0FeTgWVBLrevAw3uSKiY_WK-4qjKS4wcHLVdrYiWB_u=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Free All Angels",
+      "artists": [
+        {
+          "id": "UCDzywKLFmvLN5Ozb_TymCFw",
+          "name": "Ash"
+        }
+      ],
+      "browseId": "MPREb_mSZvIRUAcbj",
+      "audioPlaylistId": "OLAK5uy_kxhZEoP3daeLFGAC1cBUYxIEmhCcjRtmA",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/Yg2iNS7Hix-QMHHIV5ln5Sjk9Wm51qOnlL-0mAXt2yB5vEPFWlLgsfsqavTSE2vm3dkUdMPROmwMj7Cqkw=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/Yg2iNS7Hix-QMHHIV5ln5Sjk9Wm51qOnlL-0mAXt2yB5vEPFWlLgsfsqavTSE2vm3dkUdMPROmwMj7Cqkw=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": true,
+      "type": "Album"
+    },
+    {
+      "title": "Pawn Shop Guitars",
+      "artists": [
+        {
+          "id": "UCztojM6B-z6IVeM2avqruww",
+          "name": "Gilby Clarke"
+        }
+      ],
+      "browseId": "MPREb_6I2Hh4WJdTd",
+      "audioPlaylistId": "OLAK5uy_l7e7jGB8fZxafZB8nIJzWBlwBqQC0YISY",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/OwBMcPKnAwfGDNsFEtiiK7BEqeBj6BIOmNUg8HgrYTuwiU3CazyD60umXQXjk9IgY6RDZZ1hgIRtPTk=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/OwBMcPKnAwfGDNsFEtiiK7BEqeBj6BIOmNUg8HgrYTuwiU3CazyD60umXQXjk9IgY6RDZZ1hgIRtPTk=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": true,
+      "type": "Album"
+    },
+    {
+      "title": "Made Of Stone",
+      "artists": [
+        {
+          "id": "UCccFm9vNZz5u1deqhWhN2Yw",
+          "name": "The Stone Roses"
+        }
+      ],
+      "browseId": "MPREb_sRyPboUhHNC",
+      "audioPlaylistId": "OLAK5uy_nIp0JectpXfuVMR-1arusJ809Dxn64-8s",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/1aA8ysvb4lyGvE0qva0a065oZ0-6x06ACWMPv1z6AhMGvC3eaBeUs7wnOAO9-EPf6rN7BmcaVurhAkT5=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/1aA8ysvb4lyGvE0qva0a065oZ0-6x06ACWMPv1z6AhMGvC3eaBeUs7wnOAO9-EPf6rN7BmcaVurhAkT5=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Single"
+    },
+    {
+      "title": "The Great Escape",
+      "artists": [
+        {
+          "id": "UCI3EFb2lvZyBMykNd64JDhg",
+          "name": "Blur"
+        }
+      ],
+      "browseId": "MPREb_AuRwijPQetk",
+      "audioPlaylistId": "OLAK5uy_mOlSaP7xfHLPsDEpU_0Cq2mZxJpMqr3T8",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/aBsHFH4-UiKWt1u799raWTGQ9FI9WM5-5QvoOSpXktXJpnrO72N9dTbPgs9DNUf-MKjNaW-l4l_Kjz8=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/aBsHFH4-UiKWt1u799raWTGQ9FI9WM5-5QvoOSpXktXJpnrO72N9dTbPgs9DNUf-MKjNaW-l4l_Kjz8=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Don't Believe The Truth",
+      "artists": [
+        {
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA",
+          "name": "Oasis"
+        }
+      ],
+      "browseId": "MPREb_ymjUkM1pDLs",
+      "audioPlaylistId": "OLAK5uy_m2-JTuFLCjbvfobf9AtltQnb5Zyr57Qm8",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/_IafoLqRsZTyKQ9PN9i7BBK2vTfPdmU8GzKG1g9bz48wVyDCCdRHAebq78r4sIbutZ043ls4lW3jFUZ6-Q=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/_IafoLqRsZTyKQ9PN9i7BBK2vTfPdmU8GzKG1g9bz48wVyDCCdRHAebq78r4sIbutZ043ls4lW3jFUZ6-Q=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Urban Hymns",
+      "artists": [
+        {
+          "id": "UCt2KxZpY5D__kapeQ8cauQw",
+          "name": "The Verve"
+        }
+      ],
+      "browseId": "MPREb_XKUg9uNpyvu",
+      "audioPlaylistId": "OLAK5uy_kwHm7IYsHPYkH7jgJx6nx0NSvHLUybCVA",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/l9EKEI36vR1AvC6ip2XJCxg3Q1vaObyQktHfvaMvMRL4otDyBTxBo1-YJifilimLnlk3J6Tjq06gz-4=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/l9EKEI36vR1AvC6ip2XJCxg3Q1vaObyQktHfvaMvMRL4otDyBTxBo1-YJifilimLnlk3J6Tjq06gz-4=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Knebworth 1996 (Live)",
+      "artists": [
+        {
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA",
+          "name": "Oasis"
+        }
+      ],
+      "browseId": "MPREb_Wg12tLz2rVH",
+      "audioPlaylistId": "OLAK5uy_mAlbjYpap42PQ5zSUCnXjNlUzydNA0QXw",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/3Q6oHj1IM8VpSTdUbdBHRsWV_gg_4Abz2fZiwpBUOvefBDXZqxNDHL30BIk7iEEhKOYx3tqz78nKG3LcZQ=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/3Q6oHj1IM8VpSTdUbdBHRsWV_gg_4Abz2fZiwpBUOvefBDXZqxNDHL30BIk7iEEhKOYx3tqz78nKG3LcZQ=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": true,
+      "type": "Album"
+    },
+    {
+      "title": "This Is Hardcore",
+      "artists": [
+        {
+          "id": "UCestUWVB5ZScrn9_51Rj1ig",
+          "name": "Pulp"
+        }
+      ],
+      "browseId": "MPREb_piyvdrrY4fz",
+      "audioPlaylistId": "OLAK5uy_nnykGh8RUrN5xlrj3NnXcKQKBdQOsfyVw",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/MVGIRkPhPEtVw-e5tVVs_YJYA28MUgKpLvHvdZbOVGU2PDj0YaQWzf6AZCggXs9Li-F57pdcU6kfGNU=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/MVGIRkPhPEtVw-e5tVVs_YJYA28MUgKpLvHvdZbOVGU2PDj0YaQWzf6AZCggXs9Li-F57pdcU6kfGNU=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    }
+  ],
+  "duration_seconds": 3127
+}

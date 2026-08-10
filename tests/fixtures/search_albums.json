@@ -1,0 +1,236 @@
+[
+  {
+    "category": "Albums",
+    "resultType": "album",
+    "title": "Definitely Maybe",
+    "type": "Album",
+    "playlistId": "OLAK5uy_m--RCG58SjXLvgRiw0pASnMY6YjE8q3NU",
+    "duration": null,
+    "year": "1994",
+    "artists": [
+      {
+        "name": "Oasis",
+        "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+      }
+    ],
+    "browseId": "MPREb_Hl8XJR59OrY",
+    "isExplicit": true,
+    "thumbnails": [
+      {
+        "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w60-h60-l90-rj",
+        "width": 60,
+        "height": 60
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w120-h120-l90-rj",
+        "width": 120,
+        "height": 120
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w226-h226-l90-rj",
+        "width": 226,
+        "height": 226
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w544-h544-l90-rj",
+        "width": 544,
+        "height": 544
+      }
+    ]
+  },
+  {
+    "category": "Albums",
+    "resultType": "album",
+    "title": "(What's The Story) Morning Glory?",
+    "type": "Album",
+    "playlistId": "OLAK5uy_kunInnOpcKECWIBQGB0Qj6ZjquxDvfckg",
+    "duration": null,
+    "year": "1995",
+    "artists": [
+      {
+        "name": "Oasis",
+        "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+      }
+    ],
+    "browseId": "MPREb_IInSY5QXXrW",
+    "isExplicit": false,
+    "thumbnails": [
+      {
+        "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w60-h60-l90-rj",
+        "width": 60,
+        "height": 60
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w120-h120-l90-rj",
+        "width": 120,
+        "height": 120
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w226-h226-l90-rj",
+        "width": 226,
+        "height": 226
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w544-h544-l90-rj",
+        "width": 544,
+        "height": 544
+      }
+    ]
+  },
+  {
+    "category": "Albums",
+    "resultType": "album",
+    "title": "Be Here Now (Deluxe Remastered Edition)",
+    "type": "Album",
+    "playlistId": "OLAK5uy_kij0Um78FWtmec2JkFcdUcbwD7TQ7_XaI",
+    "duration": null,
+    "year": "1997",
+    "artists": [
+      {
+        "name": "Oasis",
+        "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+      }
+    ],
+    "browseId": "MPREb_Jjg4dOBxqzt",
+    "isExplicit": true,
+    "thumbnails": [
+      {
+        "url": "https://yt3.googleusercontent.com/kBRNwG3Xe5JsriTtILs4pcepANRSJCiNoSruvJhibM-9k_moeylVaLJsiF42lJoPcVxfBpMaLfYVYigg=w60-h60-l90-rj",
+        "width": 60,
+        "height": 60
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/kBRNwG3Xe5JsriTtILs4pcepANRSJCiNoSruvJhibM-9k_moeylVaLJsiF42lJoPcVxfBpMaLfYVYigg=w120-h120-l90-rj",
+        "width": 120,
+        "height": 120
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/kBRNwG3Xe5JsriTtILs4pcepANRSJCiNoSruvJhibM-9k_moeylVaLJsiF42lJoPcVxfBpMaLfYVYigg=w226-h226-l90-rj",
+        "width": 226,
+        "height": 226
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/kBRNwG3Xe5JsriTtILs4pcepANRSJCiNoSruvJhibM-9k_moeylVaLJsiF42lJoPcVxfBpMaLfYVYigg=w544-h544-l90-rj",
+        "width": 544,
+        "height": 544
+      }
+    ]
+  },
+  {
+    "category": "Albums",
+    "resultType": "album",
+    "title": "The Masterplan",
+    "type": "Album",
+    "playlistId": "OLAK5uy_l54zz2cftJhwZRONUmw9ga-Int7eICsKE",
+    "duration": null,
+    "year": "1998",
+    "artists": [
+      {
+        "name": "Oasis",
+        "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+      }
+    ],
+    "browseId": "MPREb_pYWv34sDP1Y",
+    "isExplicit": false,
+    "thumbnails": [
+      {
+        "url": "https://yt3.googleusercontent.com/X2VnFSSjBjS0Jxcz2OH_UMiye3ee_Vz_heok68hWOrOHv9iV59605Pmw5YbFDUuDENvCG_tu8DrDOVwG=w60-h60-l90-rj",
+        "width": 60,
+        "height": 60
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/X2VnFSSjBjS0Jxcz2OH_UMiye3ee_Vz_heok68hWOrOHv9iV59605Pmw5YbFDUuDENvCG_tu8DrDOVwG=w120-h120-l90-rj",
+        "width": 120,
+        "height": 120
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/X2VnFSSjBjS0Jxcz2OH_UMiye3ee_Vz_heok68hWOrOHv9iV59605Pmw5YbFDUuDENvCG_tu8DrDOVwG=w226-h226-l90-rj",
+        "width": 226,
+        "height": 226
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/X2VnFSSjBjS0Jxcz2OH_UMiye3ee_Vz_heok68hWOrOHv9iV59605Pmw5YbFDUuDENvCG_tu8DrDOVwG=w544-h544-l90-rj",
+        "width": 544,
+        "height": 544
+      }
+    ]
+  },
+  {
+    "category": "Albums",
+    "resultType": "album",
+    "title": "Play Guitar with Oasis: Definitely Maybe",
+    "type": "Album",
+    "playlistId": "OLAK5uy_lGGlMrJZSlYQILiw2XX_yrpJ_GFyIMPkM",
+    "duration": null,
+    "year": "2012",
+    "artists": [
+      {
+        "name": "The Backing Tracks",
+        "id": "UCJD99FyoaziEyOe9-FIfc9g"
+      }
+    ],
+    "browseId": "MPREb_vB6hJvTLroA",
+    "isExplicit": false,
+    "thumbnails": [
+      {
+        "url": "https://yt3.googleusercontent.com/HMurz6bYe1m2FCMSK25mrivLSYBqgVnQceZCRGEl8_DpaL8m9P2ugI1gv-_7qWxo-4-Od_ErElqx0kI=w60-h60-l90-rj",
+        "width": 60,
+        "height": 60
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/HMurz6bYe1m2FCMSK25mrivLSYBqgVnQceZCRGEl8_DpaL8m9P2ugI1gv-_7qWxo-4-Od_ErElqx0kI=w120-h120-l90-rj",
+        "width": 120,
+        "height": 120
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/HMurz6bYe1m2FCMSK25mrivLSYBqgVnQceZCRGEl8_DpaL8m9P2ugI1gv-_7qWxo-4-Od_ErElqx0kI=w226-h226-l90-rj",
+        "width": 226,
+        "height": 226
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/HMurz6bYe1m2FCMSK25mrivLSYBqgVnQceZCRGEl8_DpaL8m9P2ugI1gv-_7qWxo-4-Od_ErElqx0kI=w544-h544-l90-rj",
+        "width": 544,
+        "height": 544
+      }
+    ]
+  },
+  {
+    "category": "Albums",
+    "resultType": "album",
+    "title": "Nothing But... Electronica Essentials, Vol. 05",
+    "type": "Album",
+    "playlistId": "OLAK5uy_lMuPNcl8K2Nvu2611I21cGocGuw7aUeJk",
+    "duration": null,
+    "year": "2022",
+    "artists": [
+      {
+        "name": "Various Artists",
+        "id": null
+      }
+    ],
+    "browseId": "MPREb_F3dxJOidR82",
+    "isExplicit": false,
+    "thumbnails": [
+      {
+        "url": "https://yt3.googleusercontent.com/rInybFgpn_Jte3hivaKf6B8xHN9UFElF5-UcdMQKPCPOFGVjUTsAjKuVdszoTojcX3-RvfFSRkGcuQ_ZtA=w60-h60-l90-rj",
+        "width": 60,
+        "height": 60
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/rInybFgpn_Jte3hivaKf6B8xHN9UFElF5-UcdMQKPCPOFGVjUTsAjKuVdszoTojcX3-RvfFSRkGcuQ_ZtA=w120-h120-l90-rj",
+        "width": 120,
+        "height": 120
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/rInybFgpn_Jte3hivaKf6B8xHN9UFElF5-UcdMQKPCPOFGVjUTsAjKuVdszoTojcX3-RvfFSRkGcuQ_ZtA=w226-h226-l90-rj",
+        "width": 226,
+        "height": 226
+      },
+      {
+        "url": "https://yt3.googleusercontent.com/rInybFgpn_Jte3hivaKf6B8xHN9UFElF5-UcdMQKPCPOFGVjUTsAjKuVdszoTojcX3-RvfFSRkGcuQ_ZtA=w544-h544-l90-rj",
+        "width": 544,
+        "height": 544
+      }
+    ]
+  }
+]

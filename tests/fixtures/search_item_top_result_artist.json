@@ -1,0 +1,23 @@
+{
+  "category": "Top result",
+  "resultType": "artist",
+  "subscribers": "51.2M",
+  "artists": [
+    {
+      "name": "Oasis",
+      "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+  ],
+  "thumbnails": [
+    {
+      "url": "https://yt3.googleusercontent.com/U5ierX4J6fdj6vlmiIjKKHQhYphsOYHBd43bJRao1T2qrojHb_xcPsnL-gprIEn_y900oPEZhp-iPXs=w60-h60-p-l90-rj",
+      "width": 60,
+      "height": 60
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/U5ierX4J6fdj6vlmiIjKKHQhYphsOYHBd43bJRao1T2qrojHb_xcPsnL-gprIEn_y900oPEZhp-iPXs=w120-h120-p-l90-rj",
+      "width": 120,
+      "height": 120
+    }
+  ]
+}

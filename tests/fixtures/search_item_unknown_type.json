@@ -1,0 +1,28 @@
+{
+  "category": null,
+  "resultType": "podcast",
+  "title": "Pointless Reviews",
+  "browseId": "MPSPPL7lGdgoUKJQas6jpVtb5Q__3NHbrbC1oq",
+  "thumbnails": [
+    {
+      "url": "https://i.ytimg.com/pl_c/PL7lGdgoUKJQas6jpVtb5Q__3NHbrbC1oq/studio_square_thumbnail.jpg?sqp=CKmT59MG-oaymwEICDwQPCAASFqi85f_AwYIivDuwgY&rs=AMzJL3nFMoLwtMjOWqh92BDU5umYrsV0Jw",
+      "width": 60,
+      "height": 60
+    },
+    {
+      "url": "https://i.ytimg.com/pl_c/PL7lGdgoUKJQas6jpVtb5Q__3NHbrbC1oq/studio_square_thumbnail.jpg?sqp=CKmT59MG-oaymwEICHgQeCAASFqi85f_AwYIivDuwgY&rs=AMzJL3keIMZaqpS9-9spIJTmxcPXkaT-tQ",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "url": "https://i.ytimg.com/pl_c/PL7lGdgoUKJQas6jpVtb5Q__3NHbrbC1oq/studio_square_thumbnail.jpg?sqp=CKmT59MG-oaymwEKCOIBEOIBIABIWqLzl_8DBgiK8O7CBg&rs=AMzJL3mPKGPOFJI31CS5LiDvgkL0vDg5ew",
+      "width": 226,
+      "height": 226
+    },
+    {
+      "url": "https://i.ytimg.com/pl_c/PL7lGdgoUKJQas6jpVtb5Q__3NHbrbC1oq/studio_square_thumbnail.jpg?sqp=CKmT59MG-oaymwEKCKAEEKAEIABIWqLzl_8DBgiK8O7CBg&rs=AMzJL3lyeLPCMv4ncWNyWR7rhfjD49L3dQ",
+      "width": 544,
+      "height": 544
+    }
+  ]
+}

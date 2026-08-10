@@ -1,0 +1,32 @@
+{
+  "category": null,
+  "resultType": "album",
+  "title": "(What's The Story) Morning Glory?",
+  "type": "Album",
+  "playlistId": "OLAK5uy_kunInnOpcKECWIBQGB0Qj6ZjquxDvfckg",
+  "duration": null,
+  "browseId": "MPREb_IInSY5QXXrW",
+  "isExplicit": false,
+  "thumbnails": [
+    {
+      "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w60-h60-l90-rj",
+      "width": 60,
+      "height": 60
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w120-h120-l90-rj",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w226-h226-l90-rj",
+      "width": 226,
+      "height": 226
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/fyQACpdbGxnxcwWa6ogy2qujdidjDvv3WvpGJRthh8ffCCAYs85MnKp1tQ4tpNhZLvizPhYE7T0kiMDI=w544-h544-l90-rj",
+      "width": 544,
+      "height": 544
+    }
+  ]
+}

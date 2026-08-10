@@ -1,0 +1,54 @@
+{
+  "requestedBrowseId": "VLPL127P7lHFtiTiHsG1VWhk_dWB8NrZ2miu",
+  "bareId": "PL127P7lHFtiTiHsG1VWhk_dWB8NrZ2miu",
+  "owned": false,
+  "id": "PL127P7lHFtiTiHsG1VWhk_dWB8NrZ2miu",
+  "privacy": "PUBLIC",
+  "description": "Playlist Created with https://www.tunemymusic.com?source=pl... that lets you transfer your playlist to YouTube from any music platform such as Spotify, Deezer etc",
+  "views": 17,
+  "duration": "5 hours, 34 minutes",
+  "trackCount": 91,
+  "title": "Indie Rock Essentials",
+  "thumbnails": [
+    {
+      "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s192",
+      "width": 192,
+      "height": 192
+    },
+    {
+      "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s576",
+      "width": 576,
+      "height": 576
+    },
+    {
+      "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s1200",
+      "width": 1200,
+      "height": 1200
+    }
+  ],
+  "year": "2020",
+  "related": [],
+  "tracks": [
+    {
+      "videoId": "PvM79DJ2PmM",
+      "title": "The Less I Know The Better",
+      "artists": [],
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpJzUObWqYbCF-h_uvM6W4tGVVWNnVCu8e1z4DI2Agd-aT0hU40L2yWWM4F-PDAhRrFyihdH2EyfbBU0ZXWpasFXso72XQ"
+      },
+      "isAvailable": true,
+      "isExplicit": true,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:37",
+      "duration_seconds": 217,
+      "creditsBrowseId": "MPTCPvM79DJ2PmM"
+    }
+  ],
+  "duration_seconds": 20049
+}
