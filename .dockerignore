@@ -1,0 +1,13 @@
+.venv
+.git
+.pytest_cache
+.mypy_cache
+.ruff_cache
+__pycache__
+*.pyc
+tests
+.github
+.python-version
+uv.lock
+README.md
+AGENTS.md

@@ -1,0 +1,18 @@
+FROM python:3.12-slim
+
+RUN useradd --create-home --uid 1000 appuser
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app ./app
+
+USER appuser
+
+HEALTHCHECK --interval=10s --timeout=5s --retries=5 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)" || exit 1
+
+EXPOSE 8000
+
+CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "-w", "2", "-b", "0.0.0.0:8000", "app.main:app"]
