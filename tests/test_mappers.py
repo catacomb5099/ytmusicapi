@@ -94,6 +94,35 @@ class TestAlbumDetailMapping:
         # album track's `album` field is a bare string, not {name, id}
         assert first_track.albumName == raw["tracks"][0]["album"]
 
+    def test_maps_description_and_album_level_explicit(self, load_fixture):
+        raw = load_fixture("album_detail")
+        detail = map_album_detail(raw, requested_browse_id="MPREb_TEST")
+        assert detail.description == raw["description"]
+        assert detail.explicit == raw["isExplicit"]
+
+    def test_maps_other_versions_and_related_recommendations(self, load_fixture):
+        """Both buckets share one item shape upstream, so both map through RelatedAlbum."""
+        raw = load_fixture("album_detail")
+        detail = map_album_detail(raw, requested_browse_id="MPREb_TEST")
+        assert len(detail.otherVersions) == len(raw["other_versions"])
+        assert len(detail.relatedRecommendations) == len(raw["related_recommendations"])
+        rec = detail.relatedRecommendations[0]
+        raw_rec = raw["related_recommendations"][0]
+        assert rec.browseId == raw_rec["browseId"]
+        assert rec.audioPlaylistId == raw_rec["audioPlaylistId"]
+        assert rec.type == raw_rec["type"]
+        assert rec.explicit == raw_rec["isExplicit"]
+        assert rec.artists[0].channelId == raw_rec["artists"][0]["id"]
+        assert rec.thumbnailUrl == raw_rec["thumbnails"][-1]["url"]
+
+    def test_track_views_kept_verbatim_as_display_string(self, load_fixture):
+        """Upstream sends "27M plays" -- an abbreviation, not a number. Parsing it to an
+        int would silently read "2.2B plays" as 22, so it stays a string."""
+        raw = load_fixture("album_detail")
+        detail = map_album_detail(raw, requested_browse_id="MPREb_TEST")
+        assert detail.tracks[0].views == raw["tracks"][0]["views"]
+        assert isinstance(detail.tracks[0].views, str)
+
     def test_mangled_album_missing_audio_playlist_id_and_track_fields(self, load_fixture):
         raw = load_fixture("album_detail_mangled")
         detail = map_album_detail(raw, requested_browse_id="MPREb_TEST")
@@ -102,6 +131,29 @@ class TestAlbumDetailMapping:
         track = detail.tracks[0]
         assert track.durationSeconds is None
         assert track.trackNumber is None
+
+    def test_mangled_album_missing_new_fields_degrades_gracefully(self, load_fixture):
+        raw = load_fixture("album_detail_mangled")
+        assert "description" not in raw
+        assert "isExplicit" not in raw
+        assert "other_versions" not in raw
+        detail = map_album_detail(raw, requested_browse_id="MPREb_TEST")
+        assert detail.description is None
+        assert detail.explicit is None
+        assert detail.otherVersions == []
+        assert detail.tracks[0].views is None
+
+    def test_malformed_recommendation_entries_are_skipped_not_raised(self, load_fixture):
+        """The bucket holds a dict missing every optional key plus a non-dict entry."""
+        raw = load_fixture("album_detail_mangled")
+        assert any(not isinstance(r, dict) for r in raw["related_recommendations"])
+        detail = map_album_detail(raw, requested_browse_id="MPREb_TEST")
+        assert len(detail.relatedRecommendations) == 1  # the non-dict is dropped
+        only = detail.relatedRecommendations[0]
+        assert only.browseId == "MPREb_MANGLED"
+        assert only.thumbnailUrl is None
+        assert only.artists == []
+        assert only.type is None
 
 
 class TestArtistDetailMapping:
@@ -119,11 +171,27 @@ class TestArtistDetailMapping:
         assert len(detail.albums) == len(raw["albums"]["results"])
         assert len(detail.topSongs) == len(raw["songs"]["results"])
 
+    def test_maps_monthly_listeners_and_views(self, load_fixture):
+        """Both are upstream display strings ("51.2M", "4,883,414,620 views"), mapped
+        verbatim for the same reason `subscribers` already is."""
+        raw = load_fixture("artist_detail")
+        detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])
+        assert detail.monthlyListeners == raw["monthlyListeners"]
+        assert detail.views == raw["views"]
+
     def test_artist_with_no_albums_bucket_returns_empty_list(self, load_fixture):
         raw = load_fixture("artist_detail_no_albums")
         detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])
         assert detail.albums == []
         assert detail.singles == []
+
+    def test_artist_missing_listener_stats_degrades_gracefully(self, load_fixture):
+        raw = load_fixture("artist_detail_no_albums")
+        assert "monthlyListeners" not in raw
+        assert "views" not in raw
+        detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])
+        assert detail.monthlyListeners is None
+        assert detail.views is None
 
 
 class TestPlaylistDetailMapping:

@@ -14,6 +14,8 @@ class ArtistDetail(BaseModel):
     name: str | None = None
     description: str | None = None
     subscribers: str | None = None
+    monthlyListeners: str | None = None
+    views: str | None = None
     thumbnailUrl: str | None = None
     topSongs: list[TrackDto] = []
     albums: list[AlbumStub] = []

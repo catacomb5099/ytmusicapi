@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from app.models.album import AlbumDetail
+from app.models.album import AlbumDetail, RelatedAlbum
 from app.models.artist import ArtistDetail, RelatedArtist
 from app.models.common import AlbumRef, AlbumStub, ArtistRef, TrackDto, VideoStub
 from app.models.playlist import PlaylistDetail
@@ -80,6 +80,7 @@ def _map_track(raw: dict[str, Any]) -> TrackDto:
         trackNumber=_to_int(raw.get("trackNumber")),
         isAvailable=raw.get("isAvailable"),
         explicit=raw.get("isExplicit"),
+        views=raw.get("views"),
     )
 
 
@@ -122,6 +123,25 @@ def _map_video_stubs(raw: Any) -> list[VideoStub]:
     if not raw or not isinstance(raw, list):
         return []
     return [_map_video_stub(v) for v in raw if isinstance(v, dict)]
+
+
+def _map_related_album(raw: dict[str, Any]) -> RelatedAlbum:
+    return RelatedAlbum(
+        browseId=raw.get("browseId"),
+        title=raw.get("title"),
+        type=raw.get("type"),
+        artists=_map_artists(raw.get("artists")),
+        audioPlaylistId=raw.get("audioPlaylistId"),
+        thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
+        explicit=raw.get("isExplicit"),
+    )
+
+
+def _map_related_albums(raw: Any) -> list[RelatedAlbum]:
+    """`other_versions` and `related_recommendations` carry an identical item shape."""
+    if not raw or not isinstance(raw, list):
+        return []
+    return [_map_related_album(a) for a in raw if isinstance(a, dict)]
 
 
 def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
@@ -181,7 +201,11 @@ def map_album_detail(raw: dict[str, Any], requested_browse_id: str) -> AlbumDeta
         audioPlaylistId=raw.get("audioPlaylistId"),
         artists=_map_artists(raw.get("artists")),
         thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
+        description=raw.get("description"),
+        explicit=raw.get("isExplicit"),
         tracks=_map_tracks(raw.get("tracks")),
+        otherVersions=_map_related_albums(raw.get("other_versions")),
+        relatedRecommendations=_map_related_albums(raw.get("related_recommendations")),
     )
 
 
@@ -208,6 +232,8 @@ def map_artist_detail(raw: dict[str, Any], requested_channel_id: str) -> ArtistD
         name=raw.get("name"),
         description=raw.get("description"),
         subscribers=raw.get("subscribers"),
+        monthlyListeners=raw.get("monthlyListeners"),
+        views=raw.get("views"),
         thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
         topSongs=_map_tracks(songs_bucket.get("results") if isinstance(songs_bucket, dict) else None),
         albums=_map_album_stubs(albums_bucket.get("results") if isinstance(albums_bucket, dict) else None),

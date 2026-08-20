@@ -53,6 +53,22 @@ hardcoded years/albumIds in the current mapper).
 - A bare-name query's "Top result" artist card omits `browseId`/`artist` entirely — identity lives
   only in `artists[0]`. `map_search_item`'s artist branch falls back to that; don't remove the
   fallback thinking it's dead code.
+- **Play counts and listener stats are display strings, not numbers.** `views` on album tracks
+  (`"2.2B plays"`), `monthlyListeners` (`"181M"`), `subscribers` (`"20.3M"`) and artist `views`
+  (`"12,715,572,299 views"`) are already abbreviated/formatted upstream. They are mapped verbatim
+  as `str`. Do NOT route them through `_to_int()` — it strips non-digits, so `"2.2B plays"` becomes
+  `22`. The only exact integer available is `SongMetadata.viewCount` from `get_song()`. Track
+  `views` is populated on `get_album()` tracks and null on playlist tracks and artist `topSongs`;
+  `TrackDto` is shared by all three, so null there is expected, not drift.
+- **Album-level `isExplicit` disagrees with its own tracks.** `good kid, m.A.A.d city` returns
+  album `isExplicit: false` while all 14 tracks are `explicit: true`. It's mapped faithfully as
+  `AlbumDetail.explicit`, but don't render it as a badge — prefer the per-track flag.
+- `get_album()`'s `other_versions` (deluxe/alt editions) and `related_recommendations` carry an
+  identical item shape, so both map through the one `RelatedAlbum` model via `_map_related_albums`.
+- **Album and artist `description` is Wikipedia text under CC-BY-SA 3.0.** The attribution and
+  licence URL are part of the description string itself — a consumer that trims or summarizes it
+  drops a licence obligation. `descriptionRuns` holds the same text with real hyperlinks and is
+  deliberately not exposed yet.
 - `limit` on ytmusicapi's own methods is a floor, not a ceiling. This adapter truncates to an exact
   count in the router/mapper layer — keep doing that so the API contract stays honest.
 

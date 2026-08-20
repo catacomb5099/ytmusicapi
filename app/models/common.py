@@ -20,6 +20,11 @@ class TrackDto(BaseModel):
     trackNumber: int | None = None
     isAvailable: bool | None = None
     explicit: bool | None = None
+    # Upstream sends an already-abbreviated display string ("2.2B plays"), not a number.
+    # Kept verbatim on purpose -- do NOT run it through _to_int, which strips non-digits
+    # and would silently turn "2.2B plays" into 22. Only get_song()'s SongMetadata.viewCount
+    # carries an exact integer. Populated on album tracks; null on playlist/topSongs tracks.
+    views: str | None = None
 
 
 class AlbumStub(BaseModel):

@@ -62,9 +62,20 @@ class TestSearchContract:
         assert album["tracks"][0].get("videoId")
         assert album.get("duration_seconds") is not None
 
+        # keys behind description / explicit / recommendations / per-track play counts --
+        # all label-supplied, so a rename or removal upstream is real drift, not a bug here
+        assert "description" in album
+        assert "isExplicit" in album
+        assert "other_versions" in album
+        assert "related_recommendations" in album
+        assert "views" in album["tracks"][0]
+
         detail = map_album_detail(album, requested_browse_id=browse_id)
         assert detail.tracks
         assert detail.audioPlaylistId == album["audioPlaylistId"]
+        assert detail.description
+        assert detail.relatedRecommendations
+        assert detail.relatedRecommendations[0].browseId
 
     def test_audio_playlist_id_round_trips_to_album_browse_id(self, yt):
         results = yt.search("Oasis Definitely Maybe", filter="albums", limit=5)
@@ -81,9 +92,13 @@ class TestSearchContract:
 
         artist = yt.get_artist(channel_id)
         assert artist.get("songs") or artist.get("albums")
+        assert "monthlyListeners" in artist
+        assert "views" in artist
 
         detail = map_artist_detail(artist, requested_channel_id=channel_id)
         assert detail.channelId == channel_id
+        assert detail.monthlyListeners
+        assert detail.views
 
         albums_bucket = artist.get("albums")
         if albums_bucket and albums_bucket.get("params"):
