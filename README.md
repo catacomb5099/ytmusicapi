@@ -1,4 +1,6 @@
-# ytmusic-adapter
+# ytmusicapi (ytmusic-adapter)
+
+Turning the ytmusicapi python library into an actual usable API.
 
 A stateless FastAPI service that exposes [ytmusicapi](https://github.com/sigma67/ytmusicapi)
 (pinned `1.12.2`) as a read-only JSON API for search and detail lookups: songs, videos, albums,
