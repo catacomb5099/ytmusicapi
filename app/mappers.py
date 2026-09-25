@@ -170,7 +170,10 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         # A mixed search's "Top result" playlist card carries a bare playlistId and no browseId.
         playlist_id = playlist_id or raw.get("playlistId")
         # Keep the contract (browseId is always "VL"-prefixed); get_playlist prefixes the same way.
-        browse_id = browse_id or (f"VL{playlist_id}" if playlist_id else None)
+        # Strip any VL first so a VL-prefixed raw playlistId can never yield "VLVL...".
+        if browse_id is None and isinstance(playlist_id, str) and playlist_id:
+            playlist_id = playlist_id.removeprefix("VL")
+            browse_id = f"VL{playlist_id}"
         # Playlist cards carry "author", not "artists" -- a plain string on list rows, a list of
         # {name, id} on "Top result" cards. Fold either into artists so consumers read one shape.
         author = raw.get("author")

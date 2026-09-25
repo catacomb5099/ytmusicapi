@@ -98,6 +98,9 @@ class TestSearchItemMapping:
         no_id = map_search_item({k: v for k, v in raw.items() if k != "playlistId"})
         assert no_id.playlistId is None
         assert no_id.browseId is None
+        # a VL-prefixed raw playlistId must never yield "VLVL..."
+        vl = map_search_item({**raw, "playlistId": "VL" + raw["playlistId"]})
+        assert (vl.browseId, vl.playlistId) == ("VL" + raw["playlistId"], raw["playlistId"])
 
     def test_playlist_item_maps_item_count_to_track_count(self, load_fixture):
         """ytmusicapi hands over itemCount as an int when numeric and as a display string
