@@ -71,7 +71,8 @@ hardcoded years/albumIds in the current mapper).
   deliberately not exposed yet.
 - Playlist search items carry `author` and no `artists`: a plain string on list rows, a list of
   `{name, id}` on a mixed search's "Top result" card (which also has a bare `playlistId` and no
-  `browseId`). `map_search_item` folds either into `artists` so consumers read one shape. Their
+  `browseId`). `map_search_item` folds either into `artists` so consumers read one shape, and
+  synthesizes `browseId = "VL" + playlistId` on the card so `browseId` is always `VL`-prefixed. Their
   `itemCount` is an `int` when numeric, a display string like `"5,000+"` when capped, or `None`;
   `_to_int` handles all three (it is never an abbreviated `"2.2B"`-style string, so the warning
   above does not apply). Verified against ytmusicapi 1.12.2 `parsers/search.py`, not a live probe.

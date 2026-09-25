@@ -111,6 +111,9 @@ class TestSearchContract:
         browse_id = results[0]["browseId"]
         assert browse_id.startswith("VL")
         bare_id = browse_id[2:]
+        # map_search_item folds these into artists/trackCount -- a shape change here is drift
+        assert isinstance(results[0].get("author"), (str, type(None)))
+        assert isinstance(results[0].get("itemCount"), (int, str, type(None)))
 
         playlist = yt.get_playlist(bare_id, limit=25)
         assert playlist.get("tracks")

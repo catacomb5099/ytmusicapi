@@ -82,7 +82,8 @@ class TestSearchItemMapping:
 
     def test_top_result_playlist_card_folds_author_list_and_bare_playlist_id(self, load_fixture):
         """A mixed search's "Top result" playlist card carries author as [{name, id}] and a
-        bare playlistId with no browseId (ytmusicapi parse_top_result)."""
+        bare playlistId with no browseId. Fixture is synthetic, derived from ytmusicapi 1.12.2
+        parse_top_result (live probe blocked by TLS interception) -- re-record when possible."""
         raw = load_fixture("search_item_playlist_top_result")
         assert isinstance(raw["author"], list)
         assert "browseId" not in raw
@@ -90,10 +91,18 @@ class TestSearchItemMapping:
         assert item.artists[0].name == raw["author"][0]["name"]
         assert item.artists[0].channelId == raw["author"][0]["id"]
         assert item.playlistId == raw["playlistId"]
+        assert item.browseId == "VL" + raw["playlistId"]
+        # mangled variants degrade, never raise
+        assert map_search_item({**raw, "author": []}).artists == []
+        assert map_search_item({**raw, "author": [1, "x"]}).artists == []
+        no_id = map_search_item({k: v for k, v in raw.items() if k != "playlistId"})
+        assert no_id.playlistId is None
+        assert no_id.browseId is None
 
     def test_playlist_item_maps_item_count_to_track_count(self, load_fixture):
         """ytmusicapi hands over itemCount as an int when numeric and as a display string
-        like "5,000+" when capped."""
+        like "5,000+" when capped. Fixture is synthetic, derived from ytmusicapi 1.12.2
+        parse_search_result (live probe blocked by TLS interception) -- re-record when possible."""
         raw = load_fixture("search_item_playlist_with_item_count")
         assert map_search_item(raw).trackCount == 45
         assert map_search_item({**raw, "itemCount": "5,000+"}).trackCount == 5000
