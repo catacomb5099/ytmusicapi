@@ -1,20 +1,19 @@
 {
-  "category": "Community playlists",
+  "category": "Top result",
   "resultType": "playlist",
+  "playlistId": "PLrAl6rYgs4IvGFBDEaVGFXt6k2hZ9e3ao",
   "title": "Indie Rock Essentials",
-  "itemCount": 45,
-  "author": "Chetan Gupta",
-  "browseId": "VLPL127P7lHFtiTiHsG1VWhk_dWB8NrZ2miu",
+  "author": [
+    {
+      "name": "Chetan Gupta",
+      "id": "UCgTz7d1uD8tFvQbmXlNz8Sg"
+    }
+  ],
   "thumbnails": [
     {
       "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s192",
       "width": 192,
       "height": 192
-    },
-    {
-      "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s576",
-      "width": 576,
-      "height": 576
     },
     {
       "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s1200",

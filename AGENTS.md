@@ -69,9 +69,12 @@ hardcoded years/albumIds in the current mapper).
   licence URL are part of the description string itself — a consumer that trims or summarizes it
   drops a licence obligation. `descriptionRuns` holds the same text with real hyperlinks and is
   deliberately not exposed yet.
-- Playlist search items carry `author` (a plain string) and no `artists`; `map_search_item` folds it
-  into `artists[0]` (`channelId: null`) so consumers read one shape. Their `itemCount` is a plain
-  count string or `None` (not an abbreviated display string), so `_to_int` is safe there.
+- Playlist search items carry `author` and no `artists`: a plain string on list rows, a list of
+  `{name, id}` on a mixed search's "Top result" card (which also has a bare `playlistId` and no
+  `browseId`). `map_search_item` folds either into `artists` so consumers read one shape. Their
+  `itemCount` is an `int` when numeric, a display string like `"5,000+"` when capped, or `None`;
+  `_to_int` handles all three (it is never an abbreviated `"2.2B"`-style string, so the warning
+  above does not apply). Verified against ytmusicapi 1.12.2 `parsers/search.py`, not a live probe.
 - `limit` on ytmusicapi's own methods is a floor, not a ceiling. This adapter truncates to an exact
   count in the router/mapper layer — keep doing that so the API contract stays honest.
 

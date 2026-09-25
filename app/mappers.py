@@ -167,13 +167,19 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         browse_id = raw_browse
         if isinstance(raw_browse, str) and raw_browse.startswith("VL"):
             playlist_id = raw_browse[2:]
-        # Playlist cards carry "author" (a plain string), not "artists" -- fold it into
-        # artists[0] so consumers read one shape.
+        # A mixed search's "Top result" playlist card carries a bare playlistId and no browseId.
+        playlist_id = playlist_id or raw.get("playlistId")
+        # Playlist cards carry "author", not "artists" -- a plain string on list rows, a list of
+        # {name, id} on "Top result" cards. Fold either into artists so consumers read one shape.
         author = raw.get("author")
-        if not artists and isinstance(author, str) and author:
-            artists = [ArtistRef(name=author, channelId=None)]
-        # itemCount is a plain count string ("45") or None -- never an abbreviated display
-        # string like "2.2B" -- so _to_int is safe here (see AGENTS.md on display strings).
+        if not artists:
+            if isinstance(author, str) and author:
+                artists = [ArtistRef(name=author, channelId=None)]
+            elif isinstance(author, list):
+                artists = _map_artists(author)
+        # itemCount (ytmusicapi 1.12.2) is an int when numeric, a display string like "5,000+"
+        # when capped, or None -- never an abbreviated "2.2B"-style string -- so _to_int is
+        # safe here (see AGENTS.md on display strings).
         track_count = _to_int(raw.get("itemCount"))
 
     return SearchResultItem(
