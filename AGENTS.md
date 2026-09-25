@@ -75,7 +75,7 @@ hardcoded years/albumIds in the current mapper).
   synthesizes `browseId = "VL" + playlistId` on the card so `browseId` is always `VL`-prefixed. Their
   `itemCount` is an `int` when numeric, a display string like `"5,000+"` when capped, or `None`;
   `_to_int` handles all three (it is never an abbreviated `"2.2B"`-style string, so the warning
-  above does not apply). Verified against ytmusicapi 1.12.2 `parsers/search.py`, not a live probe.
+  above does not apply). Both shapes are recorded live in `tests/fixtures/search_item_playlist_*.json`.
 - `limit` on ytmusicapi's own methods is a floor, not a ceiling. This adapter truncates to an exact
   count in the router/mapper layer — keep doing that so the API contract stays honest.
 

@@ -2,24 +2,24 @@
   "category": "Community playlists",
   "resultType": "playlist",
   "title": "Indie Rock Essentials",
-  "itemCount": 45,
-  "author": "Chetan Gupta",
-  "browseId": "VLPL127P7lHFtiTiHsG1VWhk_dWB8NrZ2miu",
+  "itemCount": 165,
+  "author": "FEC Creator",
+  "browseId": "VLPLlCvf4s9w5UJwX7rxNWxL1CQQLn7AfGcs",
   "thumbnails": [
     {
-      "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s192",
-      "width": 192,
-      "height": 192
+      "url": "https://i.ytimg.com/vi/F7pZPuPQAN4/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3m7oP2dnjFH1jEJujlshYd_DUpV-A",
+      "width": 400,
+      "height": 225
     },
     {
-      "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s576",
-      "width": 576,
-      "height": 576
+      "url": "https://i.ytimg.com/vi/F7pZPuPQAN4/hq720.jpg?sqp=-oaymwEKCKAGEMIDIABIWg&rs=AMzJL3lvQmPSDtTidFC0G0taSFD5NSI9Xg",
+      "width": 800,
+      "height": 450
     },
     {
-      "url": "https://yt3.ggpht.com/Yl6DmsXboeoAlh-0p1RYVlosK-te5iXNKUIccjl3MtsKgkpgU4Bzmv7W5WZs_J5ij5uiihK8MgM=s1200",
-      "width": 1200,
-      "height": 1200
+      "url": "https://i.ytimg.com/vi/F7pZPuPQAN4/hq720.jpg?sqp=-oaymwEKCNUGEN8DIABIWg&rs=AMzJL3lEaitUisH20TDAz7KeEZiVpRk_Xg",
+      "width": 853,
+      "height": 479
     }
   ]
 }

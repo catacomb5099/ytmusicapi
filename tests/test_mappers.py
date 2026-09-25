@@ -82,8 +82,8 @@ class TestSearchItemMapping:
 
     def test_top_result_playlist_card_folds_author_list_and_bare_playlist_id(self, load_fixture):
         """A mixed search's "Top result" playlist card carries author as [{name, id}] and a
-        bare playlistId with no browseId. Fixture is synthetic, derived from ytmusicapi 1.12.2
-        parse_top_result (live probe blocked by TLS interception) -- re-record when possible."""
+        bare playlistId with no browseId. Fixture recorded live from a mixed search for
+        "Indie Rock Essentials" (ytmusicapi 1.12.2)."""
         raw = load_fixture("search_item_playlist_top_result")
         assert isinstance(raw["author"], list)
         assert "browseId" not in raw
@@ -101,10 +101,10 @@ class TestSearchItemMapping:
 
     def test_playlist_item_maps_item_count_to_track_count(self, load_fixture):
         """ytmusicapi hands over itemCount as an int when numeric and as a display string
-        like "5,000+" when capped. Fixture is synthetic, derived from ytmusicapi 1.12.2
-        parse_search_result (live probe blocked by TLS interception) -- re-record when possible."""
+        like "5,000+" when capped. Fixture recorded live from a community_playlists search
+        for "Indie Rock Essentials" (ytmusicapi 1.12.2); most rows carry itemCount: null."""
         raw = load_fixture("search_item_playlist_with_item_count")
-        assert map_search_item(raw).trackCount == 45
+        assert map_search_item(raw).trackCount == raw["itemCount"] == 165
         assert map_search_item({**raw, "itemCount": "5,000+"}).trackCount == 5000
 
     def test_mangled_playlist_item_missing_author_does_not_raise(self, load_fixture):
