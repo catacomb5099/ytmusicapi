@@ -15,6 +15,7 @@ class SearchResultItem(BaseModel):
     thumbnailUrl: str | None = None
     explicit: bool | None = None
     year: int | None = None
+    trackCount: int | None = None
 
 
 class SearchResponse(BaseModel):

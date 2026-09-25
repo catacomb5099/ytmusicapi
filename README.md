@@ -26,7 +26,7 @@ All `GET`, read-only, prefix `/v1`.
 
 | Route | Notes |
 |---|---|
-| `/v1/search?q=&type=&limit=` | `type` ∈ `songs,videos,albums,artists,playlists`. Omit for mixed search. `limit` is enforced as an exact ceiling (ytmusicapi's own `limit` is a floor). |
+| `/v1/search?q=&type=&limit=` | `type` ∈ `songs,videos,albums,artists,playlists`. Omit for mixed search. `limit` is enforced as an exact ceiling (ytmusicapi's own `limit` is a floor). Playlist items carry their author as `artists[0]` and a `trackCount` (null when YouTube omits it). |
 | `/v1/search/songs`, `/albums`, `/artists`, `/playlists` | typed sugar routes |
 | `/v1/albums/{browseId}` | `browseId` = `MPREb_…` |
 | `/v1/albums/by-audio-playlist/{audioPlaylistId}` | resolves an `OLAK5uy_…` id to its album, in one call |

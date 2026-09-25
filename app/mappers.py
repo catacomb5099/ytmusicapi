@@ -150,6 +150,8 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
     browse_id: str | None = None
     playlist_id: str | None = None
     title = raw.get("title")
+    artists = _map_artists(raw.get("artists"))
+    track_count: int | None = None
 
     if result_type == "artist":
         # A plain "Top result" artist card omits browseId/artist entirely and carries
@@ -165,6 +167,14 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         browse_id = raw_browse
         if isinstance(raw_browse, str) and raw_browse.startswith("VL"):
             playlist_id = raw_browse[2:]
+        # Playlist cards carry "author" (a plain string), not "artists" -- fold it into
+        # artists[0] so consumers read one shape.
+        author = raw.get("author")
+        if not artists and isinstance(author, str) and author:
+            artists = [ArtistRef(name=author, channelId=None)]
+        # itemCount is a plain count string ("45") or None -- never an abbreviated display
+        # string like "2.2B" -- so _to_int is safe here (see AGENTS.md on display strings).
+        track_count = _to_int(raw.get("itemCount"))
 
     return SearchResultItem(
         type=result_type,
@@ -172,12 +182,13 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         browseId=browse_id,
         playlistId=playlist_id,
         title=title,
-        artists=_map_artists(raw.get("artists")),
+        artists=artists,
         album=_map_album_ref(raw.get("album")),
         durationSeconds=_to_int(raw.get("duration_seconds")),
         thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
         explicit=raw.get("isExplicit"),
         year=_to_int(raw.get("year")),
+        trackCount=track_count,
     )
 
 

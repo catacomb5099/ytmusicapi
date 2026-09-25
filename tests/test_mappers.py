@@ -69,10 +69,31 @@ class TestSearchItemMapping:
         assert item.browseId is not None
         assert item.year is None
 
+    def test_playlist_item_folds_author_into_artists(self, load_fixture):
+        """Playlist cards carry a plain-string "author" and no "artists" -- the mapper
+        folds it into artists[0] so every result type exposes the same shape."""
+        for fixture in ("search_playlists", "search_mixed"):
+            raw = next(i for i in load_fixture(fixture) if i["resultType"] == "playlist")
+            assert isinstance(raw["author"], str)
+            assert not raw.get("artists")
+            item = map_search_item(raw)
+            assert item.artists[0].name == raw["author"]
+            assert item.artists[0].channelId is None
+            assert item.trackCount is None or isinstance(item.trackCount, int)
+
+    def test_playlist_item_maps_item_count_to_track_count(self, load_fixture):
+        raw = load_fixture("search_item_playlist_with_item_count")
+        assert raw["itemCount"] == "45"
+        item = map_search_item(raw)
+        assert item.trackCount == 45
+
     def test_mangled_playlist_item_missing_author_does_not_raise(self, load_fixture):
         raw = load_fixture("search_item_mangled_playlist")
+        assert "author" not in raw
         item = map_search_item(raw)
         assert item.type == "playlist"
+        assert item.artists == []
+        assert item.trackCount is None
 
     def test_limit_truncates_results(self, load_fixture):
         raw = load_fixture("search_mixed")
