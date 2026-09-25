@@ -81,6 +81,10 @@ uv run pytest -m live      # opt-in: hits the real YouTube Music backend
 uv run ruff check . && uv run mypy app
 ```
 
+Behind corporate TLS interception the live suite fails with a certificate error. Point `requests` at
+a bundle made of certifi's `cacert.pem` plus the corporate root CA (`cat "$(uv run python -m certifi)"
+corp-root.pem > ca-bundle.pem`) via `REQUESTS_CA_BUNDLE=./ca-bundle.pem`; do not commit the bundle.
+
 `tests/fixtures/` holds real recorded JSON from live calls (including a few hand-mangled variants
 with missing keys) — `tests/test_mappers.py` is driven entirely by these, so mapper correctness
 never depends on network access. `tests/test_contract_live.py` is what actually detects YouTube
