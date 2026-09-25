@@ -123,6 +123,21 @@ class TestSearchContract:
         detail = map_playlist_detail(playlist)
         assert detail.tracks
 
+    def test_top_result_playlist_card_shape(self, yt):
+        results = yt.search("Indie Rock Essentials", limit=20)
+        card = next(
+            (r for r in results if r.get("category") == "Top result" and r.get("resultType") == "playlist"),
+            None,
+        )
+        if card is None:
+            pytest.skip("no Top-result playlist card returned")
+        # map_search_item folds these (list author, bare playlistId, no browseId) -- drift detector
+        assert isinstance(card.get("author"), list)
+        assert isinstance(card.get("playlistId"), str) and card["playlistId"]
+        assert "browseId" not in card
+        item = map_search_item(card)
+        assert item.browseId == "VL" + card["playlistId"]
+
     def test_song_metadata_mapper_never_leaks_streaming_data(self, yt):
         results = yt.search("Oasis Wonderwall", filter="songs", limit=1)
         video_id = results[0]["videoId"]
