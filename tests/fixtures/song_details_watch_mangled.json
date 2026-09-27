@@ -1,0 +1,21 @@
+{
+  "tracks": [
+    {
+      "videoId": "OTHER_SONG",
+      "title": "Somebody Else's Song",
+      "album": {
+        "name": "Wrong Album",
+        "id": "MPREb_wrongAlbum"
+      },
+      "year": "1999",
+      "artists": [
+        {
+          "name": "Wrong Artist",
+          "id": "UCwrong"
+        }
+      ]
+    },
+    "junk",
+    null
+  ]
+}

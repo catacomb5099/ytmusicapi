@@ -159,11 +159,7 @@ class TestSearchContract:
 
 class TestSongDetailsContract:
     def test_album_track_yields_credits_and_official_video_yields_none(self, yt):
-        client = YTMusicClient.__new__(YTMusicClient)
-        client._ytmusic = yt
-        import threading
-
-        client._semaphore = threading.Semaphore(1)
+        client = YTMusicClient()
 
         # Manchild (album track id): every step must produce something.
         video_id = "DntZ3-yCaFs"

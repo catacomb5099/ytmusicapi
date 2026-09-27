@@ -1,6 +1,7 @@
 from app.mappers import (
     album_browse_id,
     credits_browse_id,
+    is_official_video,
     map_album_detail,
     map_artist_detail,
     map_playlist_detail,
@@ -342,6 +343,22 @@ class TestSongDetailsMapping:
         assert d.artists[0].name == song["videoDetails"]["author"]
         assert d.artists[0].channelId == song["videoDetails"]["channelId"]
         assert d.album is None
+        # A non-string author must not reach pydantic as an ArtistRef name.
+        assert map_song_details(self.VIDEO_ID, {"videoDetails": {"author": 123}}, {}, None, {}, None).artists == []
+
+    def test_watch_panel_without_the_requested_id_is_never_guessed_from_another_row(self, load_fixture):
+        # The upstream parser drops unplayable rows, so the panel can come back without the
+        # requested song. The first remaining row is a different song: its album/year must not leak.
+        panel = load_fixture("song_details_watch_mangled")
+        assert panel["tracks"][0]["videoId"] != self.VIDEO_ID
+        watch_track = pick_watch_track(panel, self.VIDEO_ID)
+        assert watch_track == {}
+        assert not is_official_video(watch_track)
+        song = load_fixture("song_details_song")
+        d = map_song_details(self.VIDEO_ID, song, watch_track, None, {}, None)
+        assert d.album is None and d.year is None
+        assert d.artists[0].name == song["videoDetails"]["author"]
+        assert is_official_video(pick_watch_track(load_fixture("song_details_watch_omv"), "tM1RS_5IAiE"))
 
     def test_mangled_credits_keep_only_well_formed_sections(self, load_fixture):
         d = map_song_details(

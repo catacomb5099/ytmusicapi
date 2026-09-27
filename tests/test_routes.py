@@ -227,7 +227,8 @@ class TestSongDetailsRoute:
         assert resp.status_code == 200
         body = resp.json()
         assert body["album"] is None and body["explicit"] is None and body["credits"] == []
-        assert "get_album" not in [c[0] for c in fake.calls]
+        # Two calls, not four: no album to look up, and an OMV never has a credits panel.
+        assert [c[0] for c in fake.calls] == ["get_song", "get_watch_playlist"]
 
     def test_watch_panel_failure_degrades_instead_of_502(self, client_with):
         client, _ = client_with(
@@ -241,6 +242,20 @@ class TestSongDetailsRoute:
         assert body["title"] == "Manchild"
         assert body["artists"] == [{"name": "Sabrina Carpenter", "channelId": "UCz51ZodJbYUNfkdPHOjJKKw"}]
         assert body["credits"] == []
+
+    def test_album_5xx_degrades_like_the_other_calls(self, client_with):
+        client, fake = client_with(
+            get_song=lambda video_id: _load("song_details_song"),
+            get_watch_playlist=lambda **kw: _load("song_details_watch"),
+            get_album=_raise(YTMusicServerError("Server returned HTTP 503")),
+            get_song_credits=lambda browse_id: _load("song_details_credits"),
+        )
+        resp = client.get("/v1/songs/DntZ3-yCaFs/details")
+        assert resp.status_code == 200
+        body = resp.json()
+        assert body["explicit"] is None and body["year"] == 2025  # year still comes from the watch track
+        assert len(body["credits"]) == 4
+        assert fake.calls[3][1] == ("MPTCDntZ3-yCaFs",)  # falls back to MPTC + videoId
 
     def test_unknown_video_is_404_before_any_other_call(self, client_with):
         client, fake = client_with(get_song=lambda video_id: {"playabilityStatus": {"status": "ERROR"}})

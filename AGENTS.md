@@ -56,6 +56,12 @@ hardcoded years/albumIds in the current mapper).
   the OMV id while `creditsBrowseId` is `'MPTC' + <ATV id>` — `pick_album_track` matches on either.
   Never take a song's year from `get_song()`'s `publishDate` (that is the video upload date) or its
   duration from the watch track's `length` (an `m:ss` string that `_to_int` would mangle).
+  ytmusicapi's watch parser models a `counterpart` (song/video twin) field, but it is absent on
+  anonymous requests for every OMV id probed — don't rediscover it. The same parser silently drops
+  unplayable (region-blocked) rows, so the watch panel can come back *without* the requested id;
+  `pick_watch_track` then returns `{}`, never the first radio row (that would attribute another
+  song's album and year). `/details` also skips the credits call outright for an OMV `videoType`
+  (two upstream calls, not four); the `MPTC + videoId` fallback stays for ATV ids whose panel failed.
 - A search result's `album` field is sometimes a plain string, sometimes `{name, id}` — depends on
   which endpoint it came from. `_map_album_ref`/`_album_name` in `mappers.py` handle both; don't
   assume a shape.
