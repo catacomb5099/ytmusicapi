@@ -69,6 +69,15 @@ hardcoded years/albumIds in the current mapper).
   licence URL are part of the description string itself — a consumer that trims or summarizes it
   drops a licence obligation. `descriptionRuns` holds the same text with real hyperlinks and is
   deliberately not exposed yet.
+- Playlist search items carry `author` and no `artists`: a plain string on list rows, a list of
+  `{name, id}` on a mixed search's "Top result" card (which also has a bare `playlistId` and no
+  `browseId`). `map_search_item` folds either into `artists` so consumers read one shape, and
+  synthesizes `browseId = "VL" + playlistId` on the card so `browseId` is always `VL`-prefixed. Their
+  `itemCount` is an `int` when numeric, a display string like `"5,000+"` when capped, or `None`;
+  `_to_int` handles all three (it is never an abbreviated `"2.2B"`-style string, so the warning
+  above does not apply). Upstream only sets `itemCount` when the row subtitle literally reads
+  `"N songs"`, which is rare (most rows show views), so `trackCount` is usually `None` on search
+  results — point consumers at `/v1/playlists/{id}.trackCount` instead. Both shapes are recorded live in `tests/fixtures/search_item_playlist_*.json`.
 - `limit` on ytmusicapi's own methods is a floor, not a ceiling. This adapter truncates to an exact
   count in the router/mapper layer — keep doing that so the API contract stays honest.
 

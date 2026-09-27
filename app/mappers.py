@@ -150,6 +150,8 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
     browse_id: str | None = None
     playlist_id: str | None = None
     title = raw.get("title")
+    artists = _map_artists(raw.get("artists"))
+    track_count: int | None = None
 
     if result_type == "artist":
         # A plain "Top result" artist card omits browseId/artist entirely and carries
@@ -165,6 +167,25 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         browse_id = raw_browse
         if isinstance(raw_browse, str) and raw_browse.startswith("VL"):
             playlist_id = raw_browse[2:]
+        # A mixed search's "Top result" playlist card carries a bare playlistId and no browseId.
+        playlist_id = playlist_id or raw.get("playlistId")
+        # Keep the contract (browseId is always "VL"-prefixed); get_playlist prefixes the same way.
+        # Strip any VL first so a VL-prefixed raw playlistId can never yield "VLVL...".
+        if browse_id is None and isinstance(playlist_id, str) and playlist_id:
+            playlist_id = playlist_id.removeprefix("VL")
+            browse_id = f"VL{playlist_id}"
+        # Playlist cards carry "author", not "artists" -- a plain string on list rows, a list of
+        # {name, id} on "Top result" cards. Fold either into artists so consumers read one shape.
+        author = raw.get("author")
+        if not artists:
+            if isinstance(author, str) and author:
+                artists = [ArtistRef(name=author, channelId=None)]
+            elif isinstance(author, list):
+                artists = _map_artists(author)
+        # itemCount (ytmusicapi 1.12.2) is an int when numeric, a display string like "5,000+"
+        # when capped, or None -- never an abbreviated "2.2B"-style string -- so _to_int is
+        # safe here (see AGENTS.md on display strings).
+        track_count = _to_int(raw.get("itemCount"))
 
     return SearchResultItem(
         type=result_type,
@@ -172,12 +193,13 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         browseId=browse_id,
         playlistId=playlist_id,
         title=title,
-        artists=_map_artists(raw.get("artists")),
+        artists=artists,
         album=_map_album_ref(raw.get("album")),
         durationSeconds=_to_int(raw.get("duration_seconds")),
         thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
         explicit=raw.get("isExplicit"),
         year=_to_int(raw.get("year")),
+        trackCount=track_count,
     )
 
 

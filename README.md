@@ -26,7 +26,7 @@ All `GET`, read-only, prefix `/v1`.
 
 | Route | Notes |
 |---|---|
-| `/v1/search?q=&type=&limit=` | `type` ∈ `songs,videos,albums,artists,playlists`. Omit for mixed search. `limit` is enforced as an exact ceiling (ytmusicapi's own `limit` is a floor). |
+| `/v1/search?q=&type=&limit=` | `type` ∈ `songs,videos,albums,artists,playlists`. Omit for mixed search. `limit` is enforced as an exact ceiling (ytmusicapi's own `limit` is a floor). Playlist items carry their author as `artists[0]`. `trackCount` is populated only when YouTube's row subtitle shows "N songs" (rare — most rows show views instead, so it is usually null) and is a floor for capped rows (`"5,000+"` → 5000); use `/v1/playlists/{playlistId}.trackCount` for a reliable count. |
 | `/v1/search/songs`, `/albums`, `/artists`, `/playlists` | typed sugar routes |
 | `/v1/albums/{browseId}` | `browseId` = `MPREb_…` |
 | `/v1/albums/by-audio-playlist/{audioPlaylistId}` | resolves an `OLAK5uy_…` id to its album, in one call |
@@ -80,6 +80,10 @@ uv run pytest              # offline: mappers, routes, error mapping — no netw
 uv run pytest -m live      # opt-in: hits the real YouTube Music backend
 uv run ruff check . && uv run mypy app
 ```
+
+Behind corporate TLS interception the live suite fails with a certificate error. Point `requests` at
+a bundle made of certifi's `cacert.pem` plus the corporate root CA (`cat "$(uv run python -m certifi)"
+corp-root.pem > ca-bundle.pem`) via `REQUESTS_CA_BUNDLE=./ca-bundle.pem`; do not commit the bundle.
 
 `tests/fixtures/` holds real recorded JSON from live calls (including a few hand-mangled variants
 with missing keys) — `tests/test_mappers.py` is driven entirely by these, so mapper correctness

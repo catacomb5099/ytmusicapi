@@ -69,10 +69,54 @@ class TestSearchItemMapping:
         assert item.browseId is not None
         assert item.year is None
 
+    def test_playlist_item_folds_author_into_artists(self, load_fixture):
+        """Playlist cards carry a plain-string "author" and no "artists" -- the mapper
+        folds it into artists[0] so every result type exposes the same shape."""
+        for fixture in ("search_playlists", "search_mixed"):
+            raw = next(i for i in load_fixture(fixture) if i["resultType"] == "playlist")
+            assert isinstance(raw["author"], str)
+            assert not raw.get("artists")
+            item = map_search_item(raw)
+            assert item.artists[0].name == raw["author"]
+            assert item.artists[0].channelId is None
+
+    def test_top_result_playlist_card_folds_author_list_and_bare_playlist_id(self, load_fixture):
+        """A mixed search's "Top result" playlist card carries author as [{name, id}] and a
+        bare playlistId with no browseId. Fixture recorded live from a mixed search for
+        "Indie Rock Essentials" (ytmusicapi 1.12.2)."""
+        raw = load_fixture("search_item_playlist_top_result")
+        assert isinstance(raw["author"], list)
+        assert "browseId" not in raw
+        item = map_search_item(raw)
+        assert item.artists[0].name == raw["author"][0]["name"]
+        assert item.artists[0].channelId == raw["author"][0]["id"]
+        assert item.playlistId == raw["playlistId"]
+        assert item.browseId == "VL" + raw["playlistId"]
+        # mangled variants degrade, never raise
+        assert map_search_item({**raw, "author": []}).artists == []
+        assert map_search_item({**raw, "author": [1, "x"]}).artists == []
+        no_id = map_search_item({k: v for k, v in raw.items() if k != "playlistId"})
+        assert no_id.playlistId is None
+        assert no_id.browseId is None
+        # a VL-prefixed raw playlistId must never yield "VLVL..."
+        vl = map_search_item({**raw, "playlistId": "VL" + raw["playlistId"]})
+        assert (vl.browseId, vl.playlistId) == ("VL" + raw["playlistId"], raw["playlistId"])
+
+    def test_playlist_item_maps_item_count_to_track_count(self, load_fixture):
+        """ytmusicapi hands over itemCount as an int when numeric and as a display string
+        like "5,000+" when capped. Fixture recorded live from a community_playlists search
+        for "Indie Rock Essentials" (ytmusicapi 1.12.2); most rows carry itemCount: null."""
+        raw = load_fixture("search_item_playlist_with_item_count")
+        assert map_search_item(raw).trackCount == raw["itemCount"] == 165
+        assert map_search_item({**raw, "itemCount": "5,000+"}).trackCount == 5000
+
     def test_mangled_playlist_item_missing_author_does_not_raise(self, load_fixture):
         raw = load_fixture("search_item_mangled_playlist")
+        assert "author" not in raw
         item = map_search_item(raw)
         assert item.type == "playlist"
+        assert item.artists == []
+        assert item.trackCount is None
 
     def test_limit_truncates_results(self, load_fixture):
         raw = load_fixture("search_mixed")
