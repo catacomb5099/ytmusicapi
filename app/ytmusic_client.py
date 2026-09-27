@@ -10,12 +10,17 @@ from app.errors import NotFoundError
 
 logger = logging.getLogger(__name__)
 
-# ytmusicapi does not raise a typed "not found" error for an invalid/deleted browseId on
-# these browse-page methods -- YouTube serves a differently-shaped page and the library's
-# own parser fails with a bare KeyError while looking for the expected 'contents' path.
-# That signature is specific enough to distinguish "page not found" from real parser drift.
-_BROWSE_METHODS = {"get_album", "get_artist", "get_playlist"}
-_EMPTY_BROWSE_PAGE_KEYERROR = "Unable to find 'contents'"
+# ytmusicapi does not raise a typed "not found" error for an invalid/deleted id on these
+# methods -- YouTube serves a differently-shaped page and the library's own parser fails with
+# a bare KeyError while looking for the expected path. Each signature is specific enough to
+# distinguish "nothing there" from real parser drift. get_song_credits hits it for any song
+# without a credits panel (every official-video id), not just invalid ones.
+_NOT_FOUND_KEYERRORS = {
+    "get_album": "Unable to find 'contents'",
+    "get_artist": "Unable to find 'contents'",
+    "get_playlist": "Unable to find 'contents'",
+    "get_song_credits": "Unable to find 'sections'",
+}
 
 
 class YTMusicClient:
@@ -53,7 +58,8 @@ class YTMusicClient:
             with self._semaphore:
                 return method(*args, **kwargs)
         except KeyError as exc:
-            if fn_name in _BROWSE_METHODS and _EMPTY_BROWSE_PAGE_KEYERROR in str(exc):
+            signature = _NOT_FOUND_KEYERRORS.get(fn_name)
+            if signature and signature in str(exc):
                 raise NotFoundError(f"{fn_name} found no page for the given id") from exc
             raise
 

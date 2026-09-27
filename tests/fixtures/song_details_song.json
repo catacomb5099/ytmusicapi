@@ -1,0 +1,38 @@
+{
+  "playabilityStatus": {
+    "status": "OK"
+  },
+  "streamingData": {
+    "expiresInSeconds": "21540"
+  },
+  "videoDetails": {
+    "videoId": "DntZ3-yCaFs",
+    "title": "Manchild",
+    "lengthSeconds": "214",
+    "channelId": "UCz51ZodJbYUNfkdPHOjJKKw",
+    "isOwnerViewing": false,
+    "isCrawlable": true,
+    "thumbnail": {
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/pbzBdDb17dzalZDm7YdsYLfUeEr1_mmm9eG4GYU4z8vio13sRpvN9-Q6SF3gatZbpcQRqsZwMiikHHA=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/pbzBdDb17dzalZDm7YdsYLfUeEr1_mmm9eG4GYU4z8vio13sRpvN9-Q6SF3gatZbpcQRqsZwMiikHHA=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ]
+    },
+    "allowRatings": true,
+    "viewCount": "86376035",
+    "author": "Sabrina Carpenter",
+    "isPrivate": false,
+    "isUnpluggedCorpus": false,
+    "musicVideoType": "MUSIC_VIDEO_TYPE_ATV",
+    "isLiveContent": false,
+    "isTvfilmVideo": false
+  }
+}

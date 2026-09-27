@@ -1,0 +1,32 @@
+{
+  "playlistId": "RDAMVMtM1RS_5IAiE",
+  "lyrics": null,
+  "related": "MPTRt_10csjHNmDlO",
+  "tracks": [
+    {
+      "videoId": "tM1RS_5IAiE",
+      "title": "Little By Little (Official Video)",
+      "length": "4:00",
+      "thumbnail": [
+        {
+          "url": "https://i.ytimg.com/vi/tM1RS_5IAiE/hq720.jpg?sqp=-oaymwEKCNUGEN8DIABIWg&rs=AMzJL3mxpEo6HyAj9l45BJvP5qAiRMi8tQ",
+          "width": 853,
+          "height": 479
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Oasis",
+          "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        }
+      ],
+      "views": "155K"
+    }
+  ]
+}

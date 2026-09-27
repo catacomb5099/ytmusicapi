@@ -1,10 +1,15 @@
 from app.mappers import (
+    album_browse_id,
+    credits_browse_id,
     map_album_detail,
     map_artist_detail,
     map_playlist_detail,
     map_search_item,
     map_search_items,
+    map_song_details,
     map_song_metadata,
+    pick_album_track,
+    pick_watch_track,
 )
 
 
@@ -274,3 +279,76 @@ class TestSongMetadataMapping:
         assert metadata.title == details["title"]
         assert metadata.lengthSeconds == int(details["lengthSeconds"])
         assert metadata.viewCount == int(details["viewCount"])
+
+
+class TestSongDetailsMapping:
+    VIDEO_ID = "DntZ3-yCaFs"
+
+    def _full(self, load_fixture):
+        song = load_fixture("song_details_song")
+        watch_track = pick_watch_track(load_fixture("song_details_watch"), self.VIDEO_ID)
+        album = load_fixture("song_details_album")
+        album_track = pick_album_track(album, self.VIDEO_ID)
+        return map_song_details(
+            self.VIDEO_ID, song, watch_track, album, album_track, load_fixture("song_details_credits")
+        )
+
+    def test_album_track_maps_every_field(self, load_fixture):
+        d = self._full(load_fixture)
+        assert d.videoId == self.VIDEO_ID
+        assert d.title == "Manchild"
+        assert d.artists[0].name == "Sabrina Carpenter"
+        assert d.artists[0].channelId == "UCz51ZodJbYUNfkdPHOjJKKw"
+        assert d.album is not None and d.album.browseId == "MPREb_msfRVJDqlXJ"
+        assert d.year == 2025
+        assert d.durationSeconds == 214  # exact, from videoDetails -- not the watch track's "3:34"
+        assert d.viewCount == 86376035
+        assert d.explicit is True  # per-track flag; the album header says False
+        assert d.thumbnailUrl and d.thumbnailUrl.startswith("https://")
+        assert [c.role for c in d.credits] == [
+            "Performed by",
+            "Written by",
+            "Produced by",
+            "Music metadata provided by",
+        ]
+        assert d.credits[1].names == ["Sabrina Carpenter", "Jack Antonoff", "Amy Allen"]
+
+    def test_never_exposes_streaming_data(self, load_fixture):
+        assert "streamingData" in load_fixture("song_details_song")
+        assert "streamingData" not in self._full(load_fixture).model_dump()
+
+    def test_album_track_is_matched_by_credits_id_when_row_lists_the_omv_id(self, load_fixture):
+        album = load_fixture("song_details_album")
+        assert album["tracks"][0]["videoId"] != self.VIDEO_ID
+        track = pick_album_track(album, self.VIDEO_ID)
+        assert track["creditsBrowseId"] == f"MPTC{self.VIDEO_ID}"
+        assert credits_browse_id(track, self.VIDEO_ID) == f"MPTC{self.VIDEO_ID}"
+        assert pick_album_track(album, "nope") == {}
+        assert credits_browse_id({}, "nope") == "MPTCnope"
+
+    def test_official_video_has_no_album_year_explicit_or_credits(self, load_fixture):
+        watch_track = pick_watch_track(load_fixture("song_details_watch_omv"), "tM1RS_5IAiE")
+        assert album_browse_id(watch_track) is None
+        song = load_fixture("song_details_song")
+        d = map_song_details("tM1RS_5IAiE", song, watch_track, None, {}, None)
+        assert d.album is None and d.year is None and d.explicit is None and d.credits == []
+        assert d.artists[0].name == "Oasis"
+        assert d.viewCount == int(song["videoDetails"]["viewCount"])
+
+    def test_missing_watch_panel_falls_back_to_video_details_author(self, load_fixture):
+        song = load_fixture("song_details_song")
+        assert pick_watch_track(None, self.VIDEO_ID) == {}
+        d = map_song_details(self.VIDEO_ID, song, {}, None, {}, None)
+        assert d.artists[0].name == song["videoDetails"]["author"]
+        assert d.artists[0].channelId == song["videoDetails"]["channelId"]
+        assert d.album is None
+
+    def test_mangled_credits_keep_only_well_formed_sections(self, load_fixture):
+        d = map_song_details(
+            self.VIDEO_ID, {}, {}, None, {}, load_fixture("song_details_credits_mangled")
+        )
+        assert [(c.role, c.names) for c in d.credits] == [
+            ("Performed by", []),
+            ("Mixed by", ["Serban Ghenea"]),
+        ]
+        assert d.title is None and d.durationSeconds is None

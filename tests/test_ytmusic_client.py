@@ -16,11 +16,19 @@ def _client_with_mocked_instance(instance: MagicMock) -> YTMusicClient:
 
 
 class TestBrowsePageNotFoundTranslation:
-    @pytest.mark.parametrize("method_name", ["get_album", "get_artist", "get_playlist"])
-    def test_empty_browse_page_keyerror_becomes_not_found(self, method_name):
+    @pytest.mark.parametrize(
+        ("method_name", "missing_key"),
+        [
+            ("get_album", "contents"),
+            ("get_artist", "contents"),
+            ("get_playlist", "contents"),
+            ("get_song_credits", "sections"),
+        ],
+    )
+    def test_empty_browse_page_keyerror_becomes_not_found(self, method_name, missing_key):
         instance = MagicMock()
         getattr(instance, method_name).side_effect = KeyError(
-            "Unable to find 'contents' using path [...] on {...}"
+            f"Unable to find '{missing_key}' using path [...] on {{...}}"
         )
         client = _client_with_mocked_instance(instance)
 
@@ -29,7 +37,7 @@ class TestBrowsePageNotFoundTranslation:
 
     def test_unrelated_keyerror_on_browse_method_still_propagates(self):
         instance = MagicMock()
-        instance.get_album.side_effect = KeyError("albums")
+        instance.get_album.side_effect = KeyError("Unable to find 'sections'")
         client = _client_with_mocked_instance(instance)
 
         with pytest.raises(KeyError):

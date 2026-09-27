@@ -3,8 +3,10 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
+from ytmusicapi.exceptions import YTMusicServerError
 
 from app.deps import get_ytmusic
+from app.errors import NotFoundError
 from app.main import app
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
@@ -182,3 +184,66 @@ class TestSongRoutes:
         client, _ = client_with(get_song=lambda video_id: {})
         resp = client.get("/v1/songs/MISSING")
         assert resp.status_code == 404
+
+
+def _raise(exc):
+    def _inner(*args, **kwargs):
+        raise exc
+
+    return _inner
+
+
+class TestSongDetailsRoute:
+    def test_full_sequence_for_an_album_track(self, client_with):
+        client, fake = client_with(
+            get_song=lambda video_id: _load("song_details_song"),
+            get_watch_playlist=lambda **kw: _load("song_details_watch"),
+            get_album=lambda browse_id: _load("song_details_album"),
+            get_song_credits=lambda browse_id: _load("song_details_credits"),
+        )
+        resp = client.get("/v1/songs/DntZ3-yCaFs/details")
+        assert resp.status_code == 200
+        body = resp.json()
+        assert body["explicit"] is True
+        assert body["album"]["browseId"] == "MPREb_msfRVJDqlXJ"
+        assert len(body["credits"]) == 4
+        assert "streamingData" not in body
+        assert [c[0] for c in fake.calls] == [
+            "get_song",
+            "get_watch_playlist",
+            "get_album",
+            "get_song_credits",
+        ]
+        assert fake.calls[2][1] == ("MPREb_msfRVJDqlXJ",)
+        assert fake.calls[3][1] == ("MPTCDntZ3-yCaFs",)
+
+    def test_official_video_skips_album_and_reports_empty_credits(self, client_with):
+        client, fake = client_with(
+            get_song=lambda video_id: _load("song_details_song"),
+            get_watch_playlist=lambda **kw: _load("song_details_watch_omv"),
+            get_song_credits=_raise(NotFoundError("no credits panel")),
+        )
+        resp = client.get("/v1/songs/tM1RS_5IAiE/details")
+        assert resp.status_code == 200
+        body = resp.json()
+        assert body["album"] is None and body["explicit"] is None and body["credits"] == []
+        assert "get_album" not in [c[0] for c in fake.calls]
+
+    def test_watch_panel_failure_degrades_instead_of_502(self, client_with):
+        client, _ = client_with(
+            get_song=lambda video_id: _load("song_details_song"),
+            get_watch_playlist=_raise(YTMusicServerError("No content returned by the server")),
+            get_song_credits=_raise(YTMusicServerError("Server returned HTTP 500")),
+        )
+        resp = client.get("/v1/songs/DntZ3-yCaFs/details")
+        assert resp.status_code == 200
+        body = resp.json()
+        assert body["title"] == "Manchild"
+        assert body["artists"] == [{"name": "Sabrina Carpenter", "channelId": "UCz51ZodJbYUNfkdPHOjJKKw"}]
+        assert body["credits"] == []
+
+    def test_unknown_video_is_404_before_any_other_call(self, client_with):
+        client, fake = client_with(get_song=lambda video_id: {"playabilityStatus": {"status": "ERROR"}})
+        resp = client.get("/v1/songs/MISSING/details")
+        assert resp.status_code == 404
+        assert len(fake.calls) == 1

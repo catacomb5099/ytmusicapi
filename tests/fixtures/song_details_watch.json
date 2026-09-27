@@ -1,0 +1,65 @@
+{
+  "playlistId": "RDAMVMDntZ3-yCaFs",
+  "lyrics": "MPLYt_msfRVJDqlXJ-1",
+  "related": "MPTRt_msfRVJDqlXJ-1",
+  "tracks": [
+    {
+      "videoId": "DntZ3-yCaFs",
+      "title": "Manchild",
+      "length": "3:34",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/pbzBdDb17dzalZDm7YdsYLfUeEr1_mmm9eG4GYU4z8vio13sRpvN9-Q6SF3gatZbpcQRqsZwMiikHHA=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Sabrina Carpenter",
+          "id": "UCz51ZodJbYUNfkdPHOjJKKw"
+        }
+      ],
+      "album": {
+        "name": "Man’s Best Friend",
+        "id": "MPREb_msfRVJDqlXJ"
+      },
+      "year": "2025"
+    },
+    {
+      "videoId": "kIft-LUHHVA",
+      "title": "Espresso",
+      "length": "2:56",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/bTWlZSenrOAYgH4r6NAzyDraWQR_wLl3OuRexJ_8h3NZUVHEilRSzUmKNa9YMOFSVcF0YtOuzKdXrt2UHg=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Sabrina Carpenter",
+          "id": "UCz51ZodJbYUNfkdPHOjJKKw"
+        }
+      ],
+      "album": {
+        "name": "Short n' Sweet",
+        "id": "MPREb_FN2r5jrFXVm"
+      },
+      "year": "2024"
+    }
+  ]
+}

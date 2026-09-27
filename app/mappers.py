@@ -16,7 +16,7 @@ from app.models.artist import ArtistDetail, RelatedArtist
 from app.models.common import AlbumRef, AlbumStub, ArtistRef, TrackDto, VideoStub
 from app.models.playlist import PlaylistDetail
 from app.models.search import SearchResultItem
-from app.models.song import SongMetadata
+from app.models.song import CreditsSection, SongDetails, SongMetadata
 
 
 def _to_int(value: Any) -> int | None:
@@ -297,4 +297,97 @@ def map_song_metadata(raw: dict[str, Any]) -> SongMetadata:
         lengthSeconds=_to_int(details.get("lengthSeconds")),
         viewCount=_to_int(details.get("viewCount")),
         thumbnailUrl=_thumbnail_url((details.get("thumbnail") or {}).get("thumbnails")),
+    )
+
+
+def pick_watch_track(watch_raw: Any, video_id: str) -> dict[str, Any]:
+    """get_watch_playlist() returns the requested song as tracks[0] plus a radio tail; match on
+    videoId and fall back to the first row. {} when the panel is missing/malformed."""
+    tracks = (watch_raw or {}).get("tracks") if isinstance(watch_raw, dict) else None
+    if not tracks or not isinstance(tracks, list):
+        return {}
+    rows = [t for t in tracks if isinstance(t, dict)]
+    return next((t for t in rows if t.get("videoId") == video_id), rows[0] if rows else {})
+
+
+def pick_album_track(album_raw: Any, video_id: str) -> dict[str, Any]:
+    """get_album() track rows often list the official-video id while creditsBrowseId carries
+    'MPTC' + the canonical album-track id -- so match on either. {} when no row matches."""
+    tracks = (album_raw or {}).get("tracks") if isinstance(album_raw, dict) else None
+    if not tracks or not isinstance(tracks, list):
+        return {}
+    return next(
+        (
+            t
+            for t in tracks
+            if isinstance(t, dict)
+            and (t.get("videoId") == video_id or t.get("creditsBrowseId") == f"MPTC{video_id}")
+        ),
+        {},
+    )
+
+
+def album_browse_id(watch_track: dict[str, Any]) -> str | None:
+    album = _map_album_ref(watch_track.get("album"))
+    return album.browseId if album else None
+
+
+def credits_browse_id(album_track: dict[str, Any], video_id: str) -> str:
+    return album_track.get("creditsBrowseId") or f"MPTC{video_id}"
+
+
+_CREDITS_KEYS = ("performed_by", "written_by", "produced_by", "music_metadata_provided_by")
+
+
+def _map_credits(raw: Any) -> list[CreditsSection]:
+    if not isinstance(raw, dict):
+        return []
+    other = raw.get("other_sections")
+    sections = [raw.get(k) for k in _CREDITS_KEYS] + (other if isinstance(other, list) else [])
+    out: list[CreditsSection] = []
+    for section in sections:
+        if not isinstance(section, dict) or not section.get("localized_title"):
+            continue
+        names = section.get("data")
+        out.append(
+            CreditsSection(
+                role=section["localized_title"],
+                names=[n for n in names if isinstance(n, str)] if isinstance(names, list) else [],
+            )
+        )
+    return out
+
+
+def map_song_details(
+    video_id: str,
+    song_raw: dict[str, Any],
+    watch_track: dict[str, Any],
+    album_raw: Any,
+    album_track: dict[str, Any],
+    credits_raw: Any,
+) -> SongDetails:
+    """Reads only get_song()'s videoDetails (never streamingData), one watch-panel track, one
+    album track and the credits dict. Duration/viewCount come from videoDetails (exact ints);
+    the watch track's 'length' is 'm:ss' and its 'views' is mis-parsed upstream, so neither is read.
+    Year comes from the watch track or the album header, never from the video upload date."""
+    details = song_raw.get("videoDetails") or {}
+    artists = _map_artists(watch_track.get("artists")) or (
+        [ArtistRef(name=details.get("author"), channelId=details.get("channelId"))]
+        if details.get("author")
+        else []
+    )
+    album_year = album_raw.get("year") if isinstance(album_raw, dict) else None
+    explicit = album_track.get("isExplicit")
+    return SongDetails(
+        videoId=video_id,
+        title=details.get("title") or watch_track.get("title"),
+        artists=artists,
+        album=_map_album_ref(watch_track.get("album")),
+        durationSeconds=_to_int(details.get("lengthSeconds")),
+        year=_to_int(watch_track.get("year")) or _to_int(album_year),
+        viewCount=_to_int(details.get("viewCount")),
+        explicit=explicit if isinstance(explicit, bool) else None,
+        thumbnailUrl=_thumbnail_url((details.get("thumbnail") or {}).get("thumbnails"))
+        or _thumbnail_url(watch_track.get("thumbnail")),
+        credits=_map_credits(credits_raw),
     )

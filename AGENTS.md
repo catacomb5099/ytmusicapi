@@ -44,9 +44,18 @@ hardcoded years/albumIds in the current mapper).
   you requested (it's only valid for `subscribe_artists`) — always echo the caller's original id.
 - `get_album`/`get_artist`/`get_playlist` raise a bare `KeyError` (missing `'contents'` key), not a
   typed not-found error, for an invalid/deleted id. `YTMusicClient.call()` recognizes this specific
-  signature on those three methods and converts it to `NotFoundError` → 404. Any other `KeyError` is
-  real parser drift → 502. Don't widen that KeyError-to-404 translation to other methods without
-  checking their actual failure signature first.
+  signature on those methods and converts it to `NotFoundError` → 404. Same for `get_song_credits`,
+  whose signature is a missing `'sections'` key — YouTube answers with a credits dialog that only
+  says "Lyrics not available". Any other `KeyError` is real parser drift → 502. Don't widen that
+  KeyError-to-404 translation to other methods without checking their actual failure signature first.
+- **Song credits, album, year and `explicit` exist only for album-track (`ATV`) ids.** An
+  official-video (`OMV`) id — the kind a "(Official Video)" title carries — has none of them
+  anywhere in ytmusicapi, and there is no public way to hop to its album-track twin. `/details`
+  reports them as `null`/`[]` rather than guessing via a title search. The `explicit` flag lives
+  only on `get_album()` track rows (not `get_song`, not the watch panel), and those rows often list
+  the OMV id while `creditsBrowseId` is `'MPTC' + <ATV id>` — `pick_album_track` matches on either.
+  Never take a song's year from `get_song()`'s `publishDate` (that is the video upload date) or its
+  duration from the watch track's `length` (an `m:ss` string that `_to_int` would mangle).
 - A search result's `album` field is sometimes a plain string, sometimes `{name, id}` — depends on
   which endpoint it came from. `_map_album_ref`/`_album_name` in `mappers.py` handle both; don't
   assume a shape.
