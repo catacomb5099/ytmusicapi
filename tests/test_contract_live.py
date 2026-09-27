@@ -12,12 +12,17 @@ Run from an environment resembling production so IP-based blocking is caught ear
 import pytest
 from ytmusicapi import YTMusic
 
+from app.errors import NotFoundError
 from app.mappers import (
     map_album_detail,
     map_artist_detail,
     map_playlist_detail,
     map_search_item,
+    map_song_details,
+    pick_album_track,
+    pick_watch_track,
 )
+from app.ytmusic_client import YTMusicClient
 
 pytestmark = pytest.mark.live
 
@@ -150,3 +155,26 @@ class TestSearchContract:
         metadata = map_song_metadata(song)
         assert "streamingData" not in metadata.model_dump()
         assert metadata.videoId == video_id
+
+
+class TestSongDetailsContract:
+    def test_album_track_yields_credits_and_official_video_yields_none(self, yt):
+        client = YTMusicClient()
+
+        # Manchild (album track id): every step must produce something.
+        video_id = "DntZ3-yCaFs"
+        watch_track = pick_watch_track(yt.get_watch_playlist(videoId=video_id, limit=1), video_id)
+        assert watch_track.get("album", {}).get("id", "").startswith("MPREb_")
+        album = yt.get_album(watch_track["album"]["id"])
+        album_track = pick_album_track(album, video_id)
+        assert album_track.get("creditsBrowseId") == f"MPTC{video_id}"
+        credits = yt.get_song_credits(f"MPTC{video_id}")
+        details = map_song_details(
+            video_id, yt.get_song(video_id), watch_track, album, album_track, credits
+        )
+        assert details.explicit is True and details.year == 2025
+        assert any(c.role == "Written by" and c.names for c in details.credits)
+
+        # An official-video id has no credits panel: the bare KeyError must still translate to 404.
+        with pytest.raises(NotFoundError):
+            client.call("get_song_credits", "MPTCtM1RS_5IAiE")

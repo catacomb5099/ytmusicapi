@@ -1,0 +1,80 @@
+{
+  "title": "Man’s Best Friend",
+  "type": "Album",
+  "year": "2025",
+  "isExplicit": false,
+  "artists": [
+    {
+      "name": "Sabrina Carpenter",
+      "id": "UCz51ZodJbYUNfkdPHOjJKKw"
+    }
+  ],
+  "trackCount": 12,
+  "audioPlaylistId": "OLAK5uy_lqfZFJRwIddn3i3akezIJwPclMpTrjH38",
+  "duration_seconds": 2312,
+  "thumbnails": [
+    {
+      "url": "https://yt3.googleusercontent.com/pbzBdDb17dzalZDm7YdsYLfUeEr1_mmm9eG4GYU4z8vio13sRpvN9-Q6SF3gatZbpcQRqsZwMiikHHA=w544-h544-l90-rj",
+      "width": 544,
+      "height": 544
+    }
+  ],
+  "tracks": [
+    {
+      "videoId": "aSugSGCC12I",
+      "title": "Manchild",
+      "artists": [
+        {
+          "name": "Sabrina Carpenter",
+          "id": "UCz51ZodJbYUNfkdPHOjJKKw"
+        }
+      ],
+      "album": "Man’s Best Friend",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpKmRN42iUUYHWhxrczF5Umv1dcWprYsX5U9z_3CKaVI8D1L_l1N4bDdw8t-GP72wxq8s4RCafqoVtrPsnartq1h9Aj2hA"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": true,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "476M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 1,
+      "duration": "3:34",
+      "duration_seconds": 214,
+      "creditsBrowseId": "MPTCDntZ3-yCaFs"
+    },
+    {
+      "videoId": "V9vuCByb6js",
+      "title": "Tears",
+      "artists": [
+        {
+          "name": "Sabrina Carpenter",
+          "id": "UCz51ZodJbYUNfkdPHOjJKKw"
+        }
+      ],
+      "album": "Man’s Best Friend",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpLE7aJ86EtJ5_k6xsfOLkJNQnl_VfxOa4OehtNJ4btSc-1fNcsMbrhFyDQ9SsC6QKBK7ZWT1y-WkxADYNUXpaQp-sfIUA"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "161M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 2,
+      "duration": "2:41",
+      "duration_seconds": 161,
+      "creditsBrowseId": "MPTCFjOhnPD_RXo"
+    }
+  ]
+}

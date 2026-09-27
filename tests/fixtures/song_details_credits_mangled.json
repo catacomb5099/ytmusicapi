@@ -1,0 +1,28 @@
+{
+  "performed_by": {
+    "localized_title": "Performed by",
+    "data": "Sabrina Carpenter"
+  },
+  "produced_by": {
+    "data": [
+      "Jack Antonoff"
+    ]
+  },
+  "music_metadata_provided_by": null,
+  "other_sections": [
+    {
+      "localized_title": "Mixed by",
+      "data": [
+        "Serban Ghenea",
+        7
+      ]
+    },
+    {
+      "localized_title": 5,
+      "data": [
+        "Not A Person"
+      ]
+    },
+    "junk"
+  ]
+}

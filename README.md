@@ -34,6 +34,7 @@ All `GET`, read-only, prefix `/v1`.
 | `/v1/artists/{channelId}/albums?limit=&order=` | two upstream calls under the hood (`get_artist` to resolve `params`, then `get_artist_albums`) |
 | `/v1/playlists/{playlistId}?limit=` | accepts both bare ids and `VL`-prefixed ids (as returned by search) |
 | `/v1/songs/{videoId}` | metadata only — `streamingData`/`playabilityStatus` are never read or returned. No playback/streaming path is exposed by this service. |
+| `/v1/songs/{videoId}/details` | the song page: artists with ids, album, year, exact duration/view count, per-track `explicit`, and `credits[{role, names}]` (performed/written/produced by, label). Up to four upstream calls. Official-video (`OMV`) ids have no album, year, explicit flag or credits on YouTube Music — those come back `null`/`[]`, not as an error. 404 only when the video itself is unknown. |
 | `/health` | liveness, no upstream call |
 | `/health/ready` | readiness — does a cheap `search("test", limit=1)`, cached for `YTM_READY_CACHE_SECONDS` (default 60s) so probes can't turn into steady load against YouTube |
 
