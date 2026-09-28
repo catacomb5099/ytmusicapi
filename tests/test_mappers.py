@@ -259,6 +259,24 @@ class TestArtistDetailMapping:
         assert detail.monthlyListeners is None
         assert detail.views is None
 
+    def test_related_artists_carry_their_largest_thumbnail(self, load_fixture):
+        raw = load_fixture("artist_detail")
+        detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])
+        raw_related = raw["related"]["results"]
+        assert len(detail.related) == len(raw_related)
+        for mapped, r in zip(detail.related, raw_related, strict=True):
+            assert mapped.browseId == r["browseId"]
+            assert mapped.thumbnailUrl == r["thumbnails"][-1]["url"]
+
+    def test_related_artist_without_thumbnails_maps_to_none(self, load_fixture):
+        raw = load_fixture("artist_detail")
+        del raw["related"]["results"][0]["thumbnails"]
+        raw["related"]["results"][1]["thumbnails"] = []
+        detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])
+        assert detail.related[0].thumbnailUrl is None
+        assert detail.related[1].thumbnailUrl is None
+        assert detail.related[2].thumbnailUrl  # the rest are untouched
+
 
 class TestPlaylistDetailMapping:
     def test_maps_core_fields_and_tracks(self, load_fixture):

@@ -260,6 +260,7 @@ def map_artist_detail(raw: dict[str, Any], requested_channel_id: str) -> ArtistD
             browseId=r.get("browseId"),
             title=r.get("title"),
             subscribers=r.get("subscribers"),
+            thumbnailUrl=_thumbnail_url(r.get("thumbnails")),
         )
         for r in (related_raw or [])
         if isinstance(r, dict)
