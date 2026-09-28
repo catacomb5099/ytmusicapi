@@ -106,6 +106,10 @@ docker run -p 8000:8000 ytmusic-adapter:local
 liveness `HEALTHCHECK` hitting `/health` (no upstream call, no `curl` dependency — the base image
 doesn't ship one, so the healthcheck uses Python's own `urllib`).
 
+Behind a TLS-intercepting corporate proxy, drop the proxy's root certificate into `certs/` as a
+`*.pem` (gitignored) before building; it is appended to the image's trust bundle. On a normal
+network leave the folder empty and the image uses the stock certifi bundle.
+
 ## Caveats
 
 - **ytmusicapi is unofficial**, mirroring an internal YouTube Music web API that changes shape
