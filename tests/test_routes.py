@@ -79,6 +79,19 @@ class TestSearchRoutes:
         _, _args, kwargs = fake.calls[0]
         assert kwargs["filter"] == "albums"
 
+    def test_featured_playlists_type_and_sugar_route_share_filter(self, client_with):
+        client, fake = client_with(search=lambda *a, **k: _load("search_featured_playlists"))
+        for url, params in (
+            ("/v1/search", {"q": "Oasis", "type": "featured_playlists"}),
+            ("/v1/search/featured_playlists", {"q": "Oasis"}),
+        ):
+            resp = client.get(url, params=params)
+            assert resp.status_code == 200
+            assert fake.calls[-1][2]["filter"] == "featured_playlists"
+            body = resp.json()
+            assert body["type"] == "featured_playlists"
+            assert body["items"][0]["playlistId"].startswith("RDCLAK5uy_")
+
 
 class TestAlbumRoutes:
     def test_get_album_by_browse_id(self, client_with):
