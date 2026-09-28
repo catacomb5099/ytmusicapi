@@ -15,6 +15,9 @@ _TYPE_TO_FILTER = {
     "albums": "albums",
     "artists": "artists",
     "playlists": "community_playlists",
+    # YouTube Music's own editorial playlists (RDCLAK5uy_... ids) -- the ones an artist is
+    # *featured in*, as opposed to user-made playlists named after the artist.
+    "featured_playlists": "featured_playlists",
 }
 
 
@@ -59,3 +62,6 @@ router.add_api_route("/songs", _typed_search("songs"), methods=["GET"], response
 router.add_api_route("/albums", _typed_search("albums"), methods=["GET"], response_model=SearchResponse)
 router.add_api_route("/artists", _typed_search("artists"), methods=["GET"], response_model=SearchResponse)
 router.add_api_route("/playlists", _typed_search("playlists"), methods=["GET"], response_model=SearchResponse)
+router.add_api_route(
+    "/featured_playlists", _typed_search("featured_playlists"), methods=["GET"], response_model=SearchResponse
+)

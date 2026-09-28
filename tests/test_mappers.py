@@ -140,6 +140,33 @@ class TestSearchItemMapping:
         assert item.artists == []
         assert item.trackCount is None
 
+    def test_featured_playlist_items_map_like_community_playlists(self, load_fixture):
+        """YouTube Music's editorial playlists come back from search(filter="featured_playlists")
+        in the same row shape as community playlists, just with RDCLAK5uy_ ids and "YouTube Music"
+        as author. Fixture recorded live for "Oasis" (ytmusicapi 1.12.2)."""
+        raw = load_fixture("search_featured_playlists")
+        items = map_search_items(raw)
+        assert len(items) == len(raw) > 0
+        for row, item in zip(raw, items, strict=True):
+            assert item.type == "playlist"
+            assert item.playlistId.startswith("RDCLAK5uy_")
+            assert item.browseId == "VL" + item.playlistId == row["browseId"]
+            assert item.artists[0].name == "YouTube Music"
+            assert item.trackCount == row["itemCount"]
+            assert isinstance(item.trackCount, int)
+            assert item.thumbnailUrl
+
+    def test_mangled_featured_playlist_item_does_not_raise(self, load_fixture):
+        raw = load_fixture("search_item_mangled_featured_playlist")
+        assert "author" not in raw and "itemCount" not in raw and raw["thumbnails"] == []
+        item = map_search_item(raw)
+        assert item.type == "playlist"
+        assert item.playlistId.startswith("RDCLAK5uy_")
+        assert item.browseId == "VL" + item.playlistId
+        assert item.artists == []
+        assert item.trackCount is None
+        assert item.thumbnailUrl is None
+
     def test_limit_truncates_results(self, load_fixture):
         raw = load_fixture("search_mixed")
         assert len(raw) > 3

@@ -92,7 +92,7 @@ hardcoded years/albumIds in the current mapper).
   `_to_int` handles all three (it is never an abbreviated `"2.2B"`-style string, so the warning
   above does not apply). Upstream only sets `itemCount` when the row subtitle literally reads
   `"N songs"`, which is rare (most rows show views), so `trackCount` is usually `None` on search
-  results — point consumers at `/v1/playlists/{id}.trackCount` instead. Both shapes are recorded live in `tests/fixtures/search_item_playlist_*.json`.
+  results — point consumers at `/v1/playlists/{id}.trackCount` instead. Both shapes are recorded live in `tests/fixtures/search_item_playlist_*.json`. `filter="featured_playlists"` rows (YouTube Music's editorial playlists) share the list-row shape with `RDCLAK5uy_…` ids and author `"YouTube Music"`; `get_playlist` opens them like any playlist (verified live, `tests/fixtures/search_featured_playlists.json`).
 - `limit` on ytmusicapi's own methods is a floor, not a ceiling. This adapter truncates to an exact
   count in the router/mapper layer — keep doing that so the API contract stays honest.
 

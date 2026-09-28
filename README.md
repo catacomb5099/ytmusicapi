@@ -26,8 +26,8 @@ All `GET`, read-only, prefix `/v1`.
 
 | Route | Notes |
 |---|---|
-| `/v1/search?q=&type=&limit=` | `type` ∈ `songs,videos,albums,artists,playlists`. Omit for mixed search. `limit` is enforced as an exact ceiling (ytmusicapi's own `limit` is a floor). Playlist items carry their author as `artists[0]`. `trackCount` is populated only when YouTube's row subtitle shows "N songs" (rare — most rows show views instead, so it is usually null) and is a floor for capped rows (`"5,000+"` → 5000); use `/v1/playlists/{playlistId}.trackCount` for a reliable count. |
-| `/v1/search/songs`, `/albums`, `/artists`, `/playlists` | typed sugar routes |
+| `/v1/search?q=&type=&limit=` | `type` ∈ `songs,videos,albums,artists,playlists,featured_playlists`. Omit for mixed search. `playlists` are user-made (community) playlists; `featured_playlists` are YouTube Music's own editorial playlists (`RDCLAK5uy_…` ids, author "YouTube Music"), i.e. the ones an artist is *featured in* — they open through `/v1/playlists/{playlistId}` like any other. `limit` is enforced as an exact ceiling (ytmusicapi's own `limit` is a floor). Playlist items carry their author as `artists[0]`. `trackCount` is populated only when YouTube's row subtitle shows "N songs" (rare — most rows show views instead, so it is usually null) and is a floor for capped rows (`"5,000+"` → 5000); use `/v1/playlists/{playlistId}.trackCount` for a reliable count. |
+| `/v1/search/songs`, `/albums`, `/artists`, `/playlists`, `/featured_playlists` | typed sugar routes |
 | `/v1/albums/{browseId}` | `browseId` = `MPREb_…` |
 | `/v1/albums/by-audio-playlist/{audioPlaylistId}` | resolves an `OLAK5uy_…` id to its album, in one call |
 | `/v1/artists/{channelId}` | `channelId` = `UC…`. The response echoes the id you requested — ytmusicapi's `get_artist()` returns a *different* `channelId` internally, which this API does not leak. `related[]` (similar artists) carries `browseId`, `title`, `subscribers` and `thumbnailUrl` (largest picture, or null). |
