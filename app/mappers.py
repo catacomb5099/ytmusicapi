@@ -204,7 +204,23 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
 
 
 def map_search_items(raw: list[dict[str, Any]], limit: int | None = None) -> list[SearchResultItem]:
-    items = [map_search_item(item) for item in raw if isinstance(item, dict)]
+    items: list[SearchResultItem] = []
+    # When the "Top result" is an artist, the songs listed inside that card carry no artist of
+    # their own (the card's heading is the artist), so ytmusicapi hands them over with no
+    # `artists` key and they would render as "Unknown Artist" downstream. ytmusicapi marks those
+    # card rows with category None; the next titled shelf ends the card.
+    card_artists: list[ArtistRef] = []
+    for item in raw:
+        if not isinstance(item, dict):
+            continue
+        mapped = map_search_item(item)
+        if item.get("category") == "Top result":
+            card_artists = mapped.artists if mapped.type == "artist" else []
+        elif item.get("category") is not None:
+            card_artists = []
+        elif card_artists and mapped.type in ("song", "video") and not mapped.artists:
+            mapped.artists = card_artists
+        items.append(mapped)
     if limit is not None:
         items = items[:limit]
     return items

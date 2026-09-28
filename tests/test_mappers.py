@@ -55,6 +55,22 @@ class TestSearchItemMapping:
         assert item.browseId == raw["artists"][0]["id"]
         assert item.title == raw["artists"][0]["name"]
 
+    def test_songs_inside_top_result_artist_card_inherit_the_card_artist(self, load_fixture):
+        """Recorded for "bad omens": the card's three songs have no `artists` key at all."""
+        raw = load_fixture("search_mixed_artist_card")
+        card_songs = [i for i in raw if i["resultType"] == "song"]
+        assert len(card_songs) == 3 and all("artists" not in i for i in card_songs)
+        items = map_search_items(raw)
+        for item in items:
+            if item.type == "song":
+                assert [a.name for a in item.artists] == ["Bad Omens"]
+                assert item.artists[0].channelId == raw[0]["artists"][0]["id"]
+        # Rows with their own artist, or in a later titled shelf, are left alone.
+        albums = [i for i in items if i.type == "album"]
+        assert albums and all(a.artists for a in albums)
+        shelved = [dict(i, category="Songs") if "artists" not in i else i for i in raw]
+        assert all(not i.artists for i in map_search_items(shelved) if i.type == "song")
+
     def test_unknown_result_type_does_not_raise(self, load_fixture):
         raw = load_fixture("search_item_unknown_type")
         item = map_search_item(raw)
