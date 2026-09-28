@@ -7,6 +7,7 @@ class RelatedArtist(BaseModel):
     browseId: str | None = None
     title: str | None = None
     subscribers: str | None = None
+    thumbnailUrl: str | None = None
 
 
 class ArtistDetail(BaseModel):
