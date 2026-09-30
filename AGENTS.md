@@ -48,7 +48,7 @@ hardcoded years/albumIds in the current mapper).
   whose signature is a missing `'sections'` key — YouTube answers with a credits dialog that only
   says "Lyrics not available". Any other `KeyError` is real parser drift → 502. Don't widen that
   KeyError-to-404 translation to other methods without checking their actual failure signature first.
-- **Song credits, album, year and `explicit` exist only for album-track (`ATV`) ids.** An
+- **Song credits, album, year, `explicit` and `plays` exist only for album-track (`ATV`) ids.** An
   official-video (`OMV`) id — the kind a "(Official Video)" title carries — has none of them
   anywhere in ytmusicapi, and there is no public way to hop to its album-track twin. `/details`
   reports them as `null`/`[]` rather than guessing via a title search. The `explicit` flag lives
@@ -73,7 +73,10 @@ hardcoded years/albumIds in the current mapper).
   search's "Top result" card), `monthlyListeners` (`"181M"`), `subscribers` (`"20.3M"`) and artist
   `views` (`"12,715,572,299 views"`) are already abbreviated/formatted upstream. They are mapped verbatim
   as `str`. Do NOT route them through `_to_int()` — it strips non-digits, so `"2.2B plays"` becomes
-  `22`. The only exact integer available is `SongMetadata.viewCount` from `get_song()`. Track
+  `22`. The only exact integer available is `viewCount` from `get_song()` (on `SongMetadata` and
+  `SongDetails`), and it counts that one upload only. `SongDetails.plays` is the album track's
+  `views`, YouTube Music's combined count: Wonderwall `hpSrLjc5SMs` has `viewCount` 97,645,262 but
+  `plays` `"1.7B plays"`. They are different numbers; never fill one from the other. Track
   `views` is populated on `get_album()` tracks and null on playlist tracks; `TrackDto` is shared,
   so null there is expected, not drift. `get_artist()` top songs also arrive with `views: None`, so
   `/v1/artists/{channelId}` fills them from each song's album (one `get_album` per distinct album,
