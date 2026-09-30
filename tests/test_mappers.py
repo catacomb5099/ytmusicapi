@@ -167,6 +167,19 @@ class TestSearchItemMapping:
         assert item.trackCount is None
         assert item.thumbnailUrl is None
 
+    def test_song_and_video_rows_keep_play_count_verbatim(self, load_fixture):
+        """Search rows carry "7.1M"/"1.7B" with no noun -- a display string, never _to_int'd.
+        The mixed search's "Top result" song card carries none."""
+        songs = load_fixture("search_songs")
+        assert [map_search_item(r).views for r in songs] == [r["views"] for r in songs]
+        assert map_search_item(songs[4]).views == "7.1M"
+        mixed = load_fixture("search_mixed")
+        video = next(i for i in mixed if i["resultType"] == "video")
+        assert map_search_item(video).views == video["views"]
+        assert mixed[0]["category"] == "Top result" and "views" not in mixed[0]
+        assert map_search_item(mixed[0]).views is None
+        assert map_search_item(load_fixture("search_item_mangled_song")).views is None
+
     def test_limit_truncates_results(self, load_fixture):
         raw = load_fixture("search_mixed")
         assert len(raw) > 3

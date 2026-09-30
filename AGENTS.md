@@ -69,8 +69,9 @@ hardcoded years/albumIds in the current mapper).
   only in `artists[0]`. `map_search_item`'s artist branch falls back to that; don't remove the
   fallback thinking it's dead code.
 - **Play counts and listener stats are display strings, not numbers.** `views` on album tracks
-  (`"2.2B plays"`), `monthlyListeners` (`"181M"`), `subscribers` (`"20.3M"`) and artist `views`
-  (`"12,715,572,299 views"`) are already abbreviated/formatted upstream. They are mapped verbatim
+  (`"2.2B plays"`), `views` on song/video search results (`"7.2M"`, no noun; null on the mixed
+  search's "Top result" card), `monthlyListeners` (`"181M"`), `subscribers` (`"20.3M"`) and artist
+  `views` (`"12,715,572,299 views"`) are already abbreviated/formatted upstream. They are mapped verbatim
   as `str`. Do NOT route them through `_to_int()` — it strips non-digits, so `"2.2B plays"` becomes
   `22`. The only exact integer available is `SongMetadata.viewCount` from `get_song()`. Track
   `views` is populated on `get_album()` tracks and null on playlist tracks and artist `topSongs`;
