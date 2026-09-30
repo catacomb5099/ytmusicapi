@@ -200,6 +200,7 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         explicit=raw.get("isExplicit"),
         year=_to_int(raw.get("year")),
         trackCount=track_count,
+        views=raw.get("views"),
     )
 
 
