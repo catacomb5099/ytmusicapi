@@ -401,6 +401,7 @@ class TestSongDetailsMapping:
         assert d.year == 2025
         assert d.durationSeconds == 214  # exact, from videoDetails -- not the watch track's "3:34"
         assert d.viewCount == 86376035
+        assert d.plays == "476M plays"  # the album track's combined count, a different number
         assert d.explicit is True  # per-track flag; the album header says False
         assert d.thumbnailUrl and d.thumbnailUrl.startswith("https://")
         assert [c.role for c in d.credits] == [
@@ -430,6 +431,7 @@ class TestSongDetailsMapping:
         song = load_fixture("song_details_song")
         d = map_song_details("tM1RS_5IAiE", song, watch_track, None, {}, None)
         assert d.album is None and d.year is None and d.explicit is None and d.credits == []
+        assert d.plays is None
         assert d.artists[0].name == "Oasis"
         assert d.viewCount == int(song["videoDetails"]["viewCount"])
 
@@ -439,7 +441,8 @@ class TestSongDetailsMapping:
         d = map_song_details(self.VIDEO_ID, song, {}, None, {}, None)
         assert d.artists[0].name == song["videoDetails"]["author"]
         assert d.artists[0].channelId == song["videoDetails"]["channelId"]
-        assert d.album is None
+        assert d.album is None and d.plays is None  # no album track found
+        assert map_song_details(self.VIDEO_ID, song, {}, None, {"views": 476}, None).plays is None
         # A non-string author must not reach pydantic as an ArtistRef name.
         assert map_song_details(self.VIDEO_ID, {"videoDetails": {"author": 123}}, {}, None, {}, None).artists == []
 

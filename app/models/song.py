@@ -36,7 +36,12 @@ class SongDetails(BaseModel):
     album: AlbumRef | None = None
     durationSeconds: int | None = None
     year: int | None = None
+    # Exact plays of this one upload (get_song()). Not the number YouTube Music shows: see `plays`.
     viewCount: int | None = None
+    # YouTube Music's combined play count in its own wording ("1.7B plays"), read from the song's
+    # album track row and kept verbatim (never _to_int'd). Null for official-video ids and whenever
+    # the album track is not found. Usually much bigger than `viewCount`.
+    plays: str | None = None
     explicit: bool | None = None
     thumbnailUrl: str | None = None
     credits: list[CreditsSection] = []
