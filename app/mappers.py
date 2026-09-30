@@ -419,7 +419,9 @@ def map_song_details(
 ) -> SongDetails:
     """Reads only get_song()'s videoDetails (never streamingData), one watch-panel track, one
     album track and the credits dict. Duration/viewCount come from videoDetails (exact ints);
-    the watch track's 'length' is 'm:ss' and its 'views' is mis-parsed upstream, so neither is read.
+    `plays` is the album track's 'views' display string ("1.7B plays", YouTube Music's combined
+    count); the watch track's 'length' is 'm:ss' and its 'views' is mis-parsed upstream, so neither
+    is read.
     Year comes from the watch track or the album header, never from the video upload date."""
     details = song_raw.get("videoDetails") or {}
     author = details.get("author")
@@ -428,6 +430,7 @@ def map_song_details(
     )
     album_year = album_raw.get("year") if isinstance(album_raw, dict) else None
     explicit = album_track.get("isExplicit")
+    plays = album_track.get("views")
     return SongDetails(
         videoId=video_id,
         title=details.get("title") or watch_track.get("title"),
@@ -436,6 +439,7 @@ def map_song_details(
         durationSeconds=_to_int(details.get("lengthSeconds")),
         year=_to_int(watch_track.get("year")) or _to_int(album_year),
         viewCount=_to_int(details.get("viewCount")),
+        plays=plays if isinstance(plays, str) else None,
         explicit=explicit if isinstance(explicit, bool) else None,
         thumbnailUrl=_thumbnail_url((details.get("thumbnail") or {}).get("thumbnails"))
         or _thumbnail_url(watch_track.get("thumbnail")),
