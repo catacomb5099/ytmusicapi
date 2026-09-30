@@ -248,8 +248,33 @@ def map_album_detail(raw: dict[str, Any], requested_browse_id: str) -> AlbumDeta
     )
 
 
-def map_artist_detail(raw: dict[str, Any], requested_channel_id: str) -> ArtistDetail:
-    songs_bucket = raw.get("songs") or {}
+def _top_song_rows(raw: dict[str, Any]) -> list[dict[str, Any]]:
+    bucket = raw.get("songs")
+    rows = bucket.get("results") if isinstance(bucket, dict) else None
+    return [s for s in rows if isinstance(s, dict)] if isinstance(rows, list) else []
+
+
+def top_song_album_ids(raw: dict[str, Any]) -> list[str]:
+    """get_artist() top songs carry views None but name their album, whose get_album() track rows
+    do carry the play count ("1.7B plays"). The distinct albums worth fetching, in order."""
+    ids = (album_browse_id(s) for s in _top_song_rows(raw) if s.get("views") is None)
+    return list(dict.fromkeys(i for i in ids if i))
+
+
+def _map_top_song(raw: dict[str, Any], albums: dict[str, Any]) -> TrackDto:
+    track = _map_track(raw)
+    video_id = raw.get("videoId")
+    if track.views is None and isinstance(video_id, str):
+        views = pick_album_track(albums.get(album_browse_id(raw) or ""), video_id).get("views")
+        track.views = views if isinstance(views, str) else None
+    return track
+
+
+def map_artist_detail(
+    raw: dict[str, Any], requested_channel_id: str, albums: dict[str, Any] | None = None
+) -> ArtistDetail:
+    """`albums` maps a top song's album browseId to its get_album() dict (None when that call
+    failed); it only fills topSongs' `views`, which get_artist() leaves null."""
     albums_bucket = raw.get("albums") or {}
     singles_bucket = raw.get("singles") or {}
     videos_bucket = raw.get("videos") or {}
@@ -275,7 +300,7 @@ def map_artist_detail(raw: dict[str, Any], requested_channel_id: str) -> ArtistD
         monthlyListeners=raw.get("monthlyListeners"),
         views=raw.get("views"),
         thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
-        topSongs=_map_tracks(songs_bucket.get("results") if isinstance(songs_bucket, dict) else None),
+        topSongs=[_map_top_song(s, albums or {}) for s in _top_song_rows(raw)],
         albums=_map_album_stubs(albums_bucket.get("results") if isinstance(albums_bucket, dict) else None),
         singles=_map_album_stubs(singles_bucket.get("results") if isinstance(singles_bucket, dict) else None),
         videos=_map_video_stubs(videos_bucket.get("results") if isinstance(videos_bucket, dict) else None),

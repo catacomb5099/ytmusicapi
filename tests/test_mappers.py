@@ -11,6 +11,7 @@ from app.mappers import (
     map_song_metadata,
     pick_album_track,
     pick_watch_track,
+    top_song_album_ids,
 )
 
 
@@ -284,6 +285,28 @@ class TestArtistDetailMapping:
         detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])
         assert detail.monthlyListeners == raw["monthlyListeners"]
         assert detail.views == raw["views"]
+
+    def test_top_songs_take_their_play_count_from_their_album(self, load_fixture):
+        """get_artist() top songs carry views None; their album's track rows carry "1.7B plays",
+        often on the official-video id with creditsBrowseId 'MPTC' + the top song's id."""
+        raw = load_fixture("artist_detail")
+        assert all(s["views"] is None for s in raw["songs"]["results"])
+        morning_glory, be_here_now = "MPREb_PITqkpE6ExP", "MPREb_2emx3fyDmIj"
+        assert top_song_album_ids(raw) == [morning_glory, be_here_now, "MPREb_4obNWjDVCfX"]
+        album = {"tracks": [{"videoId": "OMV", "creditsBrowseId": "MPTChpSrLjc5SMs", "views": "1.7B plays"}]}
+        detail = map_artist_detail(
+            raw, requested_channel_id="UC", albums={morning_glory: album, be_here_now: None}
+        )
+        # Wonderwall found; the rest: not on that album row, album failed, album never fetched.
+        assert [t.views for t in detail.topSongs] == ["1.7B plays", None, None, None, None]
+        assert map_artist_detail(raw, requested_channel_id="UC").topSongs[0].views is None
+        # A row that already has its count is neither refetched nor overwritten.
+        raw["songs"]["results"][0]["views"] = "9M plays"
+        assert top_song_album_ids(raw)[0] == morning_glory  # still needed by Don't Look Back In Anger
+        assert map_artist_detail(raw, "UC", {morning_glory: album}).topSongs[0].views == "9M plays"
+        mangled = {"songs": {"results": [{"album": "plain name"}, 1, {"views": None}, {"album": {}}]}}
+        assert top_song_album_ids(mangled) == [] == top_song_album_ids({"songs": None})
+        assert [t.views for t in map_artist_detail(mangled, "UC", {"x": album}).topSongs] == [None] * 3
 
     def test_artist_with_no_albums_bucket_returns_empty_list(self, load_fixture):
         raw = load_fixture("artist_detail_no_albums")
