@@ -136,6 +136,31 @@ class TestArtistRoutes:
         assert body["channelId"] == "UCEXAMPLE"
         assert body["channelId"] != raw["channelId"]
 
+    def test_get_artist_fills_top_song_plays_best_effort(self, client_with):
+        """One get_album per distinct top-song album; a failing album leaves null, never a 5xx."""
+        wonderwall_album = {
+            "tracks": [{"videoId": "OMV", "creditsBrowseId": "MPTChpSrLjc5SMs", "views": "1.7B plays"}]
+        }
+        outcomes = {
+            "MPREb_PITqkpE6ExP": wonderwall_album,
+            "MPREb_2emx3fyDmIj": YTMusicServerError("Server returned HTTP 503"),
+            "MPREb_4obNWjDVCfX": ValueError("parser drift"),
+        }
+
+        def get_album(browse_id):
+            outcome = outcomes[browse_id]
+            if isinstance(outcome, Exception):
+                raise outcome
+            return outcome
+
+        client, fake = client_with(get_artist=lambda channel_id: _load("artist_detail"), get_album=get_album)
+        resp = client.get("/v1/artists/UCmMUZbaYdNH0bEd1PAlAqsA")
+        assert resp.status_code == 200
+        songs = resp.json()["topSongs"]
+        assert songs[0]["title"] == "Wonderwall" and songs[0]["views"] == "1.7B plays"
+        assert [s["views"] for s in songs[1:]] == [None] * 4
+        assert sorted(c[1][0] for c in fake.calls if c[0] == "get_album") == sorted(outcomes)
+
     def test_get_artist_not_found(self, client_with):
         client, _ = client_with(get_artist=lambda channel_id: None)
         resp = client.get("/v1/artists/UCMISSING")
