@@ -1,0 +1,23 @@
+{
+  "tracks": [
+    {
+      "videoId": "GOOD_ROW_01",
+      "title": "A Song",
+      "length": "not a clock",
+      "artists": "Someone",
+      "album": "Plain String Album"
+    },
+    {
+      "title": "No Video Id"
+    },
+    {
+      "videoId": "NOTITLE_001",
+      "length": "1:02:03",
+      "artists": [{"name": null}, "junk"]
+    },
+    "junk",
+    null
+  ],
+  "playlistId": null,
+  "related": null
+}

@@ -5,7 +5,7 @@ from fastapi import FastAPI
 
 from app.config import settings
 from app.errors import register_exception_handlers
-from app.routers import albums, artists, health, playlists, search, songs
+from app.routers import albums, artists, health, playlists, radio, search, songs
 from app.ytmusic_client import init_client
 
 logging.basicConfig(level=settings.log_level)
@@ -31,3 +31,4 @@ app.include_router(albums.router)
 app.include_router(artists.router)
 app.include_router(playlists.router)
 app.include_router(songs.router)
+app.include_router(radio.router)

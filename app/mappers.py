@@ -416,3 +416,90 @@ def map_song_details(
         or _thumbnail_url(watch_track.get("thumbnail")),
         credits=_map_credits(credits_raw),
     )
+
+
+def _length_seconds(value: Any) -> int | None:
+    """A watch-panel row's `length` is a clock string ("3:56", "1:02:03"), not a number -- _to_int
+    would turn "3:56" into 356."""
+    if not isinstance(value, str) or not value:
+        return None
+    parts = value.split(":")
+    if not all(p.isdigit() for p in parts):
+        return None
+    seconds = 0
+    for part in parts:
+        seconds = seconds * 60 + int(part)
+    return seconds
+
+
+def _map_watch_track(raw: dict[str, Any]) -> TrackDto:
+    """A watch-panel (radio) row. Its `views` is not read: it is only set on music-video rows and
+    counts that one upload, which is not the combined play count TrackDto.views carries elsewhere."""
+    return TrackDto(
+        videoId=raw.get("videoId"),
+        title=raw.get("title"),
+        artists=_map_artists(raw.get("artists")),
+        albumName=_album_name(raw.get("album")),
+        durationSeconds=_length_seconds(raw.get("length")),
+    )
+
+
+def _song_key(raw: dict[str, Any]) -> tuple[str, str] | None:
+    """Title before any bracket or " - " suffix, plus the first artist, lowercased. A radio repeats
+    the seed's own songs under other ids ("Human Nature" on Thriller's radio is a different upload),
+    so matching on id alone lets them through.
+    ponytail: suffix-stripping heuristic; a song whose real title has " - " or "(" collapses with
+    its namesake by the same artist, which in a radio only drops one row."""
+    title = raw.get("title")
+    artists = raw.get("artists")
+    if not isinstance(title, str) or not isinstance(artists, list) or not artists:
+        return None
+    first = artists[0].get("name") if isinstance(artists[0], dict) else None
+    if not isinstance(first, str):
+        return None
+    base = title.split(" (")[0].split(" [")[0].split(" - ")[0].strip().lower()
+    return (base, first.strip().lower())
+
+
+def map_radio(seed_id: str, seed_raw: Any, watch_raw: Any, limit: int) -> PlaylistDetail:
+    """A radio built from one song, album or playlist, in the playlist shape so callers read it like
+    any other track list. `title`, `author` and `thumbnailUrl` describe the SEED (radios have no
+    title of their own upstream). `seed_raw` is get_album()/get_playlist() for those seeds and None
+    for a song, whose own row is the watch panel's first track. Songs that are the seed's own are
+    dropped, then the rest is cut to exactly `limit`."""
+    watch_tracks = (watch_raw or {}).get("tracks") if isinstance(watch_raw, dict) else None
+    rows = [t for t in watch_tracks if isinstance(t, dict)] if isinstance(watch_tracks, list) else []
+
+    if isinstance(seed_raw, dict):
+        seed_rows = [t for t in seed_raw.get("tracks") or [] if isinstance(t, dict)]
+        title = seed_raw.get("title")
+        authors = _map_artists(seed_raw.get("artists"))
+        author_raw = seed_raw.get("author")
+        if isinstance(author_raw, dict):
+            authors = [_map_artist_ref(author_raw)]
+        elif isinstance(author_raw, str):
+            authors = [ArtistRef(name=author_raw, channelId=None)]
+        thumbnail = _thumbnail_url(seed_raw.get("thumbnails"))
+    else:
+        seed_row = pick_watch_track(watch_raw, seed_id)
+        seed_rows = [seed_row] if seed_row else []
+        title = seed_row.get("title")
+        authors = _map_artists(seed_row.get("artists"))
+        thumbnail = _thumbnail_url(seed_row.get("thumbnail"))
+
+    seed_ids = {t.get("videoId") for t in seed_rows} | {seed_id}
+    seed_keys = {key for key in (_song_key(t) for t in seed_rows) if key}
+    tracks = [
+        _map_watch_track(t)
+        for t in rows
+        if t.get("videoId") and t.get("videoId") not in seed_ids and _song_key(t) not in seed_keys
+    ][:limit]
+
+    return PlaylistDetail(
+        id=seed_id,
+        title=title,
+        author=authors[0] if authors else None,
+        trackCount=len(tracks),
+        thumbnailUrl=thumbnail,
+        tracks=tracks,
+    )
