@@ -1,0 +1,612 @@
+{
+  "title": "Thriller",
+  "type": "Album",
+  "thumbnails": [
+    {
+      "url": "https://yt3.googleusercontent.com/URvHCfI2iyGAlAwqqBFeaFhU9DeKk_iuX40OIIIj8Zp0wIT3BVsJ2JRMwLLbUB9EZS7t7oDlMrI2S3OvGA=w60-h60-l90-rj",
+      "width": 60,
+      "height": 60
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/URvHCfI2iyGAlAwqqBFeaFhU9DeKk_iuX40OIIIj8Zp0wIT3BVsJ2JRMwLLbUB9EZS7t7oDlMrI2S3OvGA=w120-h120-l90-rj",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/URvHCfI2iyGAlAwqqBFeaFhU9DeKk_iuX40OIIIj8Zp0wIT3BVsJ2JRMwLLbUB9EZS7t7oDlMrI2S3OvGA=w226-h226-l90-rj",
+      "width": 226,
+      "height": 226
+    },
+    {
+      "url": "https://yt3.googleusercontent.com/URvHCfI2iyGAlAwqqBFeaFhU9DeKk_iuX40OIIIj8Zp0wIT3BVsJ2JRMwLLbUB9EZS7t7oDlMrI2S3OvGA=w544-h544-l90-rj",
+      "width": 544,
+      "height": 544
+    }
+  ],
+  "isExplicit": false,
+  "description": "Thriller is the sixth studio album by the American singer and songwriter Michael Jackson. It was released on November 29, 1982, through Epic Records. It was produced by Quincy Jones, who produced Jackson's previous album, Off the Wall. Recording took place from April to November 1982 at Westlake Recording Studios in Los Angeles, California, with a budget of $750,000. With an ongoing backlash against disco, Jackson transitioned his sound, with Thriller primarily featuring post-disco and synth-pop among various influences ranging from funk to rock, while its themes include paranoia, romance, and social consciousness. Paul McCartney appears as the first credited featured artist on a Jackson album.\nThriller was Jackson's first number-one album on the Billboard Top LPs & Tape chart and was at number one for a record 37 non-consecutive weeks. The singles \"Billie Jean\" and \"Beat It\" topped the Billboard Hot 100 chart, while \"The Girl Is Mine\", \"Wanna Be Startin' Somethin'\", \"Human Nature\", \"P.Y.T. \", and \"Thriller\" were Top 10 hits, setting a record for the most Top 10 hits from one album.\n\nFrom Wikipedia (https://en.wikipedia.org/wiki/Thrille...) under Creative Commons Attribution CC-BY-SA 3.0 (https://creativecommons.org/licenses/...)",
+  "descriptionRuns": [
+    {
+      "text": "Thriller is the sixth studio album by the American singer and songwriter Michael Jackson. It was released on November 29, 1982, through Epic Records. It was produced by Quincy Jones, who produced Jackson's previous album, Off the Wall. Recording took place from April to November 1982 at Westlake Recording Studios in Los Angeles, California, with a budget of $750,000. With an ongoing backlash against disco, Jackson transitioned his sound, with Thriller primarily featuring post-disco and synth-pop among various influences ranging from funk to rock, while its themes include paranoia, romance, and social consciousness. Paul McCartney appears as the first credited featured artist on a Jackson album.\nThriller was Jackson's first number-one album on the Billboard Top LPs & Tape chart and was at number one for a record 37 non-consecutive weeks. The singles \"Billie Jean\" and \"Beat It\" topped the Billboard Hot 100 chart, while \"The Girl Is Mine\", \"Wanna Be Startin' Somethin'\", \"Human Nature\", \"P.Y.T. \", and \"Thriller\" were Top 10 hits, setting a record for the most Top 10 hits from one album.\n\nFrom Wikipedia ("
+    },
+    {
+      "text": "https://en.wikipedia.org/wiki/Thrille...",
+      "url": "https://en.wikipedia.org/wiki/Thriller_(album)"
+    },
+    {
+      "text": ") under Creative Commons Attribution CC-BY-SA 3.0 ("
+    },
+    {
+      "text": "https://creativecommons.org/licenses/...",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode"
+    },
+    {
+      "text": ")"
+    }
+  ],
+  "year": "1982",
+  "artists": [
+    {
+      "name": "Michael Jackson",
+      "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+    }
+  ],
+  "trackCount": 9,
+  "duration": "42 minutes",
+  "audioPlaylistId": "OLAK5uy_l1U925dsiDi2DqlG-KCbODG6BaibpxbQE",
+  "likeStatus": "INDIFFERENT",
+  "tracks": [
+    {
+      "videoId": "DsJlttdkybk",
+      "title": "Wanna Be Startin' Somethin'",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpI_qJdsaw2KV5u0-_hZ8E55etdys3y8AzyJJCyJPw-61dcVbCULni9qCVTF5gRadsTkUWk5Ox-gYv0Qkncier9UjBTeSg"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "150M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 1,
+      "duration": "6:04",
+      "duration_seconds": 364,
+      "creditsBrowseId": "MPTC8KWf_-ofYgI"
+    },
+    {
+      "videoId": "O3tnOVideSo",
+      "title": "Baby Be Mine",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpKodim17GQWhpQtBV77UGyKn8KLaVZkSTwGGtS3Ic3_1KjNC4oFiaEsqhWeNMMPdhn4W0zebta2GAXKQ29AUTYkNSj0eQ"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "71M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 2,
+      "duration": "4:21",
+      "duration_seconds": 261,
+      "creditsBrowseId": "MPTCCOSMzAASQj4"
+    },
+    {
+      "videoId": "8GB9BULxZ8c",
+      "title": "The Girl Is Mine (feat. Paul McCartney)",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpKzOn7IcOax91aZEi4Dv8sPuomB1RTsghtktOhsBnV5s4KaNPp7lCS0wEeRW1EKLIli-51nv4BMDgB6hEfncN7Ql3tjHg"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "87M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 3,
+      "duration": "3:43",
+      "duration_seconds": 223,
+      "creditsBrowseId": "MPTCSX5vM6F57_E"
+    },
+    {
+      "videoId": "sOnqjkJTMaA",
+      "title": "Thriller",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpITFgvAkB7jGv_DaVnkJTT6OUUEWLaU8vhoDpsVFFFphhJ6X_qsmNl2Ir_X5iKTZQrZ9LLv3k-MvXfHmNmpVv6ohxFRAQ"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "1.2B plays",
+      "communityVoteStatus": null,
+      "trackNumber": 4,
+      "duration": "5:58",
+      "duration_seconds": 358,
+      "creditsBrowseId": "MPTCZ85lxckrtzg"
+    },
+    {
+      "videoId": "oRdxUFDoQe0",
+      "title": "Beat It",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpJFVMUnVRxrSt7wBSHFm23TBBmUgaHSIjPEYyY_Zw2mt_31EZkOI8EN6FAIKX1b0I-_H6B84XxkeK1QcPtJTeujoHnVKw"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "2.2B plays",
+      "communityVoteStatus": null,
+      "trackNumber": 5,
+      "duration": "4:19",
+      "duration_seconds": 259,
+      "creditsBrowseId": "MPTCkOn-HdEg6AQ"
+    },
+    {
+      "videoId": "Zi_XLOBDo_Y",
+      "title": "Billie Jean",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpLQJtk6QiqFjTeOgqaHTebPrR6-L7XKe3alHCTdEPu1dop9mh0d8HLZROzbWDLJM9sNJ8zO83HcW8Vv66oaDw3duyKbug"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "3.4B plays",
+      "communityVoteStatus": null,
+      "trackNumber": 6,
+      "duration": "4:55",
+      "duration_seconds": 295,
+      "creditsBrowseId": "MPTCKr4EQDVETuA"
+    },
+    {
+      "videoId": "YNzuiRuQNYY",
+      "title": "Human Nature",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpIb9JIFoLJKvL6EyWgD2oihVuBMSA2gCXMlf70EbpBPYLO_dCfhBR3xIOJZ8z1GidojtGiero0zA3iBG7LGiB-fkLJamw"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "245M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 7,
+      "duration": "4:07",
+      "duration_seconds": 247,
+      "creditsBrowseId": "MPTCoqLpko9Gprs"
+    },
+    {
+      "videoId": "1ZZQuj6htF4",
+      "title": "P.Y.T. (Pretty Young Thing)",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpJxdUzAlFf0h_stfAiQjrLZagjWAuN5YYt7CuyZjvgc1o4lZCU0XR1Hu8zUxCq2IDO0c9iiNg03DdzVC4K6GHj6WZvvQQ"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "266M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 8,
+      "duration": "4:00",
+      "duration_seconds": 240,
+      "creditsBrowseId": "MPTCy32ejtuxSjM"
+    },
+    {
+      "videoId": "cJLH5yXoqi8",
+      "title": "The Lady in My Life",
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": "Thriller",
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpL9xaTaIqCN7o8ZWoVt6z1piecRtGghocTTpfDXNIKx87Lld_CMGKLu6yMHY7FlsUfShCNolfKWwtt8-opnLS4JfbkeKw"
+      },
+      "thumbnails": null,
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": "109M plays",
+      "communityVoteStatus": null,
+      "trackNumber": 9,
+      "duration": "5:01",
+      "duration_seconds": 301,
+      "creditsBrowseId": "MPTCEqcw7tLnrd8"
+    }
+  ],
+  "other_versions": [
+    {
+      "title": "Thriller 25 Super Deluxe Edition",
+      "artists": [
+        {
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ",
+          "name": "Michael Jackson"
+        }
+      ],
+      "browseId": "MPREb_PQl1mTa2HFY",
+      "audioPlaylistId": "OLAK5uy_kC31zCBDi0OKrQYSBkiKi69T3AB9ci6sI",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/QQo-GjNZMm_dn9oGySGEQmTgfYHznDhDf--YhDNBNDOOGz72SQCAzycAVqy6kavxG5YAd3PT24XU0Wg-=w226-h226-s-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/QQo-GjNZMm_dn9oGySGEQmTgfYHznDhDf--YhDNBNDOOGz72SQCAzycAVqy6kavxG5YAd3PT24XU0Wg-=w544-h544-s-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Thriller 40",
+      "artists": [
+        {
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ",
+          "name": "Michael Jackson"
+        }
+      ],
+      "browseId": "MPREb_RmQFPjKjIPm",
+      "audioPlaylistId": "OLAK5uy_mEJ8cCMOkj4hse7QHbRajvO04lNc1Zxmc",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/pu5bdluXWwddUM6NTdcSraCxnlj2HMMYC5meaHCBVAT6lJoGE2wSq439hmVJJcYGmzPvrxo5N1Afz9t-=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/pu5bdluXWwddUM6NTdcSraCxnlj2HMMYC5meaHCBVAT6lJoGE2wSq439hmVJJcYGmzPvrxo5N1Afz9t-=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    }
+  ],
+  "related_recommendations": [
+    {
+      "title": "Bad",
+      "artists": [
+        {
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ",
+          "name": "Michael Jackson"
+        }
+      ],
+      "browseId": "MPREb_Y5ebh1nnQs5",
+      "audioPlaylistId": "OLAK5uy_m9ELAPGUnHtlIMV6T_bDb6YsiSKu5cI7M",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/LjzTyOPVIWPWb1jNKky5hVKh8pCPcX0WfCqeMpJ93PyPEEgrFuqEF7wHMt-NDXCZYo1T7o8La0pPMxCl=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/LjzTyOPVIWPWb1jNKky5hVKh8pCPcX0WfCqeMpJ93PyPEEgrFuqEF7wHMt-NDXCZYo1T7o8La0pPMxCl=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Greatest Hits",
+      "artists": [
+        {
+          "id": "UCNs5EIHl8WqgLN2MxFVGmqA",
+          "name": "Milli Vanilli"
+        }
+      ],
+      "browseId": "MPREb_cy9JoJYCjpg",
+      "audioPlaylistId": "OLAK5uy_ncBLzpao7bmllhL3uPetvsuY-G3WQE1kA",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/tiOsI6k6u0FJkhlphVmH_6an6DUoiY5_shaTYATVEwsPnFUHVX0tylyeKW_hE5-KuxBJW7vyFonNAbH8=w226-h226-s-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/tiOsI6k6u0FJkhlphVmH_6an6DUoiY5_shaTYATVEwsPnFUHVX0tylyeKW_hE5-KuxBJW7vyFonNAbH8=w544-h544-s-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "The Best of Milli Vanilli (35th Anniversary)",
+      "artists": [
+        {
+          "id": "UCNs5EIHl8WqgLN2MxFVGmqA",
+          "name": "Milli Vanilli"
+        }
+      ],
+      "browseId": "MPREb_fjGWLl17uPC",
+      "audioPlaylistId": "OLAK5uy_m6Q4hJnzjZTIfkUX_LdA8yGF29sttYtfM",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/SiWITWxPZkuKKhMaELFR6-x5YZCC-OIAwFyhGfRDfXaCH_ST2k3IaB30bHiB7kFLgsvjW1Ioyyg5YaZW=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/SiWITWxPZkuKKhMaELFR6-x5YZCC-OIAwFyhGfRDfXaCH_ST2k3IaB30bHiB7kFLgsvjW1Ioyyg5YaZW=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Every Home Should Have One",
+      "artists": [
+        {
+          "id": "UCb4bBpRF3nHMh633S7x9lkA",
+          "name": "Patti Austin"
+        }
+      ],
+      "browseId": "MPREb_OCoVNNPVwn8",
+      "audioPlaylistId": "OLAK5uy_k_Irjcus34x_8bytH0M5sNjhhjE9g4UxY",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/ywnBrP0v7VE2LJNFmlxUx_aNHX9X_MQbLiqee9HuKC0hPVaebC0cVYp7MfKgivxv5F0HwJSPRMlhvJUR=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/ywnBrP0v7VE2LJNFmlxUx_aNHX9X_MQbLiqee9HuKC0hPVaebC0cVYp7MfKgivxv5F0HwJSPRMlhvJUR=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Borderline",
+      "artists": [
+        {
+          "id": "UCo4CrqhIV_tSOGdDWfVyCsg",
+          "name": "Madonna"
+        }
+      ],
+      "browseId": "MPREb_Cs0qQ6d0pDP",
+      "audioPlaylistId": "OLAK5uy_k5DMvTst3EYZl5YfcILTWX9mRCu7kV26s",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/ZoIJOBlov65uBim7eZNXysxmwxlis1p81AYVEfV6PlGe-t_91NC3pFsHWRMnJNF06xa9_uUavz02HAJS=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/ZoIJOBlov65uBim7eZNXysxmwxlis1p81AYVEfV6PlGe-t_91NC3pFsHWRMnJNF06xa9_uUavz02HAJS=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Single"
+    },
+    {
+      "title": "Dream Street",
+      "artists": [
+        {
+          "id": "UCd6_LdvB_IdhYOGR-HSJziA",
+          "name": "Janet Jackson"
+        }
+      ],
+      "browseId": "MPREb_buWcqNw3YGE",
+      "audioPlaylistId": "OLAK5uy_mK56QG-WFNIO_RznOoyQzSP0FsMy3Rbxo",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/iYGCwBim_74PXBuCEZRAOC0nYNvQyUNhEjlZqukBhegs2Ra-9Dd6MUCBIaSa_3LhGpLpg4Q0hGApT2_8=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/iYGCwBim_74PXBuCEZRAOC0nYNvQyUNhEjlZqukBhegs2Ra-9Dd6MUCBIaSa_3LhGpLpg4Q0hGApT2_8=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "She Works Hard For The Money",
+      "artists": [
+        {
+          "id": "UCyRT5w65wAC7kwih0xaTo0w",
+          "name": "Donna Summer"
+        }
+      ],
+      "browseId": "MPREb_nONaW88l8LW",
+      "audioPlaylistId": "OLAK5uy_kjonWxaKiqd6XhwuPegoDepojxmMKOH1Y",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/IlP-RIhQw1rt3uumcCnWRuwxaB11DTH55i3PpU1M0SVXaTFng8LO4oEFQA28zuy0lej7dMaoneIaNYTcww=w226-h226-s-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/IlP-RIhQw1rt3uumcCnWRuwxaB11DTH55i3PpU1M0SVXaTFng8LO4oEFQA28zuy0lej7dMaoneIaNYTcww=w544-h544-s-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Saturday Night Fever (The Original Movie Soundtrack)",
+      "artists": [],
+      "browseId": "MPREb_jbIjZ5V3Yki",
+      "audioPlaylistId": "OLAK5uy_nqylnKg3q93dwt-m3m3sSq3jZQcr1huRo",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/Xq7Exaw8sR1LI3ZNOc7jRe1bLKIHgSps3mYVHEGanUgDFhlahPllZoW4bXh4u9_q2xKF6BETZg6Sgd4xNw=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/Xq7Exaw8sR1LI3ZNOc7jRe1bLKIHgSps3mYVHEGanUgDFhlahPllZoW4bXh4u9_q2xKF6BETZg6Sgd4xNw=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Please Hammer Don't Hurt 'Em",
+      "artists": [
+        {
+          "id": "UCntG6bJJ358VxZSE1ITLEvg",
+          "name": "M.C. Hammer"
+        }
+      ],
+      "browseId": "MPREb_StgSarOGmAP",
+      "audioPlaylistId": "OLAK5uy_nPOy8jrQIEn35yPSaRPeDZopGtaAQ_gbA",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/pwokaoxIWUKMMcmT2fLJITL9XCxZzwlsC1RH_rXvNLyjZYzIUUxKwNuUmZoWouVTdS9jKLvgxY_a4U5x=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/pwokaoxIWUKMMcmT2fLJITL9XCxZzwlsC1RH_rXvNLyjZYzIUUxKwNuUmZoWouVTdS9jKLvgxY_a4U5x=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    },
+    {
+      "title": "Too Legit To Quit",
+      "artists": [
+        {
+          "id": "UCntG6bJJ358VxZSE1ITLEvg",
+          "name": "M.C. Hammer"
+        }
+      ],
+      "browseId": "MPREb_VjwKLL0aiUL",
+      "audioPlaylistId": "OLAK5uy_nIe2f52izzUW8TbXma18BOLB1SbPEdDbE",
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/TgS5Xn7YheuDpJZeiDdyNbC980IrylMv2nnGHyunGI16C2AZV8ijHOLav6z-KKb2rIVqjfArSDsh2ibD=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/TgS5Xn7YheuDpJZeiDdyNbC980IrylMv2nnGHyunGI16C2AZV8ijHOLav6z-KKb2rIVqjfArSDsh2ibD=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "isExplicit": false,
+      "type": "Album"
+    }
+  ],
+  "duration_seconds": 2548
+}

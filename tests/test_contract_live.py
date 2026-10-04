@@ -17,6 +17,7 @@ from app.mappers import (
     map_album_detail,
     map_artist_detail,
     map_playlist_detail,
+    map_radio,
     map_search_item,
     map_song_details,
     pick_album_track,
@@ -178,3 +179,20 @@ class TestSongDetailsContract:
         # An official-video id has no credits panel: the bare KeyError must still translate to 404.
         with pytest.raises(NotFoundError):
             client.call("get_song_credits", "MPTCtM1RS_5IAiE")
+
+
+class TestRadioContract:
+    def test_song_and_album_radios_are_real_mixes(self, yt):
+        # Billie Jean: the song's radio leads with the song itself, then other artists' songs.
+        watch = yt.get_watch_playlist(videoId="7CTJcHjkq0E", limit=25)
+        assert watch["tracks"][0]["videoId"] == "7CTJcHjkq0E"
+        radio = map_radio("7CTJcHjkq0E", None, watch, limit=25)
+        assert radio.title and len(radio.tracks) >= 20
+        assert all(t.durationSeconds for t in radio.tracks)
+        assert len({t.artists[0].name for t in radio.tracks if t.artists}) > 5
+
+        # Thriller: RDAMPL + the album playlist is a mix, not the album replayed.
+        album = yt.get_album("MPREb_dqWTncCjkSp")
+        watch = yt.get_watch_playlist(playlistId="RDAMPL" + album["audioPlaylistId"], limit=25)
+        own = {t["videoId"] for t in album["tracks"]}
+        assert sum(t["videoId"] not in own for t in watch["tracks"]) >= 20

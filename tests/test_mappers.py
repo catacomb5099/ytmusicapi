@@ -5,6 +5,7 @@ from app.mappers import (
     map_album_detail,
     map_artist_detail,
     map_playlist_detail,
+    map_radio,
     map_search_item,
     map_search_items,
     map_song_details,
@@ -443,3 +444,63 @@ class TestSongDetailsMapping:
             ("Mixed by", ["Serban Ghenea"]),
         ]
         assert d.title is None and d.durationSeconds is None
+
+
+class TestRadioMapping:
+    def test_song_radio_drops_the_seed_and_names_itself_after_it(self, load_fixture):
+        watch = load_fixture("radio_song_watch")
+        seed_id = watch["tracks"][0]["videoId"]
+        radio = map_radio(seed_id, None, watch, limit=100)
+        assert radio.id == seed_id
+        assert radio.title == watch["tracks"][0]["title"]
+        assert radio.author.name == watch["tracks"][0]["artists"][0]["name"]
+        assert radio.thumbnailUrl == watch["tracks"][0]["thumbnail"][-1]["url"]
+        assert seed_id not in [t.videoId for t in radio.tracks]
+        assert radio.trackCount == len(radio.tracks) == len(watch["tracks"]) - 1
+
+    def test_watch_row_length_becomes_seconds(self, load_fixture):
+        watch = load_fixture("radio_album_watch")
+        radio = map_radio("MPREb_x", load_fixture("radio_album_seed"), watch, limit=100)
+        first = next(t for t in watch["tracks"] if t["videoId"] == radio.tracks[0].videoId)
+        minutes, seconds = first["length"].split(":")
+        assert radio.tracks[0].durationSeconds == int(minutes) * 60 + int(seconds)
+        assert radio.tracks[0].albumName == first["album"]["name"]
+        assert radio.tracks[0].views is None
+
+    def test_album_radio_drops_the_albums_own_songs_under_other_ids(self, load_fixture):
+        album = load_fixture("radio_album_seed")
+        watch = load_fixture("radio_album_watch")
+        # The recorded radio repeats "Human Nature" from Thriller under a different videoId.
+        assert any(t["title"] == "Human Nature" for t in watch["tracks"])
+        assert "Human Nature" in [t["title"] for t in album["tracks"]]
+        radio = map_radio("MPREb_x", album, watch, limit=100)
+        own_titles = {t["title"] for t in album["tracks"]}
+        assert not [t for t in radio.tracks if t.title in own_titles]
+        assert radio.title == album["title"]
+        assert radio.author.name == album["artists"][0]["name"]
+        assert radio.thumbnailUrl == album["thumbnails"][-1]["url"]
+
+    def test_playlist_radio_takes_title_and_author_from_the_playlist(self, load_fixture):
+        playlist = load_fixture("radio_playlist_seed")
+        radio = map_radio("PLx", playlist, load_fixture("radio_playlist_watch"), limit=100)
+        assert radio.title == playlist["title"]
+        assert radio.author.name == playlist["author"]["name"]
+        assert radio.tracks and all(t.videoId for t in radio.tracks)
+
+    def test_limit_is_exact(self, load_fixture):
+        radio = map_radio("PLx", load_fixture("radio_playlist_seed"), load_fixture("radio_playlist_watch"), limit=3)
+        assert radio.trackCount == len(radio.tracks) == 3
+
+    def test_mangled_watch_rows_degrade_instead_of_raising(self, load_fixture):
+        radio = map_radio("MISSINGSEED", None, load_fixture("radio_watch_mangled"), limit=100)
+        assert radio.title is None
+        assert radio.author is None
+        assert [t.videoId for t in radio.tracks] == ["GOOD_ROW_01", "NOTITLE_001"]
+        assert radio.tracks[0].durationSeconds is None
+        assert radio.tracks[0].artists == []
+        assert radio.tracks[0].albumName == "Plain String Album"
+        assert radio.tracks[1].durationSeconds == 3723
+
+    def test_nothing_at_all_is_an_empty_radio(self):
+        radio = map_radio("x", None, None, limit=10)
+        assert radio.tracks == [] and radio.trackCount == 0

@@ -1,0 +1,1365 @@
+{
+  "tracks": [
+    {
+      "videoId": "3oKC-XZN7L4",
+      "title": "Say Say Say",
+      "length": "3:56",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/yB9ilwpY3KM2gSwEhyvyfQ7fX4VIeS8xPNZmApRXbx2Fo-MV_qfzB5mBwljf9Pnx7-i_2VYILaJJhIjU=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/yB9ilwpY3KM2gSwEhyvyfQ7fX4VIeS8xPNZmApRXbx2Fo-MV_qfzB5mBwljf9Pnx7-i_2VYILaJJhIjU=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/yB9ilwpY3KM2gSwEhyvyfQ7fX4VIeS8xPNZmApRXbx2Fo-MV_qfzB5mBwljf9Pnx7-i_2VYILaJJhIjU=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/yB9ilwpY3KM2gSwEhyvyfQ7fX4VIeS8xPNZmApRXbx2Fo-MV_qfzB5mBwljf9Pnx7-i_2VYILaJJhIjU=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/yB9ilwpY3KM2gSwEhyvyfQ7fX4VIeS8xPNZmApRXbx2Fo-MV_qfzB5mBwljf9Pnx7-i_2VYILaJJhIjU=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/yB9ilwpY3KM2gSwEhyvyfQ7fX4VIeS8xPNZmApRXbx2Fo-MV_qfzB5mBwljf9Pnx7-i_2VYILaJJhIjU=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Paul McCartney",
+          "id": "UC0guXwTSf4hAOvCSgmViojw"
+        },
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "Pipes Of Peace",
+        "id": "MPREb_HXQW9HZO5lA"
+      },
+      "year": "1983"
+    },
+    {
+      "videoId": "BF2_ipR1OI0",
+      "title": "Risk It All",
+      "length": "3:25",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/_1ejRnxNSULMWdqN8F-gEGUVfw5kZKrwKy5xNPnSxU6Xen61q09zCR1aQn4s4L9rDOi-fGnTh3qI-LwE=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/_1ejRnxNSULMWdqN8F-gEGUVfw5kZKrwKy5xNPnSxU6Xen61q09zCR1aQn4s4L9rDOi-fGnTh3qI-LwE=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/_1ejRnxNSULMWdqN8F-gEGUVfw5kZKrwKy5xNPnSxU6Xen61q09zCR1aQn4s4L9rDOi-fGnTh3qI-LwE=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/_1ejRnxNSULMWdqN8F-gEGUVfw5kZKrwKy5xNPnSxU6Xen61q09zCR1aQn4s4L9rDOi-fGnTh3qI-LwE=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/_1ejRnxNSULMWdqN8F-gEGUVfw5kZKrwKy5xNPnSxU6Xen61q09zCR1aQn4s4L9rDOi-fGnTh3qI-LwE=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/_1ejRnxNSULMWdqN8F-gEGUVfw5kZKrwKy5xNPnSxU6Xen61q09zCR1aQn4s4L9rDOi-fGnTh3qI-LwE=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Bruno Mars",
+          "id": "UCZn4r7heNOPY-C43YIywnVA"
+        }
+      ],
+      "album": {
+        "name": "The Romantic",
+        "id": "MPREb_ThyGRhfjSbZ"
+      },
+      "year": "2026"
+    },
+    {
+      "videoId": "OvzJZTkWYoY",
+      "title": "Rock with You (Single Version)",
+      "length": "3:41",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/aNw8bKlmEJtVXKFJZDMvPOMTwkd9Z-J03X7SFsW8o7bePgNfeq9_cCJ6oWaGz9jA0MDh2zl3WfC-ybFa=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/aNw8bKlmEJtVXKFJZDMvPOMTwkd9Z-J03X7SFsW8o7bePgNfeq9_cCJ6oWaGz9jA0MDh2zl3WfC-ybFa=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/aNw8bKlmEJtVXKFJZDMvPOMTwkd9Z-J03X7SFsW8o7bePgNfeq9_cCJ6oWaGz9jA0MDh2zl3WfC-ybFa=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/aNw8bKlmEJtVXKFJZDMvPOMTwkd9Z-J03X7SFsW8o7bePgNfeq9_cCJ6oWaGz9jA0MDh2zl3WfC-ybFa=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/aNw8bKlmEJtVXKFJZDMvPOMTwkd9Z-J03X7SFsW8o7bePgNfeq9_cCJ6oWaGz9jA0MDh2zl3WfC-ybFa=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/aNw8bKlmEJtVXKFJZDMvPOMTwkd9Z-J03X7SFsW8o7bePgNfeq9_cCJ6oWaGz9jA0MDh2zl3WfC-ybFa=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "Off the Wall",
+        "id": "MPREb_W5qN7flBszY"
+      },
+      "year": "1979"
+    },
+    {
+      "videoId": "Aqc3VTpz9HQ",
+      "title": "You Give Love A Bad Name",
+      "length": "3:43",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/SqcnRq7G6BLl1gYS34sMMx-ilwFSDpSO8oG0FTBabMsNyfSNSdw1P2djS_FqC93Nlruj3RoLO-6u9zOJ=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/SqcnRq7G6BLl1gYS34sMMx-ilwFSDpSO8oG0FTBabMsNyfSNSdw1P2djS_FqC93Nlruj3RoLO-6u9zOJ=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/SqcnRq7G6BLl1gYS34sMMx-ilwFSDpSO8oG0FTBabMsNyfSNSdw1P2djS_FqC93Nlruj3RoLO-6u9zOJ=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/SqcnRq7G6BLl1gYS34sMMx-ilwFSDpSO8oG0FTBabMsNyfSNSdw1P2djS_FqC93Nlruj3RoLO-6u9zOJ=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/SqcnRq7G6BLl1gYS34sMMx-ilwFSDpSO8oG0FTBabMsNyfSNSdw1P2djS_FqC93Nlruj3RoLO-6u9zOJ=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/SqcnRq7G6BLl1gYS34sMMx-ilwFSDpSO8oG0FTBabMsNyfSNSdw1P2djS_FqC93Nlruj3RoLO-6u9zOJ=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Bon Jovi",
+          "id": "UCCL-yoaPLR-7bxZM1xlcQcQ"
+        }
+      ],
+      "album": {
+        "name": "Slippery When Wet",
+        "id": "MPREb_KgItJW84OxC"
+      },
+      "year": "1986"
+    },
+    {
+      "videoId": "KFS9c852M_k",
+      "title": "Somebody's Watching Me",
+      "length": "4:59",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/TMzZgDB0OsuAPz8-c_mmvYYcsh01yKkGO4PLS5RpXI7O2q1jdzu4t4PTaTgPIQx4NB_xDu3onOXRvpo=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/TMzZgDB0OsuAPz8-c_mmvYYcsh01yKkGO4PLS5RpXI7O2q1jdzu4t4PTaTgPIQx4NB_xDu3onOXRvpo=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/TMzZgDB0OsuAPz8-c_mmvYYcsh01yKkGO4PLS5RpXI7O2q1jdzu4t4PTaTgPIQx4NB_xDu3onOXRvpo=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/TMzZgDB0OsuAPz8-c_mmvYYcsh01yKkGO4PLS5RpXI7O2q1jdzu4t4PTaTgPIQx4NB_xDu3onOXRvpo=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/TMzZgDB0OsuAPz8-c_mmvYYcsh01yKkGO4PLS5RpXI7O2q1jdzu4t4PTaTgPIQx4NB_xDu3onOXRvpo=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/TMzZgDB0OsuAPz8-c_mmvYYcsh01yKkGO4PLS5RpXI7O2q1jdzu4t4PTaTgPIQx4NB_xDu3onOXRvpo=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Rockwell",
+          "id": "UCsUjEuAbP8wAEz8tiB3dvNw"
+        }
+      ],
+      "album": {
+        "name": "Somebody's Watching Me",
+        "id": "MPREb_IFaXddxYLGy"
+      },
+      "year": "1984"
+    },
+    {
+      "videoId": "y5X71U89SKg",
+      "title": "Speechless",
+      "length": "3:19",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/L0nwBz3JF8kFa1-1PAOiLC6pB49lsRc3QRCbj1gvU3uCNf4SXnLUGtAFBha1CZ02mhQzMJrcl-rJ0pSG=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/L0nwBz3JF8kFa1-1PAOiLC6pB49lsRc3QRCbj1gvU3uCNf4SXnLUGtAFBha1CZ02mhQzMJrcl-rJ0pSG=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/L0nwBz3JF8kFa1-1PAOiLC6pB49lsRc3QRCbj1gvU3uCNf4SXnLUGtAFBha1CZ02mhQzMJrcl-rJ0pSG=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/L0nwBz3JF8kFa1-1PAOiLC6pB49lsRc3QRCbj1gvU3uCNf4SXnLUGtAFBha1CZ02mhQzMJrcl-rJ0pSG=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/L0nwBz3JF8kFa1-1PAOiLC6pB49lsRc3QRCbj1gvU3uCNf4SXnLUGtAFBha1CZ02mhQzMJrcl-rJ0pSG=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/L0nwBz3JF8kFa1-1PAOiLC6pB49lsRc3QRCbj1gvU3uCNf4SXnLUGtAFBha1CZ02mhQzMJrcl-rJ0pSG=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "Invincible",
+        "id": "MPREb_fg6gHhdC0qT"
+      },
+      "year": "2001"
+    },
+    {
+      "videoId": "f1FGtCdCTZw",
+      "title": "Your Smile",
+      "length": "4:16",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/FkY5wksL6azmjMPZ7kQONXLMjx6LLvxRDmsPkwAd94QV-NBxTD-ETmnDB3pErrJ_T-83zrjl7U3NvrcIhQ=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/FkY5wksL6azmjMPZ7kQONXLMjx6LLvxRDmsPkwAd94QV-NBxTD-ETmnDB3pErrJ_T-83zrjl7U3NvrcIhQ=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/FkY5wksL6azmjMPZ7kQONXLMjx6LLvxRDmsPkwAd94QV-NBxTD-ETmnDB3pErrJ_T-83zrjl7U3NvrcIhQ=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/FkY5wksL6azmjMPZ7kQONXLMjx6LLvxRDmsPkwAd94QV-NBxTD-ETmnDB3pErrJ_T-83zrjl7U3NvrcIhQ=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/FkY5wksL6azmjMPZ7kQONXLMjx6LLvxRDmsPkwAd94QV-NBxTD-ETmnDB3pErrJ_T-83zrjl7U3NvrcIhQ=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/FkY5wksL6azmjMPZ7kQONXLMjx6LLvxRDmsPkwAd94QV-NBxTD-ETmnDB3pErrJ_T-83zrjl7U3NvrcIhQ=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "René & Angela",
+          "id": "UC26BTNbuDI0wS4_s4Ja0P8w"
+        }
+      ],
+      "album": {
+        "name": "Street Called Desire (Expanded Edition)",
+        "id": "MPREb_XPSOWYDWZ1I"
+      },
+      "year": "1985"
+    },
+    {
+      "videoId": "ZbxEyWGvWO4",
+      "title": "And the Beat Goes On (Single Version)",
+      "length": "3:28",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/LnRQuaZwGQ3Kn_ukDhf0wvOrv_EopiJT8BmjnXcLHyTEKnzuLhm61QboqNY45g05A6jr2vGAXf5YsUsZ=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/LnRQuaZwGQ3Kn_ukDhf0wvOrv_EopiJT8BmjnXcLHyTEKnzuLhm61QboqNY45g05A6jr2vGAXf5YsUsZ=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/LnRQuaZwGQ3Kn_ukDhf0wvOrv_EopiJT8BmjnXcLHyTEKnzuLhm61QboqNY45g05A6jr2vGAXf5YsUsZ=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/LnRQuaZwGQ3Kn_ukDhf0wvOrv_EopiJT8BmjnXcLHyTEKnzuLhm61QboqNY45g05A6jr2vGAXf5YsUsZ=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/LnRQuaZwGQ3Kn_ukDhf0wvOrv_EopiJT8BmjnXcLHyTEKnzuLhm61QboqNY45g05A6jr2vGAXf5YsUsZ=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/LnRQuaZwGQ3Kn_ukDhf0wvOrv_EopiJT8BmjnXcLHyTEKnzuLhm61QboqNY45g05A6jr2vGAXf5YsUsZ=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "The Whispers",
+          "id": "UCYXiU05GGa7ka9L_eXmR-wA"
+        }
+      ],
+      "album": {
+        "name": "The Whispers",
+        "id": "MPREb_Ght5UO5Je8P"
+      },
+      "year": "1979"
+    },
+    {
+      "videoId": "-_OPJ2d86kE",
+      "title": "They Don't Care About Us",
+      "length": "4:45",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/R7pwf7-lcPvK3dxv8jMkUd4SlbVmrM-nZOFEJqnHGLQFBl4lqj1gyeWSFO5X9HZxgUhTh4KM8n0l7j_k=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/R7pwf7-lcPvK3dxv8jMkUd4SlbVmrM-nZOFEJqnHGLQFBl4lqj1gyeWSFO5X9HZxgUhTh4KM8n0l7j_k=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/R7pwf7-lcPvK3dxv8jMkUd4SlbVmrM-nZOFEJqnHGLQFBl4lqj1gyeWSFO5X9HZxgUhTh4KM8n0l7j_k=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/R7pwf7-lcPvK3dxv8jMkUd4SlbVmrM-nZOFEJqnHGLQFBl4lqj1gyeWSFO5X9HZxgUhTh4KM8n0l7j_k=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/R7pwf7-lcPvK3dxv8jMkUd4SlbVmrM-nZOFEJqnHGLQFBl4lqj1gyeWSFO5X9HZxgUhTh4KM8n0l7j_k=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/R7pwf7-lcPvK3dxv8jMkUd4SlbVmrM-nZOFEJqnHGLQFBl4lqj1gyeWSFO5X9HZxgUhTh4KM8n0l7j_k=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "HIStory: PAST, PRESENT AND FUTURE, BOOK I",
+        "id": "MPREb_L7mH5RJKKdI"
+      },
+      "year": "1995"
+    },
+    {
+      "videoId": "3cKtSlsYVEU",
+      "title": "September",
+      "length": "3:36",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/6yT9oflvqvXnTOu7x--2aTasgLebsNfff5RqsEd07J-oXnNYVLnn-YKu48juCBI1EKEWIa1fQTMw_Krw8A=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/6yT9oflvqvXnTOu7x--2aTasgLebsNfff5RqsEd07J-oXnNYVLnn-YKu48juCBI1EKEWIa1fQTMw_Krw8A=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/6yT9oflvqvXnTOu7x--2aTasgLebsNfff5RqsEd07J-oXnNYVLnn-YKu48juCBI1EKEWIa1fQTMw_Krw8A=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/6yT9oflvqvXnTOu7x--2aTasgLebsNfff5RqsEd07J-oXnNYVLnn-YKu48juCBI1EKEWIa1fQTMw_Krw8A=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/6yT9oflvqvXnTOu7x--2aTasgLebsNfff5RqsEd07J-oXnNYVLnn-YKu48juCBI1EKEWIa1fQTMw_Krw8A=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/6yT9oflvqvXnTOu7x--2aTasgLebsNfff5RqsEd07J-oXnNYVLnn-YKu48juCBI1EKEWIa1fQTMw_Krw8A=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Earth, Wind & Fire",
+          "id": "UCdyqvgHHq9NEEfV20lO61jQ"
+        }
+      ],
+      "album": {
+        "name": "The Best Of Earth, Wind & Fire Vol. 1",
+        "id": "MPREb_ZLzUburIGbF"
+      },
+      "year": "1978"
+    },
+    {
+      "videoId": "EKOcfZtKvYQ",
+      "title": "Let's Stay Together",
+      "length": "3:20",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/Ib5IOM3s3JCo9HS6jvfSI-7_-jLp9BjYOqxxb-PfbynNh3R5BE48YXhccSIAOZai75xXsoq5haFo_0Qg=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/Ib5IOM3s3JCo9HS6jvfSI-7_-jLp9BjYOqxxb-PfbynNh3R5BE48YXhccSIAOZai75xXsoq5haFo_0Qg=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/Ib5IOM3s3JCo9HS6jvfSI-7_-jLp9BjYOqxxb-PfbynNh3R5BE48YXhccSIAOZai75xXsoq5haFo_0Qg=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/Ib5IOM3s3JCo9HS6jvfSI-7_-jLp9BjYOqxxb-PfbynNh3R5BE48YXhccSIAOZai75xXsoq5haFo_0Qg=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/Ib5IOM3s3JCo9HS6jvfSI-7_-jLp9BjYOqxxb-PfbynNh3R5BE48YXhccSIAOZai75xXsoq5haFo_0Qg=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/Ib5IOM3s3JCo9HS6jvfSI-7_-jLp9BjYOqxxb-PfbynNh3R5BE48YXhccSIAOZai75xXsoq5haFo_0Qg=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Al Green",
+          "id": "UC7tb2Of68kIlrtj2qUnJtbQ"
+        }
+      ],
+      "album": {
+        "name": "Let's Stay Together",
+        "id": "MPREb_KTmoWRewXhi"
+      },
+      "year": "1972"
+    },
+    {
+      "videoId": "Qzr0FvjOc3A",
+      "title": "Human Nature",
+      "length": "4:07",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/HMGA-g-VNrh2bSvgn-yQ_lW4ELDPihcgbfzIVyPnbk7PcjX_J9JAUgcOr2EoARYh0vumIubuJEn-2JdH=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/HMGA-g-VNrh2bSvgn-yQ_lW4ELDPihcgbfzIVyPnbk7PcjX_J9JAUgcOr2EoARYh0vumIubuJEn-2JdH=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/HMGA-g-VNrh2bSvgn-yQ_lW4ELDPihcgbfzIVyPnbk7PcjX_J9JAUgcOr2EoARYh0vumIubuJEn-2JdH=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/HMGA-g-VNrh2bSvgn-yQ_lW4ELDPihcgbfzIVyPnbk7PcjX_J9JAUgcOr2EoARYh0vumIubuJEn-2JdH=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/HMGA-g-VNrh2bSvgn-yQ_lW4ELDPihcgbfzIVyPnbk7PcjX_J9JAUgcOr2EoARYh0vumIubuJEn-2JdH=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/HMGA-g-VNrh2bSvgn-yQ_lW4ELDPihcgbfzIVyPnbk7PcjX_J9JAUgcOr2EoARYh0vumIubuJEn-2JdH=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "Michael: Songs From The Motion Picture",
+        "id": "MPREb_CUHbeoILHvg"
+      },
+      "year": "2026"
+    },
+    {
+      "videoId": "jBduATfM3eU",
+      "title": "Never Too Much",
+      "length": "3:50",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/12pGuR8RKTCi21OBfZjbaV970T6z9qhOiGerzZM-QNuvroEwhPhK4MEXTQ_DjzpGKxzWX2tapfLwn73ABA=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/12pGuR8RKTCi21OBfZjbaV970T6z9qhOiGerzZM-QNuvroEwhPhK4MEXTQ_DjzpGKxzWX2tapfLwn73ABA=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/12pGuR8RKTCi21OBfZjbaV970T6z9qhOiGerzZM-QNuvroEwhPhK4MEXTQ_DjzpGKxzWX2tapfLwn73ABA=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/12pGuR8RKTCi21OBfZjbaV970T6z9qhOiGerzZM-QNuvroEwhPhK4MEXTQ_DjzpGKxzWX2tapfLwn73ABA=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/12pGuR8RKTCi21OBfZjbaV970T6z9qhOiGerzZM-QNuvroEwhPhK4MEXTQ_DjzpGKxzWX2tapfLwn73ABA=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/12pGuR8RKTCi21OBfZjbaV970T6z9qhOiGerzZM-QNuvroEwhPhK4MEXTQ_DjzpGKxzWX2tapfLwn73ABA=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Luther Vandross",
+          "id": "UCtvW9Gxu_fu4nFGSjLmVjMw"
+        }
+      ],
+      "album": {
+        "name": "R&B: From Doo-Wop To Hip-Hop",
+        "id": "MPREb_iYW0Cj4PR4e"
+      },
+      "year": "1999"
+    },
+    {
+      "videoId": "NAhL_9iXaTw",
+      "title": "Reminiscing",
+      "length": "4:12",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/seBLnooJq7RNMec6SBZ-QSTAe8APS6Z7BbArmW4fjiQvweOo4ZAfUppS91vNkiIqtDc-2D2I_N71sFHhZg=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/seBLnooJq7RNMec6SBZ-QSTAe8APS6Z7BbArmW4fjiQvweOo4ZAfUppS91vNkiIqtDc-2D2I_N71sFHhZg=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/seBLnooJq7RNMec6SBZ-QSTAe8APS6Z7BbArmW4fjiQvweOo4ZAfUppS91vNkiIqtDc-2D2I_N71sFHhZg=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/seBLnooJq7RNMec6SBZ-QSTAe8APS6Z7BbArmW4fjiQvweOo4ZAfUppS91vNkiIqtDc-2D2I_N71sFHhZg=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/seBLnooJq7RNMec6SBZ-QSTAe8APS6Z7BbArmW4fjiQvweOo4ZAfUppS91vNkiIqtDc-2D2I_N71sFHhZg=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/seBLnooJq7RNMec6SBZ-QSTAe8APS6Z7BbArmW4fjiQvweOo4ZAfUppS91vNkiIqtDc-2D2I_N71sFHhZg=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Little River Band",
+          "id": "UCreiohNB7aQ41Dv5daGfbcA"
+        }
+      ],
+      "album": {
+        "name": "Greatest Hits",
+        "id": "MPREb_MnHJqbcP84g"
+      },
+      "year": "1982"
+    },
+    {
+      "videoId": "XzNWRmqibNE",
+      "title": "Smooth Criminal",
+      "length": "4:18",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "Bad (25th Anniversary)",
+        "id": "MPREb_0AFJs8nNJS8"
+      },
+      "year": "1987"
+    },
+    {
+      "videoId": "Qnqh4SiZPnI",
+      "title": "Suzanne (At The Church)",
+      "length": "4:00",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/gymanjbDjAwZ389HumfQ6CqA8CXuiioADe0zJ1mvl_U89SJNTljqQcNufu2HUN3t_QxH4dvzKzob40o=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/gymanjbDjAwZ389HumfQ6CqA8CXuiioADe0zJ1mvl_U89SJNTljqQcNufu2HUN3t_QxH4dvzKzob40o=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/gymanjbDjAwZ389HumfQ6CqA8CXuiioADe0zJ1mvl_U89SJNTljqQcNufu2HUN3t_QxH4dvzKzob40o=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/gymanjbDjAwZ389HumfQ6CqA8CXuiioADe0zJ1mvl_U89SJNTljqQcNufu2HUN3t_QxH4dvzKzob40o=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/gymanjbDjAwZ389HumfQ6CqA8CXuiioADe0zJ1mvl_U89SJNTljqQcNufu2HUN3t_QxH4dvzKzob40o=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/gymanjbDjAwZ389HumfQ6CqA8CXuiioADe0zJ1mvl_U89SJNTljqQcNufu2HUN3t_QxH4dvzKzob40o=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Mark Ronson",
+          "id": "UCm9XijVCOsRrxdx0giD_1fQ"
+        },
+        {
+          "name": "RAYE",
+          "id": "UCvyjk7zKlaFyNIPZ-Pyvkng"
+        }
+      ],
+      "album": {
+        "name": "Suzanne (At The Church)",
+        "id": "MPREb_3CUsTsHcJvi"
+      },
+      "year": "2025"
+    },
+    {
+      "videoId": "UvynvnxZJ3Q",
+      "title": "I Want You Back",
+      "length": "2:57",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/oQcG15Ql4bueUGNCepNLpEfYvDFLYiVox4F6lVPRmn75WeqzSA-HdM08HWxtGCkGjhUYZ2jzAm6ESGJn=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/oQcG15Ql4bueUGNCepNLpEfYvDFLYiVox4F6lVPRmn75WeqzSA-HdM08HWxtGCkGjhUYZ2jzAm6ESGJn=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/oQcG15Ql4bueUGNCepNLpEfYvDFLYiVox4F6lVPRmn75WeqzSA-HdM08HWxtGCkGjhUYZ2jzAm6ESGJn=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/oQcG15Ql4bueUGNCepNLpEfYvDFLYiVox4F6lVPRmn75WeqzSA-HdM08HWxtGCkGjhUYZ2jzAm6ESGJn=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/oQcG15Ql4bueUGNCepNLpEfYvDFLYiVox4F6lVPRmn75WeqzSA-HdM08HWxtGCkGjhUYZ2jzAm6ESGJn=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/oQcG15Ql4bueUGNCepNLpEfYvDFLYiVox4F6lVPRmn75WeqzSA-HdM08HWxtGCkGjhUYZ2jzAm6ESGJn=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Jackson 5",
+          "id": "UCimf1nPr_Wc0ddnienWKGdg"
+        }
+      ],
+      "album": {
+        "name": "Diana Ross Presents The Jackson 5",
+        "id": "MPREb_cupPZfBlA5H"
+      },
+      "year": "1969"
+    },
+    {
+      "videoId": "Vc7ZvpQMCzE",
+      "title": "Bad",
+      "length": "4:08",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/N3dO2K1MIFWJtEqZNpQ4yfISUC3gDaIIZNYCs6kwcX5G46AHtK6W_fxfHeQ30sdBdRgyyqXkbbqzPuI=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N3dO2K1MIFWJtEqZNpQ4yfISUC3gDaIIZNYCs6kwcX5G46AHtK6W_fxfHeQ30sdBdRgyyqXkbbqzPuI=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N3dO2K1MIFWJtEqZNpQ4yfISUC3gDaIIZNYCs6kwcX5G46AHtK6W_fxfHeQ30sdBdRgyyqXkbbqzPuI=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N3dO2K1MIFWJtEqZNpQ4yfISUC3gDaIIZNYCs6kwcX5G46AHtK6W_fxfHeQ30sdBdRgyyqXkbbqzPuI=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N3dO2K1MIFWJtEqZNpQ4yfISUC3gDaIIZNYCs6kwcX5G46AHtK6W_fxfHeQ30sdBdRgyyqXkbbqzPuI=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N3dO2K1MIFWJtEqZNpQ4yfISUC3gDaIIZNYCs6kwcX5G46AHtK6W_fxfHeQ30sdBdRgyyqXkbbqzPuI=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "The Essential Michael Jackson",
+        "id": "MPREb_lrzGImeeSWk"
+      },
+      "year": "2005"
+    },
+    {
+      "videoId": "DzXEos0xIQM",
+      "title": "Come and Get Your Love",
+      "length": "5:01",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/zKbX2JV0JdUf87t6_iA6keYhHBLGgyMYG7qai-WhuahIR2jw_yERaCPdBWh8q4iRkN6oEeLHIGDCsGNPow=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/zKbX2JV0JdUf87t6_iA6keYhHBLGgyMYG7qai-WhuahIR2jw_yERaCPdBWh8q4iRkN6oEeLHIGDCsGNPow=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/zKbX2JV0JdUf87t6_iA6keYhHBLGgyMYG7qai-WhuahIR2jw_yERaCPdBWh8q4iRkN6oEeLHIGDCsGNPow=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/zKbX2JV0JdUf87t6_iA6keYhHBLGgyMYG7qai-WhuahIR2jw_yERaCPdBWh8q4iRkN6oEeLHIGDCsGNPow=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/zKbX2JV0JdUf87t6_iA6keYhHBLGgyMYG7qai-WhuahIR2jw_yERaCPdBWh8q4iRkN6oEeLHIGDCsGNPow=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/zKbX2JV0JdUf87t6_iA6keYhHBLGgyMYG7qai-WhuahIR2jw_yERaCPdBWh8q4iRkN6oEeLHIGDCsGNPow=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Redbone",
+          "id": "UCC7tLkKIDdakbSN6Z1n4TbA"
+        }
+      ],
+      "album": {
+        "name": "Wovoka",
+        "id": "MPREb_SEZdUwGeAzt"
+      },
+      "year": "1973"
+    },
+    {
+      "videoId": "mRNcPbCJNJ8",
+      "title": "Smooth Operator (Single Version)",
+      "length": "4:19",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/jiA6FEYpRHaf6gBbPB8j8FyspyTxTWZvGNYa1IwiGnfBUWEZLZv-VAUNFiv1KJ6hYf3lUM4W5S0O9VA=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/jiA6FEYpRHaf6gBbPB8j8FyspyTxTWZvGNYa1IwiGnfBUWEZLZv-VAUNFiv1KJ6hYf3lUM4W5S0O9VA=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/jiA6FEYpRHaf6gBbPB8j8FyspyTxTWZvGNYa1IwiGnfBUWEZLZv-VAUNFiv1KJ6hYf3lUM4W5S0O9VA=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/jiA6FEYpRHaf6gBbPB8j8FyspyTxTWZvGNYa1IwiGnfBUWEZLZv-VAUNFiv1KJ6hYf3lUM4W5S0O9VA=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/jiA6FEYpRHaf6gBbPB8j8FyspyTxTWZvGNYa1IwiGnfBUWEZLZv-VAUNFiv1KJ6hYf3lUM4W5S0O9VA=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/jiA6FEYpRHaf6gBbPB8j8FyspyTxTWZvGNYa1IwiGnfBUWEZLZv-VAUNFiv1KJ6hYf3lUM4W5S0O9VA=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Sade",
+          "id": "UCgxBu-PnULL4WRG7HcNpRvg"
+        }
+      ],
+      "album": {
+        "name": "The Best of Sade",
+        "id": "MPREb_6mgYXAVHMgn"
+      },
+      "year": "1994"
+    },
+    {
+      "videoId": "1R4pJc6vNn8",
+      "title": "Dirty Diana",
+      "length": "4:41",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/4IhR8db0ePRchdQgUzYcjxTgjBBn16vYi1bOVgf0Z0-tfjBN62-FSn6wtrxDm4eg-jQh9JVvHPyWUAvs=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "Bad (25th Anniversary)",
+        "id": "MPREb_0AFJs8nNJS8"
+      },
+      "year": "1987"
+    },
+    {
+      "videoId": "gvLMhpzYic0",
+      "title": "Girls Just Want to Have Fun",
+      "length": "3:59",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/N-U7_cNgPu9DCTWNP9HfqFbtmw1nQzbeIgWq7swQMNgqmjvj1GvpKBf-Um8tu9k5iA8LXHgDtiIoLe-j=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N-U7_cNgPu9DCTWNP9HfqFbtmw1nQzbeIgWq7swQMNgqmjvj1GvpKBf-Um8tu9k5iA8LXHgDtiIoLe-j=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N-U7_cNgPu9DCTWNP9HfqFbtmw1nQzbeIgWq7swQMNgqmjvj1GvpKBf-Um8tu9k5iA8LXHgDtiIoLe-j=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N-U7_cNgPu9DCTWNP9HfqFbtmw1nQzbeIgWq7swQMNgqmjvj1GvpKBf-Um8tu9k5iA8LXHgDtiIoLe-j=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N-U7_cNgPu9DCTWNP9HfqFbtmw1nQzbeIgWq7swQMNgqmjvj1GvpKBf-Um8tu9k5iA8LXHgDtiIoLe-j=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/N-U7_cNgPu9DCTWNP9HfqFbtmw1nQzbeIgWq7swQMNgqmjvj1GvpKBf-Um8tu9k5iA8LXHgDtiIoLe-j=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Cyndi Lauper",
+          "id": "UC9I3hbllzsS4QZqNekPE76g"
+        }
+      ],
+      "album": {
+        "name": "She's So Unusual",
+        "id": "MPREb_wRKmB04VUmW"
+      },
+      "year": "1983"
+    },
+    {
+      "videoId": "W-mbRPhmAhY",
+      "title": "Loving You",
+      "length": "3:16",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/qk8rEQ5zgdeXxszR37SjJHOPOlPG6NhD5F4r-rxdxdrdmf7rF6xv_OdrCBuZBxaTFc4fVK2ImJLW5FKt=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/qk8rEQ5zgdeXxszR37SjJHOPOlPG6NhD5F4r-rxdxdrdmf7rF6xv_OdrCBuZBxaTFc4fVK2ImJLW5FKt=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/qk8rEQ5zgdeXxszR37SjJHOPOlPG6NhD5F4r-rxdxdrdmf7rF6xv_OdrCBuZBxaTFc4fVK2ImJLW5FKt=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/qk8rEQ5zgdeXxszR37SjJHOPOlPG6NhD5F4r-rxdxdrdmf7rF6xv_OdrCBuZBxaTFc4fVK2ImJLW5FKt=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/qk8rEQ5zgdeXxszR37SjJHOPOlPG6NhD5F4r-rxdxdrdmf7rF6xv_OdrCBuZBxaTFc4fVK2ImJLW5FKt=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/qk8rEQ5zgdeXxszR37SjJHOPOlPG6NhD5F4r-rxdxdrdmf7rF6xv_OdrCBuZBxaTFc4fVK2ImJLW5FKt=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Michael Jackson",
+          "id": "UCoIOOL7QKuBhQHVKL8y7BEQ"
+        }
+      ],
+      "album": {
+        "name": "XSCAPE",
+        "id": "MPREb_iRUNZn88Ax7"
+      },
+      "year": "2014"
+    },
+    {
+      "videoId": "G_GG4PgwbcI",
+      "title": "We Are One",
+      "length": "4:23",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/ebtQpnKrxFLyNq_O_-O08myoYiEFOXE_9NYTu823mohFCkXANbcnF1fnh89KA0qjiks7XP5_elP68I77=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/ebtQpnKrxFLyNq_O_-O08myoYiEFOXE_9NYTu823mohFCkXANbcnF1fnh89KA0qjiks7XP5_elP68I77=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/ebtQpnKrxFLyNq_O_-O08myoYiEFOXE_9NYTu823mohFCkXANbcnF1fnh89KA0qjiks7XP5_elP68I77=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/ebtQpnKrxFLyNq_O_-O08myoYiEFOXE_9NYTu823mohFCkXANbcnF1fnh89KA0qjiks7XP5_elP68I77=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/ebtQpnKrxFLyNq_O_-O08myoYiEFOXE_9NYTu823mohFCkXANbcnF1fnh89KA0qjiks7XP5_elP68I77=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/ebtQpnKrxFLyNq_O_-O08myoYiEFOXE_9NYTu823mohFCkXANbcnF1fnh89KA0qjiks7XP5_elP68I77=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "Althea Rene",
+          "id": "UCOfI14Ev93CfLTd00lrB9Mw"
+        }
+      ],
+      "album": {
+        "name": "Flawsome",
+        "id": "MPREb_IMOCnhsRROY"
+      },
+      "year": "2019"
+    },
+    {
+      "videoId": "HzdD8kbDzZA",
+      "title": "Take on Me",
+      "length": "3:46",
+      "thumbnail": [
+        {
+          "url": "https://yt3.googleusercontent.com/8YZqnYRc52GUz0iyQTRZvzh8RSbCNTTC0NSrpRlKf8UfSyu87K7ziegM8aFfAyMgUXBisxT_weHb4pFE=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/8YZqnYRc52GUz0iyQTRZvzh8RSbCNTTC0NSrpRlKf8UfSyu87K7ziegM8aFfAyMgUXBisxT_weHb4pFE=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/8YZqnYRc52GUz0iyQTRZvzh8RSbCNTTC0NSrpRlKf8UfSyu87K7ziegM8aFfAyMgUXBisxT_weHb4pFE=w180-h180-l90-rj",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/8YZqnYRc52GUz0iyQTRZvzh8RSbCNTTC0NSrpRlKf8UfSyu87K7ziegM8aFfAyMgUXBisxT_weHb4pFE=w226-h226-l90-rj",
+          "width": 226,
+          "height": 226
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/8YZqnYRc52GUz0iyQTRZvzh8RSbCNTTC0NSrpRlKf8UfSyu87K7ziegM8aFfAyMgUXBisxT_weHb4pFE=w302-h302-l90-rj",
+          "width": 302,
+          "height": 302
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/8YZqnYRc52GUz0iyQTRZvzh8RSbCNTTC0NSrpRlKf8UfSyu87K7ziegM8aFfAyMgUXBisxT_weHb4pFE=w544-h544-l90-rj",
+          "width": 544,
+          "height": 544
+        }
+      ],
+      "likeStatus": null,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "inLibrary": false,
+      "feedbackTokens": null,
+      "pinnedToListenAgain": false,
+      "listenAgainFeedbackTokens": null,
+      "artists": [
+        {
+          "name": "a-ha",
+          "id": "UCx00XxqRCfPS6zaTzRm3H2A"
+        }
+      ],
+      "album": {
+        "name": "Hunting High and Low",
+        "id": "MPREb_5xYAryDnQqC"
+      },
+      "year": "1985"
+    }
+  ],
+  "playlistId": "RDAMPLOLAK5uy_l1U925dsiDi2DqlG-KCbODG6BaibpxbQE",
+  "lyrics": "MPLYt_HXQW9HZO5lA-2",
+  "related": "MPTRt_HXQW9HZO5lA-2"
+}

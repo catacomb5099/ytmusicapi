@@ -275,3 +275,58 @@ class TestSongDetailsRoute:
         resp = client.get("/v1/songs/MISSING/details")
         assert resp.status_code == 404
         assert len(fake.calls) == 1
+
+
+class TestRadioRoutes:
+    def test_song_seed_asks_for_one_extra_row(self, client_with):
+        client, fake = client_with(get_watch_playlist=lambda **k: _load("radio_song_watch"))
+        resp = client.get("/v1/radio/7CTJcHjkq0E", params={"limit": 5})
+        assert resp.status_code == 200
+        assert len(resp.json()["tracks"]) == 5
+        assert fake.calls == [("get_watch_playlist", (), {"videoId": "7CTJcHjkq0E", "limit": 6})]
+
+    def test_album_seed_plays_the_album_playlist_as_a_radio(self, client_with):
+        album = _load("radio_album_seed")
+        client, fake = client_with(
+            get_album=lambda *a, **k: album, get_watch_playlist=lambda **k: _load("radio_album_watch")
+        )
+        resp = client.get("/v1/radio/MPREb_abc")
+        assert resp.status_code == 200
+        assert resp.json()["title"] == album["title"]
+        assert fake.calls[0] == ("get_album", ("MPREb_abc",), {})
+        assert fake.calls[1][2]["playlistId"] == "RDAMPL" + album["audioPlaylistId"]
+
+    def test_playlist_seed_strips_vl(self, client_with):
+        client, fake = client_with(
+            get_playlist=lambda *a, **k: _load("radio_playlist_seed"),
+            get_watch_playlist=lambda **k: _load("radio_playlist_watch"),
+        )
+        resp = client.get("/v1/radio/VLPLabc123456789")
+        assert resp.status_code == 200
+        assert resp.json()["id"] == "VLPLabc123456789"
+        assert fake.calls[0] == ("get_playlist", ("PLabc123456789",), {"limit": 100})
+        assert fake.calls[1][2]["playlistId"] == "RDAMPLPLabc123456789"
+
+    def test_album_without_playlist_id_is_404(self, client_with):
+        client, _ = client_with(get_album=lambda *a, **k: {"title": "x"})
+        assert client.get("/v1/radio/MPREb_abc").status_code == 404
+
+    def test_no_radio_upstream_is_404(self, client_with):
+        def no_content(**_):
+            raise YTMusicServerError("No content returned by the server.\nEnsure you have access to RDAMVMx")
+
+        client, _ = client_with(get_watch_playlist=no_content)
+        resp = client.get("/v1/radio/zzzzzzzzzzz")
+        assert resp.status_code == 404
+        assert resp.json()["error"]["code"] == "not_found"
+
+    def test_other_upstream_error_is_502(self, client_with):
+        def boom(**_):
+            raise YTMusicServerError("Server returned HTTP 500: Internal Server Error.")
+
+        client, _ = client_with(get_watch_playlist=boom)
+        assert client.get("/v1/radio/zzzzzzzzzzz").status_code == 502
+
+    def test_limit_out_of_range_is_422(self, client_with):
+        client, _ = client_with()
+        assert client.get("/v1/radio/zzzzzzzzzzz", params={"limit": 0}).status_code == 422

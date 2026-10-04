@@ -1,0 +1,893 @@
+{
+  "owned": false,
+  "id": "PLAiErhOJQIk4dYgkNprVqeUZVshbw6-gf",
+  "privacy": "PUBLIC",
+  "description": null,
+  "views": 19,
+  "duration": "4+ hours",
+  "trackCount": 70,
+  "title": "indie chill",
+  "thumbnails": [
+    {
+      "url": "https://yt3.ggpht.com/JBfGcglZVqp4AEy0oZLK2A86CGrzK9u-E3UkD8SAqrDgD-TVM_Vn6MbE2loL8brwsG9F25J72Q=s192",
+      "width": 192,
+      "height": 192
+    },
+    {
+      "url": "https://yt3.ggpht.com/JBfGcglZVqp4AEy0oZLK2A86CGrzK9u-E3UkD8SAqrDgD-TVM_Vn6MbE2loL8brwsG9F25J72Q=s576",
+      "width": 576,
+      "height": 576
+    },
+    {
+      "url": "https://yt3.ggpht.com/JBfGcglZVqp4AEy0oZLK2A86CGrzK9u-E3UkD8SAqrDgD-TVM_Vn6MbE2loL8brwsG9F25J72Q=s1200",
+      "width": 1200,
+      "height": 1200
+    }
+  ],
+  "author": {
+    "name": "Leah Else",
+    "id": "UC7cFq69Pk0ORN5YA6g22UqA"
+  },
+  "year": "2022",
+  "related": [],
+  "tracks": [
+    {
+      "videoId": "NwFVSclD_uc",
+      "title": "I Love You So",
+      "artists": [
+        {
+          "name": "The Walters",
+          "id": "UCWXnGZRSAZJQ7JV7id5fufg"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/NwFVSclD_uc/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mmeZqf6IARuc9ztI9TZzDAWnwTgQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "2:41",
+      "duration_seconds": 161
+    },
+    {
+      "videoId": "SDTZ7iX4vTQ",
+      "title": "Pumped Up Kicks",
+      "artists": [
+        {
+          "name": "Foster The People",
+          "id": "UCIzEvQ6PlJ9XxeDrT9jEBTA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/SDTZ7iX4vTQ/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kRSTs__5UN-53HTFrNc1sSJ1TYxQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:16",
+      "duration_seconds": 256
+    },
+    {
+      "videoId": "9i2e3yVoS44",
+      "title": "Pool [Official Video]",
+      "artists": [
+        {
+          "name": "Still Woozy",
+          "id": "UCDlbcahRswIkTVRLEqPmF8A"
+        },
+        {
+          "name": "Remi Wolf",
+          "id": "UCm6dAIj2i3D0tOK5a-Wwy6Q"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/9i2e3yVoS44/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3nCUBeEBAGW4_WBoDVpntXMTqGSvg",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:47",
+      "duration_seconds": 227
+    },
+    {
+      "videoId": "uJ_1HMAGb4k",
+      "title": "Riptide",
+      "artists": [
+        {
+          "name": "Vance Joy",
+          "id": "UCwNoBkSn4w8l4olCKDCTplQ"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/uJ_1HMAGb4k/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mOAa--fwcPfWSTt0AvNIFWOz4UlA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:25",
+      "duration_seconds": 205
+    },
+    {
+      "videoId": "x-OzspEcQG8",
+      "title": "Ryd",
+      "artists": [
+        {
+          "name": "Steve Lacy",
+          "id": "UCju-DqP7JNtCnMWFXhLgPHQ"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/x-OzspEcQG8/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mNh6UTJFf0cozLl9KKlxVEmMj65A",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "6:09",
+      "duration_seconds": 369
+    },
+    {
+      "videoId": "MqcC3bYZs10",
+      "title": "The Tribe",
+      "artists": [
+        {
+          "name": "Jeff Mailfert",
+          "id": "UCeoR9LB2P0ThJS52Q_oSTvg"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/MqcC3bYZs10/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mB-fleo_IYyTb9UWxCcdjEEMUu5w",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:13",
+      "duration_seconds": 253
+    },
+    {
+      "videoId": "fJLQCf4mFP0",
+      "title": "Arctic Monkeys - I Wanna Be Yours",
+      "artists": [
+        {
+          "name": "Rodrigo Lima",
+          "id": "UCLbmMOELeSj0_gEIpuuIjzw"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/fJLQCf4mFP0/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kqF8D9rJVVxhaqJcyabSkYocNujw",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_UGC",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:05",
+      "duration_seconds": 185
+    },
+    {
+      "videoId": "wGF7PswOENQ",
+      "title": "The Night We Met",
+      "artists": [
+        {
+          "name": "Lord Huron",
+          "id": "UCHIqmk90GKurdVSG5cf-sFQ"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/wGF7PswOENQ/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3n211e9UDiJors87VpIrRBv0kw-Yg",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:29",
+      "duration_seconds": 209
+    },
+    {
+      "videoId": "GbDvg_ydRf8",
+      "title": "Neptune - Shiny Demise (Official Music Video)",
+      "artists": [
+        {
+          "name": "Neptune",
+          "id": "UCqTHM7Rzn7BKvgF5hDpf34Q"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/GbDvg_ydRf8/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kIKOUb0pDlNZheEA0sesHSC4F9EA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_UGC",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:04",
+      "duration_seconds": 244
+    },
+    {
+      "videoId": "RBtlPT23PTM",
+      "title": "Space Song",
+      "artists": [
+        {
+          "name": "Beach House",
+          "id": "UC785fnTclD2P2WQXRAt2BVg"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/RBtlPT23PTM/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3nuGTAyAZRBrTyrXaR7aFoGbRICRQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "5:21",
+      "duration_seconds": 321
+    },
+    {
+      "videoId": "Rb6Scz-5YOs",
+      "title": "Supalonely (feat. Gus Dapperton)",
+      "artists": [
+        {
+          "name": "BENEE",
+          "id": "UCBfIRqiUk_-57izXvbZPYlA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/Rb6Scz-5YOs/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mmjpYtjArsZiPDkRWAphtxgaX6BQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:41",
+      "duration_seconds": 221
+    },
+    {
+      "videoId": "2QXSnc_9OuU",
+      "title": "All I Ever Asked",
+      "artists": [
+        {
+          "name": "Rachel Chinouriri",
+          "id": "UCiZ0AtOgemlCINGbnUK54kw"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/2QXSnc_9OuU/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3nXvllHrj2XAMtkVilFLrV4N25EAA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:38",
+      "duration_seconds": 218
+    },
+    {
+      "videoId": "AzjMmwki1Fs",
+      "title": "You're Somebody Else (Official Video)",
+      "artists": [
+        {
+          "name": "flora cash",
+          "id": "UCLcdzadtYzkPRyCmvj96BDw"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/AzjMmwki1Fs/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kZseuNRFFVvNcIhpidu_1ejbZ0zQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:52",
+      "duration_seconds": 232
+    },
+    {
+      "videoId": "goWa6EzkCh4",
+      "title": "Where’s My Love (Alternate Version)",
+      "artists": [
+        {
+          "name": "SYML",
+          "id": "UCikqEzbWCBRKj00F_L3EFfg"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/goWa6EzkCh4/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3k7tAGbUBJ5Y_wPud_ebnQlh4NnMA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:13",
+      "duration_seconds": 253
+    },
+    {
+      "videoId": "N6vLhW_YlQM",
+      "title": "NW3 (Official Video)",
+      "artists": [
+        {
+          "name": "Bakar",
+          "id": "UCKShz2ERq6956VkE2O-ZUhA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/N6vLhW_YlQM/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3nnS7B9HzflAiziAQ-pb-CHcihoPw",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:13",
+      "duration_seconds": 253
+    },
+    {
+      "videoId": "mtf7hC17IBM",
+      "title": "All I Want (Part 1)",
+      "artists": [
+        {
+          "name": "Kodaline",
+          "id": "UC0cymQddFci7e31o7EIznYw"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/mtf7hC17IBM/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3lc2zSATJ9ca54jBGGabut_l_SaiQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "5:20",
+      "duration_seconds": 320
+    },
+    {
+      "videoId": "ssF-hrwAHHc",
+      "title": "Somebody Else",
+      "artists": [
+        {
+          "name": "The 1975",
+          "id": "UCNrTdctAV0JMT7RBQvpA5lw"
+        }
+      ],
+      "album": {
+        "name": "I like it when you sleep, for you are so beautiful yet so unaware of it",
+        "id": "MPREb_iqvr01F0NCF"
+      },
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "feedbackTokens": {
+        "add": null,
+        "remove": "AB9zfpJzhDN-mrponIg7eEaHiYOqLhZzqtYobB8-1ZDU3blat_dnId89aeIyHaNV57x8suqW9W1rS8S6MHOLe3cDoGjz2QlDoA"
+      },
+      "thumbnails": [
+        {
+          "url": "https://yt3.googleusercontent.com/mrqdZT-UuDInyOvtNoCFZMMUNVp9gAK-0npgEk83K9VvlpJHxXdYIrQ3q9o3UW6O5uuDj6mBiRHS1zRp=w60-h60-l90-rj",
+          "width": 60,
+          "height": 60
+        },
+        {
+          "url": "https://yt3.googleusercontent.com/mrqdZT-UuDInyOvtNoCFZMMUNVp9gAK-0npgEk83K9VvlpJHxXdYIrQ3q9o3UW6O5uuDj6mBiRHS1zRp=w120-h120-l90-rj",
+          "width": 120,
+          "height": 120
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": true,
+      "videoType": "MUSIC_VIDEO_TYPE_ATV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "5:48",
+      "duration_seconds": 348,
+      "creditsBrowseId": "MPTCssF-hrwAHHc"
+    },
+    {
+      "videoId": "7gj4KeNxLmA",
+      "title": "Don't Say Goodbye",
+      "artists": [
+        {
+          "name": "andrew reed & the liberation",
+          "id": "UCgOwr-77QpzwqAb8FIHRtAA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/7gj4KeNxLmA/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3nTWq4UmA8pzoZPLUWXjktQufQScA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:36",
+      "duration_seconds": 216
+    },
+    {
+      "videoId": "OqBuXQLR4Y8",
+      "title": "Best Friend",
+      "artists": [
+        {
+          "name": "Rex Orange County",
+          "id": "UCRI-Ds5eY70A4oeHggAFBbg"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/OqBuXQLR4Y8/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3m1C1M6WINRU9L1ZTprVbZaXfd9iw",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:23",
+      "duration_seconds": 263
+    },
+    {
+      "videoId": "sng_CdAAw8M",
+      "title": "Open",
+      "artists": [
+        {
+          "name": "Rhye",
+          "id": "UCO3bfi6sSorqa0p7Wu_s1DA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/sng_CdAAw8M/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kDGQTtEvRGGb76em2abisa0qlPVQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:28",
+      "duration_seconds": 268
+    },
+    {
+      "videoId": "0MMfH96Fb18",
+      "title": "Sour Switchblade",
+      "artists": [
+        {
+          "name": "Elita",
+          "id": "UCKyvnuPWIpYYhPKXSWpYTRw"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/0MMfH96Fb18/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mtkxPPFSExsXJGWQakoKeB7XxRqQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "2:27",
+      "duration_seconds": 147
+    },
+    {
+      "videoId": "Gqk7DocjQ3w",
+      "title": "Always Forever (Official Video)",
+      "artists": [
+        {
+          "name": "Cults",
+          "id": "UCeedwBSloWKEP_HNT5HDGWQ"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/Gqk7DocjQ3w/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kiL9aw-SfbIJLzo4Cmn3yj5JWEkQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:02",
+      "duration_seconds": 242
+    },
+    {
+      "videoId": "iggmiF7DNoM",
+      "title": "we fell in love in october",
+      "artists": [
+        {
+          "name": "Marie Ulven",
+          "id": "UCmNtyqQl03eWyvikCMbO3fA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/iggmiF7DNoM/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mbvpQpyCg_dh6wFV6qmog69x3WMg",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:08",
+      "duration_seconds": 188
+    },
+    {
+      "videoId": "yVRicZwPir8",
+      "title": "Alec",
+      "artists": [
+        {
+          "name": "Goldensuns",
+          "id": "UCJRs7JJOE6TAgRJK79tKRYw"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/yVRicZwPir8/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3llgcn48FNXW70AvgzHEOuRgwk3sA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:03",
+      "duration_seconds": 183
+    },
+    {
+      "videoId": "tG7wLK4aAOE",
+      "title": "YEAH RIGHT",
+      "artists": [
+        {
+          "name": "Joji",
+          "id": "UCXi-Rme73-wjVK5IE78a3SQ"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/tG7wLK4aAOE/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3k6llgpL6OWnk7oy_KmIlNyaz2vdA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "2:55",
+      "duration_seconds": 175
+    },
+    {
+      "videoId": "m-7nN2jT9Ok",
+      "title": "Pope Is a Rockstar",
+      "artists": [
+        {
+          "name": "SALES",
+          "id": "UCBMWt1VFr9su8Cx4TjSXklQ"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/m-7nN2jT9Ok/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3n5VMAqh9NXcoTFJWxQwQ3HoUSQXQ",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:04",
+      "duration_seconds": 184
+    },
+    {
+      "videoId": "q5OS-ANdq1Q",
+      "title": "Higher",
+      "artists": [
+        {
+          "name": "Haley Johnsen",
+          "id": "UCgsLnyNhf9S4V0GdJ7FKsxw"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/q5OS-ANdq1Q/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3nyGNcXvvGTJ8_afi-3RTGr0XylEg",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "3:14",
+      "duration_seconds": 194
+    },
+    {
+      "videoId": "hh1WeQxfCX0",
+      "title": "Can I Call You Tonight?",
+      "artists": [
+        {
+          "name": "Dayglow",
+          "id": "UCyMwUmEqTBsHjeQFnDBKaRA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/hh1WeQxfCX0/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3mOk6nzeLSFqO8Nq_qXj64BaWtPYA",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "5:00",
+      "duration_seconds": 300
+    },
+    {
+      "videoId": "eGReASgVM1Q",
+      "title": "It Wasn't Easy To Be Happy For You (Part 4 Of 10)",
+      "artists": [
+        {
+          "name": "The Lumineers",
+          "id": "UCMcghb8JhNIYntWea9QKFGA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/eGReASgVM1Q/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kiZEVMTybTyfVJHLJgukW9tNuzNg",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "4:10",
+      "duration_seconds": 250
+    },
+    {
+      "videoId": "L4sbDxR22z4",
+      "title": "K.",
+      "artists": [
+        {
+          "name": "Cigarettes After Sex",
+          "id": "UCIMuwfTAzgZ5Dg84TmYxYkA"
+        }
+      ],
+      "album": null,
+      "likeStatus": "INDIFFERENT",
+      "inLibrary": false,
+      "pinnedToListenAgain": false,
+      "thumbnails": [
+        {
+          "url": "https://i.ytimg.com/vi/L4sbDxR22z4/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3l60kQeo7cBl76869F_ItIdj5-GJg",
+          "width": 400,
+          "height": 225
+        }
+      ],
+      "isAvailable": true,
+      "isExplicit": false,
+      "videoType": "MUSIC_VIDEO_TYPE_OMV",
+      "views": null,
+      "communityVoteStatus": null,
+      "duration": "5:18",
+      "duration_seconds": 318
+    }
+  ],
+  "duration_seconds": 16716
+}

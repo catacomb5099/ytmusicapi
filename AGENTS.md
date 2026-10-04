@@ -94,6 +94,15 @@ hardcoded years/albumIds in the current mapper).
   above does not apply). Upstream only sets `itemCount` when the row subtitle literally reads
   `"N songs"`, which is rare (most rows show views), so `trackCount` is usually `None` on search
   results — point consumers at `/v1/playlists/{id}.trackCount` instead. Both shapes are recorded live in `tests/fixtures/search_item_playlist_*.json`. `filter="featured_playlists"` rows (YouTube Music's editorial playlists) share the list-row shape with `RDCLAK5uy_…` ids and author `"YouTube Music"`; `get_playlist` opens them like any playlist (verified live, `tests/fixtures/search_featured_playlists.json`).
+- **Radios (`/v1/radio`).** A song's radio is `get_watch_playlist(videoId=…)` (ytmusicapi fills in
+  `RDAMVM` + id); an album's or playlist's is `get_watch_playlist(playlistId="RDAMPL" + <OLAK…/PL…/RDCLAK…>)`.
+  ytmusicapi's `radio=True` flag looks like the obvious switch and is not: on an album or playlist id it
+  only replays the seed. `get_playlist()` cannot open any `RD…` radio id (KeyError → 404), so a radio is
+  never reachable through `/v1/playlists`. A radio is rebuilt on every call: measured 2026-10-04, the
+  same seed two minutes apart kept 18/25 (song), 7/25 (album) and 5/25 (playlist) of its songs; calls
+  in the same second agree. Consumers that show a radio and later act on it must store it. An unknown
+  video id answers `YTMusicServerError("No content returned by the server…")`, translated to 404 in
+  the radio router only. A radio started from a music-video (`OMV`) id comes back all music videos.
 - `limit` on ytmusicapi's own methods is a floor, not a ceiling. This adapter truncates to an exact
   count in the router/mapper layer — keep doing that so the API contract stays honest.
 
