@@ -77,7 +77,8 @@ hardcoded years/albumIds in the current mapper).
   `views` is populated on `get_album()` tracks and null on playlist tracks; `TrackDto` is shared,
   so null there is expected, not drift. `get_artist()` top songs also arrive with `views: None`, so
   `/v1/artists/{channelId}` fills them from each song's album (one `get_album` per distinct album,
-  in parallel, matched via `pick_album_track`). That is best-effort: an album that fails to load
+  in parallel, matched via `pick_album_track`, else the one album row with the same title via
+  `pick_album_track_by_title` -- Bicep "Glue" lists a third upload id). That is best-effort: an album that fails to load
   logs a warning and leaves its songs null; it never fails the artist response.
 - **Album-level `isExplicit` disagrees with its own tracks.** `good kid, m.A.A.d city` returns
   album `isExplicit: false` while all 14 tracks are `explicit: true`. It's mapped faithfully as

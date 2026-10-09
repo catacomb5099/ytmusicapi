@@ -309,6 +309,26 @@ class TestArtistDetailMapping:
         assert top_song_album_ids(mangled) == [] == top_song_album_ids({"songs": None})
         assert [t.views for t in map_artist_detail(mangled, "UC", {"x": album}).topSongs] == [None] * 3
 
+    def test_top_song_falls_back_to_the_album_row_with_the_same_title(self, load_fixture):
+        """Bicep "Glue": the artist page and the album row name different upload ids and no MPTC
+        link joins them, so the id match finds nothing; the same title on the same album does.
+        Two same-titled rows stay unmatched rather than guessing."""
+        raw = load_fixture("artist_detail")
+        morning_glory = "MPREb_PITqkpE6ExP"
+        by_title = {"tracks": [{"videoId": "OTHER", "title": "Wonderwall", "views": "1.7B plays"}]}
+        detail = map_artist_detail(raw, "UC", {morning_glory: by_title})
+        assert [t.views for t in detail.topSongs] == ["1.7B plays", None, None, None, None]
+        doubles = {"tracks": by_title["tracks"] + [{"videoId": "LIVE", "title": "Wonderwall", "views": "3M plays"}]}
+        assert map_artist_detail(raw, "UC", {morning_glory: doubles}).topSongs[0].views is None
+        # The id match still wins over a same-titled row when both are present.
+        both = {
+            "tracks": [
+                {"videoId": "OTHER", "title": "Wonderwall", "views": "1M plays"},
+                {"videoId": "hpSrLjc5SMs", "title": "Wonderwall", "views": "1.7B plays"},
+            ]
+        }
+        assert map_artist_detail(raw, "UC", {morning_glory: both}).topSongs[0].views == "1.7B plays"
+
     def test_artist_with_no_albums_bucket_returns_empty_list(self, load_fixture):
         raw = load_fixture("artist_detail_no_albums")
         detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])

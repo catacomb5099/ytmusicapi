@@ -265,7 +265,9 @@ def _map_top_song(raw: dict[str, Any], albums: dict[str, Any]) -> TrackDto:
     track = _map_track(raw)
     video_id = raw.get("videoId")
     if track.views is None and isinstance(video_id, str):
-        views = pick_album_track(albums.get(album_browse_id(raw) or ""), video_id).get("views")
+        album = albums.get(album_browse_id(raw) or "")
+        row = pick_album_track(album, video_id) or pick_album_track_by_title(album, track.title)
+        views = row.get("views")
         track.views = views if isinstance(views, str) else None
     return track
 
@@ -373,6 +375,17 @@ def pick_album_track(album_raw: Any, video_id: str) -> dict[str, Any]:
         ),
         {},
     )
+
+
+def pick_album_track_by_title(album_raw: Any, title: Any) -> dict[str, Any]:
+    """Fallback for a top song whose album row lists yet another upload id (Bicep "Glue": artist
+    page lXc8EHmFXOM, album row A7ZxRs45tTg, no MPTC link): the one row with the same title.
+    {} when none or several match -- two same-titled rows (live doubles) would be a guess."""
+    tracks = (album_raw or {}).get("tracks") if isinstance(album_raw, dict) else None
+    if not title or not isinstance(tracks, list):
+        return {}
+    rows = [t for t in tracks if isinstance(t, dict) and t.get("title") == title]
+    return rows[0] if len(rows) == 1 else {}
 
 
 def album_browse_id(watch_track: dict[str, Any]) -> str | None:
