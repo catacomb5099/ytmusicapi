@@ -18,6 +18,26 @@ logger = logging.getLogger(__name__)
 _ORDER_VALUES = {"Recency", "Popularity", "Alphabetical order"}
 
 
+# ytmusicapi's own default page; the artist page shows a scrolling row, so more is noise.
+ALL_ALBUMS_LIMIT = 100
+
+
+def _all_albums_or_none(client: YTMusicClient, artist_raw: dict[str, Any]) -> Any:
+    """get_artist()'s albums bucket is YouTube's artist-page shelf: ten releases, newest first, so
+    for an old act it is all reissues and EPs (Black Sabbath's shows no 'Paranoid'). The same
+    bucket carries `params` for the full discography, which YouTube can order by popularity."""
+    bucket = artist_raw.get("albums")
+    if not isinstance(bucket, dict) or not bucket.get("params"):
+        return None
+    try:
+        return client.call(
+            "get_artist_albums", bucket["browseId"], bucket["params"], limit=ALL_ALBUMS_LIMIT, order="Popularity"
+        )
+    except Exception as exc:  # noqa: BLE001 -- the artist-page shelf is a fine fallback
+        logger.warning("get_artist_albums for the full discography failed, keeping the page shelf: %r", exc)
+        return None
+
+
 def _album_or_none(client: YTMusicClient, album_id: str) -> Any:
     try:
         return client.call("get_album", album_id)
@@ -28,19 +48,22 @@ def _album_or_none(client: YTMusicClient, album_id: str) -> Any:
 
 @router.get("/{channel_id}", response_model=ArtistDetail)
 def get_artist(channel_id: str, client: YTMusicClient = Depends(get_ytmusic)) -> ArtistDetail:
-    """get_artist() plus one get_album per distinct album among the top songs (YouTube lists five
-    top songs, so up to five extra calls, run in parallel): top songs carry no play count, their
-    album's track rows do. Best-effort -- an album that fails to load leaves its songs' `views`
-    null and never fails the artist response."""
+    """get_artist(), plus in parallel: get_artist_albums() for the full discography by popularity
+    (replaces the ten-newest shelf in `albums`), and one get_album per distinct album among the
+    top songs (YouTube lists five, so up to five calls): top songs carry no play count, their
+    album's track rows do. All best-effort -- a failed call leaves the shelf as YouTube's page
+    shows it or a song's `views` null, and never fails the artist response."""
     raw = client.call("get_artist", channel_id)
     if not raw:
         raise NotFoundError(f"No artist found for channelId '{channel_id}'")
     album_ids = top_song_album_ids(raw)
     # The client's semaphore still bounds total upstream concurrency across requests.
     with ThreadPoolExecutor(max_workers=4) as pool:
+        all_albums = pool.submit(_all_albums_or_none, client, raw)
         found = pool.map(lambda album_id: _album_or_none(client, album_id), album_ids)
         albums = dict(zip(album_ids, found, strict=True))
-    return map_artist_detail(raw, requested_channel_id=channel_id, albums=albums)
+        all_albums = all_albums.result()
+    return map_artist_detail(raw, requested_channel_id=channel_id, albums=albums, all_albums=all_albums)
 
 
 @router.get("/{channel_id}/albums", response_model=list[AlbumStub])
