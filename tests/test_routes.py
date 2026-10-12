@@ -161,6 +161,40 @@ class TestArtistRoutes:
         assert [s["views"] for s in songs[1:]] == [None] * 4
         assert sorted(c[1][0] for c in fake.calls if c[0] == "get_album") == sorted(outcomes)
 
+    def test_get_artist_albums_are_the_full_discography_by_popularity(self, client_with):
+        """The page's own albums bucket is ten-newest-first; the response carries get_artist_albums()
+        asked for by popularity instead, resolved from the bucket's params."""
+        artist_raw = _load("artist_detail")
+        albums_raw = _load("artist_albums")
+        client, fake = client_with(
+            get_artist=lambda channel_id: artist_raw,
+            get_artist_albums=lambda browse_id, params, **kw: albums_raw,
+        )
+        resp = client.get("/v1/artists/UCEXAMPLE")
+        assert resp.status_code == 200
+        assert [a["browseId"] for a in resp.json()["albums"]] == [a["browseId"] for a in albums_raw]
+        (call,) = [c for c in fake.calls if c[0] == "get_artist_albums"]
+        assert call[1] == (artist_raw["albums"]["browseId"], artist_raw["albums"]["params"])
+        assert call[2] == {"limit": 100, "order": "Popularity"}
+
+    def test_get_artist_keeps_page_shelf_when_discography_fails(self, client_with):
+        artist_raw = _load("artist_detail")
+
+        def boom(*a, **k):
+            raise YTMusicServerError("Server returned HTTP 503")
+
+        client, _ = client_with(get_artist=lambda channel_id: artist_raw, get_artist_albums=boom)
+        resp = client.get("/v1/artists/UCEXAMPLE")
+        assert resp.status_code == 200
+        shelf = [a["browseId"] for a in artist_raw["albums"]["results"]]
+        assert [a["browseId"] for a in resp.json()["albums"]] == shelf
+
+    def test_get_artist_without_albums_params_asks_for_no_discography(self, client_with):
+        client, fake = client_with(get_artist=lambda channel_id: _load("artist_detail_no_albums"))
+        resp = client.get("/v1/artists/UCEXAMPLE")
+        assert resp.status_code == 200
+        assert "get_artist_albums" not in [c[0] for c in fake.calls]
+
     def test_get_artist_not_found(self, client_with):
         client, _ = client_with(get_artist=lambda channel_id: None)
         resp = client.get("/v1/artists/UCMISSING")
