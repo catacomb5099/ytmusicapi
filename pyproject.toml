@@ -3,6 +3,7 @@ name = "ytmusic-adapter"
 version = "0.1.0"
 description = "Stateless FastAPI adapter exposing ytmusicapi as a read-only JSON API"
 requires-python = ">=3.12"
+license = "AGPL-3.0-only"
 dependencies = [
     "fastapi>=0.115,<1",
     "uvicorn[standard]>=0.32,<1",
