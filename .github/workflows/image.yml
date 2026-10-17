@@ -1,16 +1,15 @@
 # Publishes this repo's Docker image to GitHub Packages: ghcr.io/${{ github.repository }}.
-#   push to move-fast-break-things -> :develop and :<next version>-develop.<run number>
-#                                     (the test channel: built on every change, may break)
-#   push of a tag like v1.2.3       -> :1.2.3, :1.2, :1 and :latest (stable)
-#   pull request                    -> builds for amd64 only and pushes nothing, so a broken
-#                                     Dockerfile shows up before it is merged
-# "Next version" is the version this project is working towards: `version` in pyproject.toml.
+#   push to master  -> :develop and :<version>-develop.<run number> (built on every change, may break)
+#   pull request    -> builds for amd64 only and pushes nothing, so a broken
+#                      Dockerfile shows up before it is merged
+# This repo has one branch and no stable releases: every image is a develop build. naviseerr's own
+# releases name the exact develop build they were tested with.
+# "Version" is the version this project is working towards: `version` in pyproject.toml.
 name: image
 
 on:
   push:
-    branches: [move-fast-break-things]
-    tags: ['v*.*.*']
+    branches: [master]
   pull_request:
 
 permissions:
@@ -50,12 +49,8 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           flavor: latest=false
           tags: |
-            type=raw,value=develop,enable=${{ github.ref == 'refs/heads/move-fast-break-things' }}
-            type=raw,value=${{ steps.version.outputs.version }}-develop.${{ github.run_number }},enable=${{ github.ref == 'refs/heads/move-fast-break-things' }}
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/v') }}
+            type=raw,value=develop,enable=${{ github.ref == 'refs/heads/master' }}
+            type=raw,value=${{ steps.version.outputs.version }}-develop.${{ github.run_number }},enable=${{ github.ref == 'refs/heads/master' }}
             type=ref,event=pr
 
       - uses: docker/build-push-action@v6
