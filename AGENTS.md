@@ -132,6 +132,14 @@ hardcoded years/albumIds in the current mapper).
   in the same second agree. Consumers that show a radio and later act on it must store it. An unknown
   video id answers `YTMusicServerError("No content returned by the server…")`, translated to 404 in
   the radio router only. A radio started from a music-video (`OMV`) id comes back all music videos.
+- **ytmusicapi decodes the body before it checks the status** (`_send_request`: `json.loads(response.text)`
+  first). A YouTube 429 or 403 with an HTML body therefore raises `json.JSONDecodeError`, never
+  `YTMusicServerError`, and reaches `app/errors.py` as "unreadable answer" (502), not as a rate limit.
+  The 429 branch only ever sees a JSON-bodied 429. Don't "fix" this by parsing the HTML.
+- **A `requests.ConnectionError` is not a timeout.** It covers DNS failure, refused, TLS, proxy and
+  connect timeout, and is answered 502 `upstream_unreachable` naming the chained cause's class;
+  only `ReadTimeout` (YouTube reached, slow) is 504 `upstream_timeout`. On 12-10-2026 both read
+  "Upstream request timed out" and a DNS failure inside the container was taken for a rate limit.
 - `limit` on ytmusicapi's own methods is a floor, not a ceiling. This adapter truncates to an exact
   count in the router/mapper layer — keep doing that so the API contract stays honest.
 

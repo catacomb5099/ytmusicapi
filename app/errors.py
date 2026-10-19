@@ -6,6 +6,7 @@ Raw upstream payloads are logged at ERROR, never returned in the body.
 
 from __future__ import annotations
 
+import json
 import logging
 import re
 
@@ -67,10 +68,35 @@ def register_exception_handlers(app: FastAPI) -> None:
         return JSONResponse(status_code=502, content=_envelope("upstream_error", "Upstream request failed"))
 
     @app.exception_handler(requests.exceptions.ReadTimeout)
-    @app.exception_handler(requests.exceptions.ConnectionError)
     def handle_timeout(_: Request, exc: Exception) -> JSONResponse:
-        logger.error("Upstream timeout/connection error: %s", exc)
+        logger.error("Upstream read timeout: %s", exc)
         return JSONResponse(status_code=504, content=_envelope("upstream_timeout", "Upstream request timed out"))
+
+    # DNS failure, connection refused, TLS, proxy, connect timeout: YouTube was never reached. Until
+    # 19-10-2026 this shared the 504 above and read "timed out" in every log, which sent a
+    # self-hoster looking for a slow YouTube when their container had no DNS. The class name is the
+    # one safe, useful word (NameResolutionError, ProxyError, SSLError); the text may hold a URL.
+    # requests chains urllib3's MaxRetryError, whose `reason` is the error that matters.
+    @app.exception_handler(requests.exceptions.ConnectionError)
+    def handle_unreachable(_: Request, exc: Exception) -> JSONResponse:
+        cause = exc.__cause__ or exc.__context__
+        cause = getattr(cause, "reason", None) or cause
+        kind = type(cause).__name__ if cause is not None else type(exc).__name__
+        logger.error("Could not reach YouTube Music (%s): %s", kind, exc)
+        return JSONResponse(
+            status_code=502,
+            content=_envelope("upstream_unreachable", f"Could not reach YouTube Music ({kind})"),
+        )
+
+    # ytmusicapi decodes the body before it looks at the status, so a non-JSON answer (an HTML
+    # "sorry" page, an empty body after a stall) surfaced as FastAPI's plain-text 500 until 19-10-2026.
+    @app.exception_handler(json.JSONDecodeError)
+    def handle_unreadable_answer(_: Request, exc: json.JSONDecodeError) -> JSONResponse:
+        logger.error("Upstream answer was not JSON: %s", exc)
+        return JSONResponse(
+            status_code=502,
+            content=_envelope("upstream_error", "YouTube Music sent an unreadable answer"),
+        )
 
     @app.exception_handler(YTMusicError)
     def handle_generic_ytmusic_error(_: Request, exc: YTMusicError) -> JSONResponse:
