@@ -13,3 +13,7 @@ class PlaylistDetail(BaseModel):
     durationSeconds: int | None = None
     thumbnailUrl: str | None = None
     tracks: list[TrackDto] = []
+    # YouTube Music's own wording with its noun ("6.9M views"), verbatim: user-made playlists only.
+    # None on YouTube Music's editorial playlists (which show no count), on radios, and when the
+    # header carries none. A display string, never a number (see AGENTS.md on play counts).
+    views: str | None = None

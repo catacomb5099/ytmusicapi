@@ -3,12 +3,47 @@ import logging
 import threading
 
 import requests
+import ytmusicapi.mixins.playlists as _ytm_playlists
 from ytmusicapi import YTMusic
 
 from app.config import settings
 from app.errors import NotFoundError
 
 logger = logging.getLogger(__name__)
+
+
+def _keep_playlist_views_text() -> None:
+    """Keep YouTube's own "6.9M views" beside ytmusicapi's lossy playlist header count.
+
+    ytmusicapi 1.12.2 reads a user playlist's header line ("6.9M views • 100 tracks • 6+ hours")
+    and stores `views = to_int("6.9M views")` = 69. The display string exists only in that raw
+    header, so this wraps the module-global the playlist mixin calls by name and adds `viewsText`:
+    the first run, verbatim, when the header has more than three runs; None otherwise, which is
+    what YouTube Music's own editorial playlists send ("51 songs • 4 hours"). This is the one place
+    outside mappers.py that reads a raw ytmusicapi dict. If the name ever vanishes from the library,
+    log and skip: a cosmetic number must never stop the adapter from starting.
+    """
+    original = getattr(_ytm_playlists, "parse_playlist_header_meta", None)
+    if original is None:
+        logger.warning("ytmusicapi has no parse_playlist_header_meta; playlist views will be null")
+        return
+    if hasattr(original, "__wrapped__"):
+        return  # already wrapped
+
+    @functools.wraps(original)
+    def with_views_text(header):
+        meta = original(header)
+        subtitle = header.get("secondSubtitle") if isinstance(header, dict) else None
+        runs = subtitle.get("runs") if isinstance(subtitle, dict) else None
+        first = runs[0] if isinstance(runs, list) and len(runs) > 3 else None
+        text = first.get("text") if isinstance(first, dict) else None
+        meta["viewsText"] = text if isinstance(text, str) else None
+        return meta
+
+    _ytm_playlists.parse_playlist_header_meta = with_views_text
+
+
+_keep_playlist_views_text()
 
 # ytmusicapi does not raise a typed "not found" error for an invalid/deleted id on these
 # methods -- YouTube serves a differently-shaped page and the library's own parser fails with
