@@ -182,6 +182,17 @@ class TestSearchItemMapping:
         assert map_search_item(mixed[0]).views is None
         assert map_search_item(load_fixture("search_item_mangled_song")).views is None
 
+    def test_playlist_rows_carry_youtubes_view_count_with_its_noun(self, load_fixture):
+        """A playlist row's `viewsText` ("375K views", kept by app.ytmusic_client's row-parser
+        wrapper) is the row's `views`; a row without one (editorial "51 songs", older library) is None."""
+        raw = next(i for i in load_fixture("search_mixed") if i["resultType"] == "playlist")
+        assert "viewsText" not in raw and map_search_item(raw).views is None
+        assert map_search_item({**raw, "viewsText": "375K views"}).views == "375K views"
+        assert map_search_item({**raw, "viewsText": None}).views is None
+        assert map_search_item({**raw, "viewsText": 375}).views is None
+        # the library's lossy int must never leak in through the shared key either
+        assert map_search_item({**raw, "views": 31}).views is None
+
     def test_limit_truncates_results(self, load_fixture):
         raw = load_fixture("search_mixed")
         assert len(raw) > 3

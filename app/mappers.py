@@ -152,6 +152,7 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
     title = raw.get("title")
     artists = _map_artists(raw.get("artists"))
     track_count: int | None = None
+    views = raw.get("views")  # songs/videos: YouTube's bare "7.2M"
 
     if result_type == "artist":
         # A plain "Top result" artist card omits browseId/artist entirely and carries
@@ -186,6 +187,9 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         # when capped, or None -- never an abbreviated "2.2B"-style string -- so _to_int is
         # safe here (see AGENTS.md on display strings).
         track_count = _to_int(raw.get("itemCount"))
+        # Playlist rows: YouTube's own "375K views" (noun and all), kept by app.ytmusic_client's
+        # row-parser wrapper; None when the row shows a song count instead (editorial playlists).
+        views = raw.get("viewsText") if isinstance(raw.get("viewsText"), str) else None
 
     return SearchResultItem(
         type=result_type,
@@ -200,7 +204,7 @@ def map_search_item(raw: dict[str, Any]) -> SearchResultItem:
         explicit=raw.get("isExplicit"),
         year=_to_int(raw.get("year")),
         trackCount=track_count,
-        views=raw.get("views"),
+        views=views,
     )
 
 

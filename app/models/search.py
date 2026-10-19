@@ -16,8 +16,11 @@ class SearchResultItem(BaseModel):
     explicit: bool | None = None
     year: int | None = None
     trackCount: int | None = None
-    # YouTube's abbreviated play count without a noun ("7.2M"), kept verbatim like TrackDto.views.
-    # Songs and videos only; null on the "Top result" card and on albums/artists/playlists.
+    # Kept verbatim like TrackDto.views, never a number. Songs and videos: YouTube's abbreviated play
+    # count without a noun ("7.2M"). Playlists: how often the playlist itself was viewed, in YouTube
+    # Music's own wording with its noun ("375K views"), user-made playlists only (YouTube Music's own
+    # editorial playlists show a song count there instead). Null on the "Top result" card and on
+    # albums and artists.
     views: str | None = None
 
 

@@ -74,7 +74,7 @@ hardcoded years/albumIds in the current mapper).
   fallback thinking it's dead code.
 - **Play counts and listener stats are display strings, not numbers.** `views` on album tracks
   (`"2.2B plays"`), `views` on song/video search results (`"7.2M"`, no noun; null on the mixed
-  search's "Top result" card), `monthlyListeners` (`"181M"`), `subscribers` (`"20.3M"`) and artist
+  search's "Top result" card), `views` on playlist search rows (`"375K views"`, noun kept), `monthlyListeners` (`"181M"`), `subscribers` (`"20.3M"`) and artist
   `views` (`"12,715,572,299 views"`) are already abbreviated/formatted upstream. They are mapped verbatim
   as `str`. Do NOT route them through `_to_int()` — it strips non-digits, so `"2.2B plays"` becomes
   `22`. The only exact integer available is `viewCount` from `get_song()` (on `SongMetadata` and
@@ -114,7 +114,15 @@ hardcoded years/albumIds in the current mapper).
   `_to_int` handles all three (it is never an abbreviated `"2.2B"`-style string, so the warning
   above does not apply). Upstream only sets `itemCount` when the row subtitle literally reads
   `"N songs"`, which is rare (most rows show views), so `trackCount` is usually `None` on search
-  results — point consumers at `/v1/playlists/{id}.trackCount` instead. Both shapes are recorded live in `tests/fixtures/search_item_playlist_*.json`. `filter="featured_playlists"` rows (YouTube Music's editorial playlists) share the list-row shape with `RDCLAK5uy_…` ids and author `"YouTube Music"`; `get_playlist` opens them like any playlist (verified live, `tests/fixtures/search_featured_playlists.json`).
+  results — point consumers at `/v1/playlists/{id}.trackCount` instead. The view count those rows
+  show instead ("375K views", the last subtitle run) is what ytmusicapi drops: `app/ytmusic_client.py`
+  wraps `ytmusicapi.parsers.search.parse_search_result` (the second library wrap, same shape as the
+  header one) and adds `viewsText` to playlist rows, which `map_search_item` exposes as
+  `SearchResultItem.views` with its noun kept. A row shows a view count or a song count, never both
+  (measured 19-10-2026 on 80 rows: user-made rows "375K views", editorial rows "51 songs"), so a
+  row whose last run is `"N songs"` keeps `viewsText` None; that English test is the library's own
+  `itemCount` test, so with another `YTM_LANGUAGE` an editorial row's "51 Titel" would come through
+  as the count YouTube shows there. Raw row shape in `tests/fixtures/search_raw_row_playlist_mixed.json`. Both shapes are recorded live in `tests/fixtures/search_item_playlist_*.json`. `filter="featured_playlists"` rows (YouTube Music's editorial playlists) share the list-row shape with `RDCLAK5uy_…` ids and author `"YouTube Music"`; `get_playlist` opens them like any playlist (verified live, `tests/fixtures/search_featured_playlists.json`).
 - **Radios (`/v1/radio`).** A song's radio is `get_watch_playlist(videoId=…)` (ytmusicapi fills in
   `RDAMVM` + id); an album's or playlist's is `get_watch_playlist(playlistId="RDAMPL" + <OLAK…/PL…/RDCLAK…>)`.
   ytmusicapi's `radio=True` flag looks like the obvious switch and is not: on an album or playlist id it

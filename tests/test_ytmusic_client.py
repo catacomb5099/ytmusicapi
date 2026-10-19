@@ -4,9 +4,14 @@ from unittest.mock import MagicMock
 
 import pytest
 from ytmusicapi.mixins import playlists as ytm_playlists
+from ytmusicapi.parsers import search as ytm_search
 
 from app.errors import NotFoundError
-from app.ytmusic_client import YTMusicClient, _keep_playlist_views_text
+from app.ytmusic_client import (
+    YTMusicClient,
+    _keep_playlist_row_views_text,
+    _keep_playlist_views_text,
+)
 
 
 def _client_with_mocked_instance(instance: MagicMock) -> YTMusicClient:
@@ -106,3 +111,67 @@ class TestPlaylistViewsText:
         with caplog.at_level(logging.WARNING):
             _keep_playlist_views_text()
         assert "playlist views will be null" in caplog.text
+
+
+class TestPlaylistRowViewsText:
+    """Importing app.ytmusic_client also wraps ytmusicapi's search ROW parser so a playlist row's
+    "375K views" survives (the library keeps only the "N songs" form, as itemCount)."""
+
+    @staticmethod
+    def _filtered(raw: dict) -> dict:
+        # The same row as a community_playlists search sends it: "author • count", no "Playlist" run.
+        runs = raw["flexColumns"][1]["musicResponsiveListItemFlexColumnRenderer"]["text"]["runs"][2:]
+        column = {"musicResponsiveListItemFlexColumnRenderer": {"text": {"runs": runs}}}
+        return {**raw, "flexColumns": [raw["flexColumns"][0], column]}
+
+    @staticmethod
+    def _with_last_run(raw: dict, text: str) -> dict:
+        import copy
+
+        row = copy.deepcopy(raw)
+        row["flexColumns"][1]["musicResponsiveListItemFlexColumnRenderer"]["text"]["runs"][-1] = {"text": text}
+        return row
+
+    def test_mixed_row_keeps_youtubes_wording(self, load_fixture):
+        raw = load_fixture("search_raw_row_playlist_mixed")  # "Playlist • Cristian Torres • 3.1M views"
+        row = ytm_search.parse_search_result(raw, None, None)
+        assert row["viewsText"] == "3.1M views"
+        assert (row["resultType"], row["author"], row["itemCount"]) == ("playlist", "Cristian Torres", None)
+
+    def test_filtered_row_keeps_youtubes_wording(self, load_fixture):
+        raw = self._filtered(load_fixture("search_raw_row_playlist_mixed"))  # "Cristian Torres • 3.1M views"
+        row = ytm_search.parse_search_result(raw, "playlist", "Community playlists")
+        assert row["viewsText"] == "3.1M views"
+        assert row["author"] == "Cristian Torres"
+
+    def test_song_count_row_is_not_a_view_count(self, load_fixture):
+        raw = load_fixture("search_raw_row_playlist_mixed")
+        # YouTube Music's own playlists show "51 songs" in that slot; the library's itemCount owns it
+        assert ytm_search.parse_search_result(self._with_last_run(raw, "51 songs"), None, None)["viewsText"] is None
+        filtered = self._filtered(self._with_last_run(raw, "214 songs"))
+        row = ytm_search.parse_search_result(filtered, "playlist", "Community playlists")
+        assert (row["viewsText"], row["itemCount"]) == (None, 214)
+        assert ytm_search.parse_search_result(self._with_last_run(raw, "1 song"), None, None)["viewsText"] is None
+
+    def test_row_without_the_count_run_gives_none_not_an_error(self, load_fixture):
+        raw = load_fixture("search_raw_row_playlist_mixed")
+        runs = raw["flexColumns"][1]["musicResponsiveListItemFlexColumnRenderer"]["text"]["runs"]
+        short = {**raw, "flexColumns": [raw["flexColumns"][0], {"musicResponsiveListItemFlexColumnRenderer": {"text": {"runs": runs[:3]}}}]}
+        # "Playlist • author" on a mixed row: the library's has_author test fails, so nothing is read
+        assert ytm_search.parse_search_result(short, None, None)["viewsText"] is None
+        assert ytm_search.parse_search_result(self._with_last_run(raw, "  "), None, None)["viewsText"] is None
+
+    def test_non_playlist_rows_are_left_alone(self, load_fixture):
+        raw = load_fixture("search_raw_row_playlist_mixed")
+        album = {**raw, "navigationEndpoint": {"browseEndpoint": {"browseId": "MPREb_Hl8XJR59OrY"}}}
+        assert "viewsText" not in ytm_search.parse_search_result(album, None, None)
+
+    def test_wrapping_twice_wraps_once(self):
+        _keep_playlist_row_views_text()
+        assert not hasattr(ytm_search.parse_search_result.__wrapped__, "__wrapped__")
+
+    def test_missing_library_internal_logs_and_skips_instead_of_failing_startup(self, monkeypatch, caplog):
+        monkeypatch.delattr(ytm_search, "parse_search_result")
+        with caplog.at_level(logging.WARNING):
+            _keep_playlist_row_views_text()
+        assert "playlist search rows' views will be null" in caplog.text
