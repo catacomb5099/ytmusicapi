@@ -381,6 +381,13 @@ class TestPlaylistDetailMapping:
         assert track.albumName is None
         assert track.artists == []
 
+    def test_views_is_youtubes_display_string_never_the_lossy_int(self, load_fixture):
+        raw = load_fixture("playlist_detail")
+        assert raw["views"] == 21  # ytmusicapi's to_int("2.1M views"): lossy, must never reach the wire
+        assert map_playlist_detail(raw).views == raw["viewsText"] == "2.1M views"
+        assert map_playlist_detail({**raw, "viewsText": None}).views is None
+        assert map_playlist_detail(load_fixture("playlist_detail_mangled")).views is None
+
 
 class TestSongMetadataMapping:
     def test_never_exposes_streaming_data(self, load_fixture):
@@ -532,6 +539,7 @@ class TestRadioMapping:
         assert radio.title == playlist["title"]
         assert radio.author.name == playlist["author"]["name"]
         assert radio.tracks and all(t.videoId for t in radio.tracks)
+        assert radio.views is None  # a radio is naviseerr's own list; YouTube shows no count for it
 
     def test_limit_is_exact(self, load_fixture):
         radio = map_radio("PLx", load_fixture("radio_playlist_seed"), load_fixture("radio_playlist_watch"), limit=3)

@@ -22,7 +22,9 @@ hardcoded years/albumIds in the current mapper).
   that way even if you're tempted to expose more of `get_song()`'s payload.
 - **`mappers.py` is the only file that reads raw ytmusicapi dicts.** Every field access there must
   coalesce a missing/malformed key to a safe default rather than raise. If you add a new detail
-  lookup, add its mapper here, not inline in a router.
+  lookup, add its mapper here, not inline in a router. One exception: the
+  `parse_playlist_header_meta` wrapper in `ytmusic_client.py`, which reads a playlist header before
+  the library discards its view-count string; see the play-counts bullet below.
 - **No new dependencies without a reason.** No Redis, no DB driver, no resilience library. The
   service is stateless by design; caching lives on naviseerr's side, not here.
 
@@ -85,6 +87,16 @@ hardcoded years/albumIds in the current mapper).
   in parallel, matched via `pick_album_track`, else the one album row with the same title via
   `pick_album_track_by_title` -- Bicep "Glue" lists a third upload id). That is best-effort: an album that fails to load
   logs a warning and leaves its songs null; it never fails the artist response.
+  **A playlist's own view count is the worst case of this:** `get_playlist()["views"]` is
+  `to_int("6.9M views")` = 69 (ytmusicapi 1.12.2 `parsers/playlists.py`), lossy and never exposed.
+  `app/ytmusic_client.py` wraps `ytmusicapi.mixins.playlists.parse_playlist_header_meta` once at
+  import so the raw header's first run survives as `viewsText`, which `map_playlist_detail` exposes
+  as `PlaylistDetail.views` (`"6.9M views"`, verbatim, localised by `YTM_LANGUAGE`). YouTube Music's
+  own editorial playlists (`RDCLAK5uy_…`) have no count in their header (3 runs, not 5), so `views`
+  is None there; radios (`map_radio`) never set it. That wrapper is the one place outside
+  `mappers.py` that reads a raw ytmusicapi dict (a header, before the library discards the string);
+  if a library bump drops the name it logs a WARN and skips, so `views` goes null and startup is
+  unaffected. Upstream `main` still has the same lossy line, so do not expect a bump to fix it.
 - **Album-level `isExplicit` disagrees with its own tracks.** `good kid, m.A.A.d city` returns
   album `isExplicit: false` while all 14 tracks are `explicit: true`. It's mapped faithfully as
   `AlbumDetail.explicit`, but don't render it as a badge — prefer the per-track flag.

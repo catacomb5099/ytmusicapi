@@ -128,6 +128,8 @@ class TestSearchContract:
 
         detail = map_playlist_detail(playlist)
         assert detail.tracks
+        # the wrapped header parser: YouTube's own display string in YTM_LANGUAGE, or nothing (editorial)
+        assert detail.views is None or (isinstance(detail.views, str) and detail.views.strip())
 
     def test_top_result_playlist_card_shape(self, yt):
         results = yt.search("Indie Rock Essentials", limit=20)

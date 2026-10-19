@@ -334,6 +334,9 @@ def map_playlist_detail(raw: dict[str, Any]) -> PlaylistDetail:
         durationSeconds=_to_int(raw.get("duration_seconds")),
         thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
         tracks=_map_tracks(raw.get("tracks")),
+        # raw["views"] is ytmusicapi's to_int("2.1M views") = 21: lossy, never exposed. `viewsText`
+        # is YouTube's own display string, kept by app.ytmusic_client's header-parser wrapper.
+        views=raw.get("viewsText") if isinstance(raw.get("viewsText"), str) else None,
     )
 
 
