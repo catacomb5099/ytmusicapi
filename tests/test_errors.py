@@ -1,3 +1,5 @@
+import json
+
 import requests
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
@@ -76,10 +78,43 @@ class TestErrorMapping:
         resp = client.get("/boom")
         assert resp.status_code == 504
 
-    def test_connection_error_maps_to_504(self):
+    def test_connection_error_maps_to_502_naming_the_cause(self):
         client = TestClient(_app_raising(requests.exceptions.ConnectionError("connection refused")))
         resp = client.get("/boom")
-        assert resp.status_code == 504
+        assert resp.status_code == 502
+        assert resp.json()["error"] == {
+            "code": "upstream_unreachable",
+            "message": "Could not reach YouTube Music (ConnectionError)",
+        }
+
+    def test_connection_error_names_the_underlying_class(self):
+        # requests chains urllib3's cause (NameResolutionError for DNS, ProxyError, SSLError...):
+        # that name, never the text, which can hold the URL that failed.
+        try:
+            raise requests.exceptions.ConnectionError("HTTPSConnectionPool(host='music.youtube.com')") from OSError(
+                "[Errno 8] nodename nor servname provided"
+            )
+        except requests.exceptions.ConnectionError as chained:
+            exc = chained
+        client = TestClient(_app_raising(exc))
+        resp = client.get("/boom")
+        assert resp.status_code == 502
+        assert resp.json()["error"]["message"] == "Could not reach YouTube Music (OSError)"
+
+    def test_connect_timeout_is_unreachable_not_timed_out(self):
+        client = TestClient(_app_raising(requests.exceptions.ConnectTimeout("connect timed out")))
+        resp = client.get("/boom")
+        assert resp.status_code == 502
+        assert resp.json()["error"]["code"] == "upstream_unreachable"
+
+    def test_non_json_upstream_answer_maps_to_502(self):
+        client = TestClient(_app_raising(json.JSONDecodeError("Expecting value", "<html>", 0)))
+        resp = client.get("/boom")
+        assert resp.status_code == 502
+        assert resp.json()["error"] == {
+            "code": "upstream_error",
+            "message": "YouTube Music sent an unreadable answer",
+        }
 
     def test_generic_ytmusic_error_maps_to_502(self):
         client = TestClient(_app_raising(YTMusicError("unclassified failure")))

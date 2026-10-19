@@ -65,7 +65,9 @@ Every error response is `{"error": {"code": "<slug>", "message": "<safe text>"}}
 | Entity not found (unknown/deleted browseId, videoId, playlistId) | 404 |
 | Upstream 400/401/403 (YouTube bot detection) or 5xx | 502 |
 | Upstream 429 | 429, with `Retry-After` |
-| Upstream timeout / connection failure | 504 |
+| Upstream read timeout (YouTube took longer than `YTM_TIMEOUT_SECONDS`) | 504 `upstream_timeout` |
+| YouTube never reached (DNS, connection refused, TLS, proxy, connect timeout) | 502 `upstream_unreachable`, the message naming the exception class (`NameResolutionError`, `ProxyError`...) |
+| Upstream answer that is not JSON (an HTML block page, an empty body) | 502 `upstream_error` "YouTube Music sent an unreadable answer" |
 | Unrecognized upstream response shape (parser drift) | 502 |
 
 **A note on 404 vs 502 for browse pages**: `get_album`/`get_artist`/`get_playlist` don't return
