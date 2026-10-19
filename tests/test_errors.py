@@ -1,6 +1,7 @@
 import json
 
 import requests
+import urllib3
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from ytmusicapi.exceptions import (
@@ -100,6 +101,21 @@ class TestErrorMapping:
         resp = client.get("/boom")
         assert resp.status_code == 502
         assert resp.json()["error"]["message"] == "Could not reach YouTube Music (OSError)"
+
+    def test_connection_error_names_the_reason_inside_urllib3s_max_retry_error(self):
+        # The real chain: requests.ConnectionError <- urllib3 MaxRetryError(reason=ProxyError /
+        # NameResolutionError / NewConnectionError). The reason is the word worth logging.
+        reason = urllib3.exceptions.ProxyError("Unable to connect to proxy", OSError(61, "Connection refused"))
+        try:
+            raise requests.exceptions.ConnectionError("Max retries exceeded") from urllib3.exceptions.MaxRetryError(
+                None, "https://music.youtube.com/", reason
+            )
+        except requests.exceptions.ConnectionError as chained:
+            exc = chained
+        client = TestClient(_app_raising(exc))
+        resp = client.get("/boom")
+        assert resp.status_code == 502
+        assert resp.json()["error"]["message"] == "Could not reach YouTube Music (ProxyError)"
 
     def test_connect_timeout_is_unreachable_not_timed_out(self):
         client = TestClient(_app_raising(requests.exceptions.ConnectTimeout("connect timed out")))

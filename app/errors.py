@@ -76,9 +76,11 @@ def register_exception_handlers(app: FastAPI) -> None:
     # 19-10-2026 this shared the 504 above and read "timed out" in every log, which sent a
     # self-hoster looking for a slow YouTube when their container had no DNS. The class name is the
     # one safe, useful word (NameResolutionError, ProxyError, SSLError); the text may hold a URL.
+    # requests chains urllib3's MaxRetryError, whose `reason` is the error that matters.
     @app.exception_handler(requests.exceptions.ConnectionError)
     def handle_unreachable(_: Request, exc: Exception) -> JSONResponse:
         cause = exc.__cause__ or exc.__context__
+        cause = getattr(cause, "reason", None) or cause
         kind = type(cause).__name__ if cause is not None else type(exc).__name__
         logger.error("Could not reach YouTube Music (%s): %s", kind, exc)
         return JSONResponse(
