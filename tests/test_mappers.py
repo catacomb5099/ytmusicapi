@@ -383,7 +383,7 @@ class TestPlaylistDetailMapping:
 
     def test_views_is_youtubes_display_string_never_the_lossy_int(self, load_fixture):
         raw = load_fixture("playlist_detail")
-        assert raw["views"] == 17  # ytmusicapi's to_int("2.1M views"); must never reach the wire
+        assert raw["views"] == 21  # ytmusicapi's to_int("2.1M views"): lossy, must never reach the wire
         assert map_playlist_detail(raw).views == raw["viewsText"] == "2.1M views"
         assert map_playlist_detail({**raw, "viewsText": None}).views is None
         assert map_playlist_detail(load_fixture("playlist_detail_mangled")).views is None

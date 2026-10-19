@@ -20,9 +20,11 @@ hardcoded years/albumIds in the current mapper).
 - **No playback/streaming surface.** `get_song()`'s `streamingData`/`playabilityStatus` must never
   be read by a mapper or reach a response. `map_song_metadata()` only reads `videoDetails`; keep it
   that way even if you're tempted to expose more of `get_song()`'s payload.
-- **`mappers.py` is the only file that reads raw ytmusicapi dicts.** (One exception: the `parse_playlist_header_meta` wrapper in `ytmusic_client.py`, which reads a playlist header before the library discards its view-count string; see the play-counts bullet below.) Every field access there must
+- **`mappers.py` is the only file that reads raw ytmusicapi dicts.** Every field access there must
   coalesce a missing/malformed key to a safe default rather than raise. If you add a new detail
-  lookup, add its mapper here, not inline in a router.
+  lookup, add its mapper here, not inline in a router. One exception: the
+  `parse_playlist_header_meta` wrapper in `ytmusic_client.py`, which reads a playlist header before
+  the library discards its view-count string; see the play-counts bullet below.
 - **No new dependencies without a reason.** No Redis, no DB driver, no resilience library. The
   service is stateless by design; caching lives on naviseerr's side, not here.
 

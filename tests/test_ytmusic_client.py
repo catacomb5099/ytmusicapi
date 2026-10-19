@@ -1,3 +1,4 @@
+import functools
 import logging
 from unittest.mock import MagicMock
 
@@ -90,6 +91,15 @@ class TestPlaylistViewsText:
     def test_wrapping_twice_wraps_once(self):
         _keep_playlist_views_text()
         assert not hasattr(ytm_playlists.parse_playlist_header_meta.__wrapped__, "__wrapped__")
+
+    def test_wraps_a_library_parser_that_is_itself_decorated(self, monkeypatch):
+        # a future ytmusicapi may decorate the parser (functools.wraps sets __wrapped__): still ours to wrap
+        inner = ytm_playlists.parse_playlist_header_meta.__wrapped__
+        library = functools.wraps(inner)(lambda header: inner(header))
+        monkeypatch.setattr(ytm_playlists, "parse_playlist_header_meta", library)
+        _keep_playlist_views_text()
+        header = self._header("6.9M views", " • ", "100 tracks", " • ", "6+ hours")
+        assert ytm_playlists.parse_playlist_header_meta(header)["viewsText"] == "6.9M views"
 
     def test_missing_library_internal_logs_and_skips_instead_of_failing_startup(self, monkeypatch, caplog):
         monkeypatch.delattr(ytm_playlists, "parse_playlist_header_meta")

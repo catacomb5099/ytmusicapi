@@ -27,8 +27,8 @@ def _keep_playlist_views_text() -> None:
     if original is None:
         logger.warning("ytmusicapi has no parse_playlist_header_meta; playlist views will be null")
         return
-    if hasattr(original, "__wrapped__"):
-        return  # already wrapped
+    if getattr(original, "_keeps_views_text", False):
+        return  # already wrapped (any other __wrapped__ is the library's own decorator: wrap it)
 
     @functools.wraps(original)
     def with_views_text(header):
@@ -40,6 +40,7 @@ def _keep_playlist_views_text() -> None:
         meta["viewsText"] = text if isinstance(text, str) else None
         return meta
 
+    with_views_text._keeps_views_text = True  # type: ignore[attr-defined]
     _ytm_playlists.parse_playlist_header_meta = with_views_text
 
 
