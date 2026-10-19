@@ -120,6 +120,10 @@ class TestSearchContract:
         # map_search_item folds these into artists/trackCount -- a shape change here is drift
         assert isinstance(results[0].get("author"), (str, type(None)))
         assert isinstance(results[0].get("itemCount"), (int, str, type(None)))
+        # the wrapped row parser: YouTube's own "375K views" in YTM_LANGUAGE, or nothing ("N songs" rows)
+        views_text = results[0].get("viewsText")
+        assert views_text is None or (isinstance(views_text, str) and views_text.strip())
+        assert not (views_text and results[0].get("itemCount")), "a row shows a view count or a song count, never both"
 
         playlist = yt.get_playlist(bare_id, limit=25)
         assert playlist.get("tracks")

@@ -1,0 +1,56 @@
+{
+  "flexColumns": [
+    {
+      "musicResponsiveListItemFlexColumnRenderer": {
+        "text": {
+          "runs": [
+            {
+              "text": "OASIS - GREATEST HITS / THE VERY BEST OF OASIS"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "musicResponsiveListItemFlexColumnRenderer": {
+        "text": {
+          "runs": [
+            {
+              "text": "Playlist"
+            },
+            {
+              "text": " • "
+            },
+            {
+              "text": "Cristian Torres"
+            },
+            {
+              "text": " • "
+            },
+            {
+              "text": "3.1M views"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "navigationEndpoint": {
+    "browseEndpoint": {
+      "browseId": "VLPL6tShteYHSkv4QvZI5KpnLuiuL06iekUl"
+    }
+  },
+  "thumbnail": {
+    "musicThumbnailRenderer": {
+      "thumbnail": {
+        "thumbnails": [
+          {
+            "url": "https://i.ytimg.com/vi/E5DlBU0A61c/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3kIjrSixxzQ4VoHLlXE8OFG-F9Ezg",
+            "width": 400,
+            "height": 225
+          }
+        ]
+      }
+    }
+  }
+}

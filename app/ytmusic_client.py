@@ -4,6 +4,7 @@ import threading
 
 import requests
 import ytmusicapi.mixins.playlists as _ytm_playlists
+import ytmusicapi.parsers.search as _ytm_search
 from ytmusicapi import YTMusic
 
 from app.config import settings
@@ -44,7 +45,58 @@ def _keep_playlist_views_text() -> None:
     _ytm_playlists.parse_playlist_header_meta = with_views_text
 
 
+def _keep_playlist_row_views_text() -> None:
+    """Keep YouTube's own "375K views" on playlist SEARCH ROWS, which ytmusicapi reads past.
+
+    A playlist row's subtitle ends in one count run: "375K views" on a user-made playlist, "51 songs"
+    on one of YouTube Music's own ("Playlist • author • count" on a mixed search, "author • count"
+    on a filtered one). ytmusicapi 1.12.2 keeps only the "N songs" form (as `itemCount`) and drops
+    a view count on the floor. This wraps the row parser `parse_search_results` calls by name and
+    adds `viewsText`: the count run verbatim when the row has an author and the run is not a song
+    count, None otherwise. The author/offset arithmetic is the library's own (`default_offset` and
+    `has_author` in parsers/search.py), so an author name is never mistaken for a count. Same
+    safety net as `_keep_playlist_views_text`: log and skip if the name is gone.
+    """
+    original = getattr(_ytm_search, "parse_search_result", None)
+    if original is None:
+        logger.warning("ytmusicapi has no parse_search_result; playlist search rows' views will be null")
+        return
+    if getattr(original, "_keeps_views_text", False):
+        return
+
+    @functools.wraps(original)
+    def with_views_text(data, result_type=None, category=None):
+        result = original(data, result_type, category)
+        if isinstance(result, dict) and result.get("resultType") == "playlist":
+            offset = (not result_type or result_type == "album") * 2  # ytmusicapi's default_offset
+            result["viewsText"] = _row_count_text(data, offset)
+        return result
+
+    with_views_text._keeps_views_text = True  # type: ignore[attr-defined]
+    _ytm_search.parse_search_result = with_views_text
+
+
+def _row_count_text(data, offset: int) -> str | None:
+    """The trailing count run of a playlist row's subtitle, unless it is the song count."""
+    try:
+        runs = data["flexColumns"][1]["musicResponsiveListItemFlexColumnRenderer"]["text"]["runs"]
+    except (KeyError, IndexError, TypeError):
+        return None
+    if not isinstance(runs, list) or len(runs) != offset + 3:  # the library's has_author test
+        return None
+    text = runs[-1].get("text") if isinstance(runs[-1], dict) else None
+    if not isinstance(text, str) or not text.strip():
+        return None
+    # ponytail: English "songs", the same literal ytmusicapi tests for itemCount; with another
+    # YTM_LANGUAGE an editorial row's "51 Titel" would come through as the count YouTube shows there.
+    words = text.split(" ")
+    if len(words) >= 2 and words[1] in ("song", "songs"):
+        return None
+    return text
+
+
 _keep_playlist_views_text()
+_keep_playlist_row_views_text()
 
 # ytmusicapi does not raise a typed "not found" error for an invalid/deleted id on these
 # methods -- YouTube serves a differently-shaped page and the library's own parser fails with
