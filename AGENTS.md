@@ -3,6 +3,8 @@
 Durable decisions and constraints. Keep this current — if you change behavior this file
 describes, update the doc in the same change.
 
+When the owner works through their `/naviseerr` command, that command decides how to plan, demo, open PRs and merge, and it wins over this file on those points. This file covers the code.
+
 ## What this service is
 
 A stateless FastAPI adapter around `ytmusicapi`, exposing read-only search + detail lookups
