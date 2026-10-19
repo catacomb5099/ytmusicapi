@@ -164,11 +164,7 @@ class TestPlaylistRowViewsText:
     def test_non_playlist_rows_are_left_alone(self, load_fixture):
         raw = load_fixture("search_raw_row_playlist_mixed")
         album = {**raw, "navigationEndpoint": {"browseEndpoint": {"browseId": "MPREb_Hl8XJR59OrY"}}}
-        try:
-            row = ytm_search.parse_search_result(album, None, None)
-        except ValueError:
-            pytest.skip("the library wants a fuller album row; the point is viewsText is not set")
-        assert "viewsText" not in row
+        assert "viewsText" not in ytm_search.parse_search_result(album, None, None)
 
     def test_wrapping_twice_wraps_once(self):
         _keep_playlist_row_views_text()

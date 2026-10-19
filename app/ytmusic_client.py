@@ -65,9 +65,10 @@ def _keep_playlist_row_views_text() -> None:
         return
 
     @functools.wraps(original)
-    def with_views_text(data, result_type=None, category=None):
-        result = original(data, result_type, category)
+    def with_views_text(data, *args, **kwargs):
+        result = original(data, *args, **kwargs)  # pass-through: a library signature change cannot break search
         if isinstance(result, dict) and result.get("resultType") == "playlist":
+            result_type = args[0] if args else kwargs.get("result_type")
             offset = (not result_type or result_type == "album") * 2  # ytmusicapi's default_offset
             result["viewsText"] = _row_count_text(data, offset)
         return result
