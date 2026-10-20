@@ -18,8 +18,6 @@ colorama==0.4.6 ; sys_platform == 'win32'
     # via click
 fastapi==0.141.1
     # via ytmusic-adapter
-gunicorn==23.0.0
-    # via ytmusic-adapter
 h11==0.16.0
     # via uvicorn
 httptools==0.8.0
@@ -28,8 +26,6 @@ idna==3.18
     # via
     #   anyio
     #   requests
-packaging==26.3
-    # via gunicorn
 pydantic==2.13.4
     # via
     #   fastapi

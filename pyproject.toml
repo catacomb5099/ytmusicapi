@@ -7,7 +7,6 @@ license = "AGPL-3.0-only"
 dependencies = [
     "fastapi>=0.115,<1",
     "uvicorn[standard]>=0.32,<1",
-    "gunicorn>=23,<24",
     "pydantic>=2.9,<3",
     "pydantic-settings>=2.6,<3",
     "ytmusicapi==1.12.2",

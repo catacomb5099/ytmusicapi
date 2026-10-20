@@ -22,4 +22,7 @@ HEALTHCHECK --interval=10s --timeout=5s --retries=5 \
 LABEL org.opencontainers.image.licenses=AGPL-3.0-only
 EXPOSE 8000
 
-CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "-w", "2", "-b", "0.0.0.0:8000", "app.main:app"]
+# One process: it still serves requests in parallel (sync routes run on a thread pool, YouTube calls
+# wait on the network), at a third of the memory of gunicorn with 2 workers. No per-CPU malloc pools.
+ENV MALLOC_ARENA_MAX=2
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
