@@ -48,7 +48,7 @@ All `GET`, read-only, prefix `/v1`.
 | `YTM_TIMEOUT_SECONDS` | `10` | per-request timeout (ytmusicapi's own default is 30s) |
 | `YTM_MAX_CONCURRENCY` | `8` | semaphore bound on concurrent upstream calls |
 | `YTM_READY_CACHE_SECONDS` | `60` | `/health/ready` result cache |
-| `YTM_LOG_LEVEL` | `INFO` | |
+| `YTM_LOG_LEVEL` | `INFO` | `DEBUG` also logs the `/health` and `/health/ready` calls, which are hidden otherwise |
 | `YTM_PROXY_URL` | unset | **dormant fallback.** Set if anonymous requests start getting blocked (datacenter-IP flagging is a real risk — see Caveats). Passed straight to `requests`. |
 | `YTM_AUTH_FILE` | unset | **dormant fallback.** Path to a `browser.json`/`oauth.json` for cookie/OAuth auth. Setting this breaks the stateless/no-secrets property — treat it as a last resort, not a default. |
 

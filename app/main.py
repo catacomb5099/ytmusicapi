@@ -11,6 +11,22 @@ from app.ytmusic_client import init_client
 logging.basicConfig(level=settings.log_level)
 
 
+class _HealthAtDebug(logging.Filter):
+    """Health and readiness checks run every few seconds; log them only when YTM_LOG_LEVEL=DEBUG."""
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        # uvicorn.access args: (client, method, path, http_version, status)
+        args = record.args
+        if isinstance(args, tuple) and len(args) > 2 and str(args[2]).startswith("/health"):
+            record.levelno, record.levelname = logging.DEBUG, "DEBUG"
+            return settings.log_level.upper() == "DEBUG"
+        return True
+
+
+# At import: uvicorn sets up logging before importing the app and keeps filters already added.
+logging.getLogger("uvicorn.access").addFilter(_HealthAtDebug())
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_client()
