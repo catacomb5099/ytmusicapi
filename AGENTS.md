@@ -22,9 +22,9 @@ hardcoded years/albumIds in the current mapper).
   that way even if you're tempted to expose more of `get_song()`'s payload.
 - **`mappers.py` is the only file that reads raw ytmusicapi dicts.** Every field access there must
   coalesce a missing/malformed key to a safe default rather than raise. If you add a new detail
-  lookup, add its mapper here, not inline in a router. One exception: the
-  `parse_playlist_header_meta` wrapper in `ytmusic_client.py`, which reads a playlist header before
-  the library discards its view-count string; see the play-counts bullet below.
+  lookup, add its mapper here, not inline in a router. One exception: the ytmusicapi parser wrappers
+  in `ytmusic_client.py`, which read a raw playlist header or row before the library discards its
+  count string; see the play-counts bullet below.
 - **No new dependencies without a reason.** No Redis, no DB driver, no resilience library. The
   service is stateless by design; caching lives on naviseerr's side, not here.
 
@@ -81,8 +81,12 @@ hardcoded years/albumIds in the current mapper).
   `SongDetails`), and it counts that one upload only. `SongDetails.plays` is the album track's
   `views`, YouTube Music's combined count: Wonderwall `hpSrLjc5SMs` has `viewCount` 97,645,262 but
   `plays` `"1.7B plays"`. They are different numbers; never fill one from the other. Track
-  `views` is populated on `get_album()` tracks and null on playlist tracks; `TrackDto` is shared,
-  so null there is expected, not drift. `get_artist()` top songs also arrive with `views: None`, so
+  `views` is populated on `get_album()` tracks and on an artist's "Top songs" playlist
+  (`VLOLAK5uy_…`, the `songs.browseId` of `get_artist()`), whose rows print "1.7B plays" in a plain
+  column that ytmusicapi reads only on album pages: `app/ytmusic_client.py` wraps
+  `ytmusicapi.parsers.playlists.parse_playlist_item` (the third library wrap) to keep it. Other
+  playlists' tracks have no such column and stay null; `TrackDto` is shared, so null there is
+  expected, not drift. `get_artist()` top songs also arrive with `views: None`, so
   `/v1/artists/{channelId}` fills them from each song's album (one `get_album` per distinct album,
   in parallel, matched via `pick_album_track`, else the one album row with the same title via
   `pick_album_track_by_title` -- Bicep "Glue" lists a third upload id). That is best-effort: an album that fails to load

@@ -4,6 +4,7 @@ import threading
 
 import requests
 import ytmusicapi.mixins.playlists as _ytm_playlists
+import ytmusicapi.parsers.playlists as _ytm_playlist_rows
 import ytmusicapi.parsers.search as _ytm_search
 from ytmusicapi import YTMusic
 
@@ -96,8 +97,54 @@ def _row_count_text(data, offset: int) -> str | None:
     return text
 
 
+def _keep_playlist_item_plays_text() -> None:
+    """Keep the "1.7B plays" column on playlist ROWS, which ytmusicapi reads only on album pages.
+
+    An artist's "Top songs" playlist (the `songs.browseId` of get_artist(), `VLOLAK5uy_...`) prints
+    each song's combined play count in a plain-text flex column. ytmusicapi 1.12.2's
+    `parse_playlist_item` sets `views` only when `is_album` is true, so on a playlist the count is
+    lost. This wraps that row parser (which `parse_playlist_items` calls by name from the same module)
+    and, when the library left `views` None, sets it to the first single-run, non-clickable column
+    whose text ends in " plays". Other playlists have no such column and stay None. Same safety net as
+    the two wrappers above: log and skip if the name is gone.
+    """
+    original = getattr(_ytm_playlist_rows, "parse_playlist_item", None)
+    if original is None:
+        logger.warning("ytmusicapi has no parse_playlist_item; Top songs playlist rows' plays will be null")
+        return
+    if getattr(original, "_keeps_views_text", False):
+        return
+
+    @functools.wraps(original)
+    def with_plays_text(data, *args, **kwargs):
+        song = original(data, *args, **kwargs)
+        if isinstance(song, dict) and song.get("views") is None:
+            song["views"] = _plays_column_text(data)
+        return song
+
+    with_plays_text._keeps_views_text = True  # type: ignore[attr-defined]
+    _ytm_playlist_rows.parse_playlist_item = with_plays_text
+
+
+def _plays_column_text(data) -> str | None:
+    columns = data.get("flexColumns") if isinstance(data, dict) else None
+    for column in columns if isinstance(columns, list) else []:
+        try:
+            runs = column["musicResponsiveListItemFlexColumnRenderer"]["text"]["runs"]
+        except (KeyError, TypeError):
+            continue
+        if not isinstance(runs, list) or len(runs) != 1 or not isinstance(runs[0], dict):
+            continue
+        text = runs[0].get("text")
+        # ponytail: English " plays", like the "songs" literal above; another YTM_LANGUAGE leaves views None.
+        if "navigationEndpoint" not in runs[0] and isinstance(text, str) and text.endswith(" plays"):
+            return text
+    return None
+
+
 _keep_playlist_views_text()
 _keep_playlist_row_views_text()
+_keep_playlist_item_plays_text()
 
 # ytmusicapi does not raise a typed "not found" error for an invalid/deleted id on these
 # methods -- YouTube serves a differently-shaped page and the library's own parser fails with
