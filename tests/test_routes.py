@@ -267,6 +267,14 @@ class TestPlaylistRoutes:
         assert resp.status_code == 200
         assert fake.calls[0][1][0] == "PLEXAMPLE123"
 
+    def test_an_artists_top_songs_playlist_is_named_after_the_artist(self, client_with):
+        """YouTube titles every artist's list "Top songs"; downloaded, two of them would share one file."""
+        client, _ = client_with(get_playlist=lambda *a, **k: _load("artist_top_songs_playlist"))
+        assert client.get("/v1/playlists/VLOLAK5uy_kGykcqHKDHRHuJ2sE8EcduYEr1FtafoQs").json()["title"] == "Oasis: Top songs"
+        anonymous = {**_load("artist_top_songs_playlist"), "author": None}
+        client, _ = client_with(get_playlist=lambda *a, **k: anonymous)
+        assert client.get("/v1/playlists/OLAK5uy_x").json()["title"] == "Top songs"
+
     def test_get_playlist_not_found(self, client_with):
         client, _ = client_with(get_playlist=lambda bare_id, limit: None)
         resp = client.get("/v1/playlists/PLMISSING")

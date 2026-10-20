@@ -346,9 +346,15 @@ def map_playlist_detail(raw: dict[str, Any]) -> PlaylistDetail:
     elif isinstance(author_raw, str):
         author = ArtistRef(name=author_raw, channelId=None)
 
+    title = raw.get("title")
+    # Every artist's own list is titled just "Top songs"; downloaded, two of them would write one file.
+    # ponytail: English title, like the " plays" literal in app.ytmusic_client.
+    if title == "Top songs" and author and author.name:
+        title = f"{author.name}: Top songs"
+
     return PlaylistDetail(
         id=raw.get("id"),
-        title=raw.get("title"),
+        title=title,
         description=raw.get("description"),
         author=author,
         privacy=raw.get("privacy"),
