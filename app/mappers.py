@@ -293,11 +293,13 @@ def map_artist_detail(
     albums: dict[str, Any] | None = None,
     all_albums: Any = None,
     top_songs: Any = None,
+    all_singles: Any = None,
 ) -> ArtistDetail:
     """`albums` maps a top song's album browseId to its get_album() dict (None when that call
     failed); it only fills the page's topSongs' `views`, which get_artist() leaves null. `all_albums`
     is get_artist_albums()'s list (the full discography, in the order it was asked for) and stands in
-    for the page's ten-newest albums shelf; empty or None keeps the shelf. `top_songs` is get_playlist()
+    for the page's ten-newest albums shelf; empty or None keeps the shelf. `all_singles` is the same for
+    singles (newest first). `top_songs` is get_playlist()
     on the songs bucket's "Top songs" playlist: its first ten rows stand in for the page's five;
     empty or None keeps the page's."""
     songs_bucket = raw.get("songs") or {}
@@ -332,7 +334,8 @@ def map_artist_detail(
         songsPlaylistId=songs_playlist_id if isinstance(songs_playlist_id, str) and songs_playlist_id else None,
         albums=_map_album_stubs(all_albums)
         or _map_album_stubs(albums_bucket.get("results") if isinstance(albums_bucket, dict) else None),
-        singles=_map_album_stubs(singles_bucket.get("results") if isinstance(singles_bucket, dict) else None),
+        singles=_map_album_stubs(all_singles)
+        or _map_album_stubs(singles_bucket.get("results") if isinstance(singles_bucket, dict) else None),
         videos=_map_video_stubs(videos_bucket.get("results") if isinstance(videos_bucket, dict) else None),
         related=related,
     )

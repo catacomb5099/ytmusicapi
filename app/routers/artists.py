@@ -28,19 +28,18 @@ _ORDER_VALUES = {"Recency", "Popularity", "Alphabetical order"}
 ALL_ALBUMS_LIMIT = 100
 
 
-def _all_albums_or_none(client: YTMusicClient, artist_raw: dict[str, Any]) -> Any:
-    """get_artist()'s albums bucket is YouTube's artist-page shelf: ten releases, newest first, so
-    for an old act it is all reissues and EPs (Black Sabbath's shows no 'Paranoid'). The same
-    bucket carries `params` for the full discography, which YouTube can order by popularity."""
-    bucket = artist_raw.get("albums")
+def _all_releases_or_none(client: YTMusicClient, artist_raw: dict[str, Any], shelf: str, **order: str) -> Any:
+    """get_artist()'s albums and singles buckets are YouTube's artist-page shelves: ten releases,
+    newest first, so for an old act the albums are all reissues and EPs (Black Sabbath's shows no
+    'Paranoid') and a busy one shows ten of its 92 singles (Taylor Swift). The same bucket carries
+    `params` for the full list, which YouTube can also order by popularity."""
+    bucket = artist_raw.get(shelf)
     if not isinstance(bucket, dict) or not bucket.get("params"):
         return None
     try:
-        return client.call(
-            "get_artist_albums", bucket["browseId"], bucket["params"], limit=ALL_ALBUMS_LIMIT, order="Popularity"
-        )
+        return client.call("get_artist_albums", bucket["browseId"], bucket["params"], limit=ALL_ALBUMS_LIMIT, **order)
     except Exception as exc:  # noqa: BLE001 -- the artist-page shelf is a fine fallback
-        logger.warning("get_artist_albums for the full discography failed, keeping the page shelf: %r", exc)
+        logger.warning("get_artist_albums for all %s failed, keeping the page shelf: %r", shelf, exc)
         return None
 
 
@@ -70,7 +69,8 @@ def _album_or_none(client: YTMusicClient, album_id: str) -> Any:
 @router.get("/{channel_id}", response_model=ArtistDetail)
 def get_artist(channel_id: str, client: YTMusicClient = Depends(get_ytmusic)) -> ArtistDetail:
     """get_artist(), plus in parallel: get_artist_albums() for the full discography by popularity
-    (replaces the ten-newest shelf in `albums`) and get_playlist() on the "Top songs" playlist (its
+    (replaces the ten-newest shelf in `albums`), get_artist_albums() for every single, newest first
+    (replaces the ten-newest shelf in `singles`), and get_playlist() on the "Top songs" playlist (its
     first ten rows, with their play counts, replace the page's five `topSongs`). Only when that
     playlist gives nothing: one get_album per distinct album among the page's five top songs, which
     carry no play count while their album's track rows do. All best-effort -- a failed call leaves
@@ -80,14 +80,20 @@ def get_artist(channel_id: str, client: YTMusicClient = Depends(get_ytmusic)) ->
         raise NotFoundError(f"No artist found for channelId '{channel_id}'")
     # The client's semaphore still bounds total upstream concurrency across requests.
     with ThreadPoolExecutor(max_workers=4) as pool:
-        all_albums = pool.submit(_all_albums_or_none, client, raw)
+        all_albums = pool.submit(_all_releases_or_none, client, raw, "albums", order="Popularity")
+        # Newest first, YouTube's own order for singles: its first ten are exactly the page shelf.
+        all_singles = pool.submit(_all_releases_or_none, client, raw, "singles")
         top_songs = pool.submit(_top_songs_or_none, client, raw).result()
         album_ids = [] if top_song_rows(top_songs) else top_song_album_ids(raw)
         found = pool.map(lambda album_id: _album_or_none(client, album_id), album_ids)
         albums = dict(zip(album_ids, found, strict=True))
-        all_albums = all_albums.result()
     return map_artist_detail(
-        raw, requested_channel_id=channel_id, albums=albums, all_albums=all_albums, top_songs=top_songs
+        raw,
+        requested_channel_id=channel_id,
+        albums=albums,
+        all_albums=all_albums.result(),
+        all_singles=all_singles.result(),
+        top_songs=top_songs,
     )
 
 

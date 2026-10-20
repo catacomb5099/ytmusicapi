@@ -203,9 +203,25 @@ class TestArtistRoutes:
         resp = client.get("/v1/artists/UCEXAMPLE")
         assert resp.status_code == 200
         assert [a["browseId"] for a in resp.json()["albums"]] == [a["browseId"] for a in albums_raw]
-        (call,) = [c for c in fake.calls if c[0] == "get_artist_albums"]
-        assert call[1] == (artist_raw["albums"]["browseId"], artist_raw["albums"]["params"])
+        bucket = artist_raw["albums"]
+        (call,) = [c for c in fake.calls if c[0] == "get_artist_albums" and c[1][1] == bucket["params"]]
+        assert call[1] == (bucket["browseId"], bucket["params"])
         assert call[2] == {"limit": 100, "order": "Popularity"}
+
+    def test_get_artist_singles_are_all_singles_newest_first(self, client_with):
+        """The page's singles bucket is a shelf of ten; the same bucket's params give all of them."""
+        artist_raw = _load("artist_detail")
+        singles = [{"browseId": f"MPREb_single{i}", "title": f"Single {i}", "year": "2020"} for i in range(26)]
+        by_params = {artist_raw["albums"]["params"]: _load("artist_albums"), artist_raw["singles"]["params"]: singles}
+        client, fake = client_with(
+            get_artist=lambda channel_id: artist_raw,
+            get_artist_albums=lambda browse_id, params, **kw: by_params[params],
+        )
+        resp = client.get("/v1/artists/UCEXAMPLE")
+        assert resp.status_code == 200
+        assert [s["browseId"] for s in resp.json()["singles"]] == [s["browseId"] for s in singles]
+        (call,) = [c for c in fake.calls if c[0] == "get_artist_albums" and c[1][1] == artist_raw["singles"]["params"]]
+        assert call[2] == {"limit": 100}  # YouTube's own order, newest first: its first ten are the shelf
 
     def test_get_artist_keeps_page_shelf_when_discography_fails(self, client_with):
         artist_raw = _load("artist_detail")
@@ -218,6 +234,8 @@ class TestArtistRoutes:
         assert resp.status_code == 200
         shelf = [a["browseId"] for a in artist_raw["albums"]["results"]]
         assert [a["browseId"] for a in resp.json()["albums"]] == shelf
+        singles_shelf = [a["browseId"] for a in artist_raw["singles"]["results"]]
+        assert [a["browseId"] for a in resp.json()["singles"]] == singles_shelf
 
     def test_get_artist_without_albums_params_asks_for_no_discography(self, client_with):
         client, fake = client_with(get_artist=lambda channel_id: _load("artist_detail_no_albums"))
