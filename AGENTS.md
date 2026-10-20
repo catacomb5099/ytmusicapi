@@ -87,7 +87,8 @@ hardcoded years/albumIds in the current mapper).
   `ytmusicapi.parsers.playlists.parse_playlist_item` (the third library wrap) to keep it. Other
   playlists' tracks have no such column and stay null; `TrackDto` is shared, so null there is
   expected, not drift. `get_artist()` top songs also arrive with `views: None`, so
-  `/v1/artists/{channelId}` fills them from each song's album (one `get_album` per distinct album,
+  `/v1/artists/{channelId}` reads its ten top songs from that "Top songs" playlist instead; only
+  when that call fails does it keep the page's five and fill them from each song's album (one `get_album` per distinct album,
   in parallel, matched via `pick_album_track`, else the one album row with the same title via
   `pick_album_track_by_title` -- Bicep "Glue" lists a third upload id). That is best-effort: an album that fails to load
   logs a warning and leaves its songs null; it never fails the artist response.

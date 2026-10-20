@@ -1,0 +1,534 @@
+{
+ "owned": false,
+ "id": "OLAK5uy_kGykcqHKDHRHuJ2sE8EcduYEr1FtafoQs",
+ "privacy": "PUBLIC",
+ "description": null,
+ "views": null,
+ "duration": "11+ hours",
+ "trackCount": 150,
+ "title": "Top songs",
+ "thumbnails": [
+  {
+   "url": "https://yt3.googleusercontent.com/FoVQFdW6zBi3sNA_yZJSV3VTWmi0belhhFzleuEbn27utkirstj1woXHfWmWqkNyHla37ZFbk_F6jvVV=w60-h60-l90-rj",
+   "width": 60,
+   "height": 60
+  },
+  {
+   "url": "https://yt3.googleusercontent.com/FoVQFdW6zBi3sNA_yZJSV3VTWmi0belhhFzleuEbn27utkirstj1woXHfWmWqkNyHla37ZFbk_F6jvVV=w120-h120-l90-rj",
+   "width": 120,
+   "height": 120
+  },
+  {
+   "url": "https://yt3.googleusercontent.com/FoVQFdW6zBi3sNA_yZJSV3VTWmi0belhhFzleuEbn27utkirstj1woXHfWmWqkNyHla37ZFbk_F6jvVV=w226-h226-l90-rj",
+   "width": 226,
+   "height": 226
+  },
+  {
+   "url": "https://yt3.googleusercontent.com/FoVQFdW6zBi3sNA_yZJSV3VTWmi0belhhFzleuEbn27utkirstj1woXHfWmWqkNyHla37ZFbk_F6jvVV=w544-h544-l90-rj",
+   "width": 544,
+   "height": 544
+  }
+ ],
+ "author": {
+  "name": "Oasis",
+  "id": "UCUDVBtnOQi4c7E8jebpjc9Q"
+ },
+ "viewsText": null,
+ "year": "2026",
+ "related": [],
+ "tracks": [
+  {
+   "videoId": "hpSrLjc5SMs",
+   "title": "Wonderwall",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "(What's The Story) Morning Glory?",
+    "id": "MPREb_PITqkpE6ExP"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpI6DsV_G9hFRFSvchWNGHGsKfRXgkRl8bIKc90t1ckMuuAACNmi3veQgRV_bAsuuttE7Ki6G8VOtmMvg7wLpM83GYE4cQ"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/SP0cN9Mypy_WeKEajm03ERYOU_53KkHZpu4EQpSJUzcQ1H_3HhS1FmjR34KTstf-0DX83JLCCj9ouc-k1g=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/SP0cN9Mypy_WeKEajm03ERYOU_53KkHZpu4EQpSJUzcQ1H_3HhS1FmjR34KTstf-0DX83JLCCj9ouc-k1g=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "1.7B plays",
+   "communityVoteStatus": null,
+   "duration": "4:19",
+   "duration_seconds": 259,
+   "creditsBrowseId": "MPTChpSrLjc5SMs"
+  },
+  {
+   "videoId": "aW_8kbyOKeQ",
+   "title": "Don't Look Back In Anger",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "(What's The Story) Morning Glory?",
+    "id": "MPREb_PITqkpE6ExP"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpImb8dy_x7OVGX4w9bIntWxGyWIFfxcKZ2hgvYrhre7DZUqn3VrYrfXsObJ3Mv9lhRZ3jxge16Zazp79LEx8XIwdjK5DA"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/SP0cN9Mypy_WeKEajm03ERYOU_53KkHZpu4EQpSJUzcQ1H_3HhS1FmjR34KTstf-0DX83JLCCj9ouc-k1g=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/SP0cN9Mypy_WeKEajm03ERYOU_53KkHZpu4EQpSJUzcQ1H_3HhS1FmjR34KTstf-0DX83JLCCj9ouc-k1g=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "885M plays",
+   "communityVoteStatus": null,
+   "duration": "4:48",
+   "duration_seconds": 288,
+   "creditsBrowseId": "MPTCaW_8kbyOKeQ"
+  },
+  {
+   "videoId": "q-jkObVL-P8",
+   "title": "Stop Crying Your Heart Out",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Heathen Chemistry",
+    "id": "MPREb_4obNWjDVCfX"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpJphB0VVD0THYJP94PDxO70LPb-4CVCxcdCO9L7tQmizG33v3JbWsjg2NKSBl0Y-YlQSGHHU-SCsJx4H1AGHZ0ReeF0jw"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/-16L2gZPSumAhOg2Neq8JZVI9741PM9DRLU__0YG14pnZr45dv_RbOcdP42MBXUJWU1aCFik2y4V5Hwb=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/-16L2gZPSumAhOg2Neq8JZVI9741PM9DRLU__0YG14pnZr45dv_RbOcdP42MBXUJWU1aCFik2y4V5Hwb=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "490M plays",
+   "communityVoteStatus": null,
+   "duration": "5:04",
+   "duration_seconds": 304,
+   "creditsBrowseId": "MPTCq-jkObVL-P8"
+  },
+  {
+   "videoId": "MObZC3Iq_Go",
+   "title": "Champagne Supernova",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "(What's The Story) Morning Glory?",
+    "id": "MPREb_PITqkpE6ExP"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpLy2TNbt9i2KfPh_chLwx5Ea-wHt4zB2V4hdt4unBXIlW-9V3JBnmH30qNjpOEBBckF7aCpBQN27JRKPHoXu-X-q5cN1A"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/SP0cN9Mypy_WeKEajm03ERYOU_53KkHZpu4EQpSJUzcQ1H_3HhS1FmjR34KTstf-0DX83JLCCj9ouc-k1g=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/SP0cN9Mypy_WeKEajm03ERYOU_53KkHZpu4EQpSJUzcQ1H_3HhS1FmjR34KTstf-0DX83JLCCj9ouc-k1g=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "359M plays",
+   "communityVoteStatus": null,
+   "duration": "7:31",
+   "duration_seconds": 451,
+   "creditsBrowseId": "MPTCMObZC3Iq_Go"
+  },
+  {
+   "videoId": "oaYgLkd_fIE",
+   "title": "Stand by Me",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Be Here Now",
+    "id": "MPREb_2emx3fyDmIj"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpJGYGuYp3_RO5r4tX5toKcOOLa08zQMADidOaN6X-4EyGwaJuZu205QgKler4sR6UK69N6fR1HJTPnVsfb2iFeTLbCp9g"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/pg8L1-x9H9A9n2lHvDQ59QU7MnRrO_5bbKot8JMM5mLBqA2ccJ9g4izk_ICCjQnN4393CeDok8OY4Te4=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/pg8L1-x9H9A9n2lHvDQ59QU7MnRrO_5bbKot8JMM5mLBqA2ccJ9g4izk_ICCjQnN4393CeDok8OY4Te4=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "339M plays",
+   "communityVoteStatus": null,
+   "duration": "5:57",
+   "duration_seconds": 357,
+   "creditsBrowseId": "MPTCoaYgLkd_fIE"
+  },
+  {
+   "videoId": "Vd9i5F0OOJ8",
+   "title": "Whatever",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Definitely Maybe (Deluxe Edition Remastered)",
+    "id": "MPREb_8k7WQz36zgN"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpK7WAlHZycXfIBNNLvIiaTMzZ0h7CkA2QqrLRe8llu71pm0fbU2xfxdv_5SE4GBqS537bbZso3iuvMGbBbfFoSGOIfaqg"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/BHxw1yBoaAtiJjeNt43TsU1R-DUX22xYmvvobw9PEhIRVzH3gUV8WHEhZwil-vvkF5INhqAQ-Nw4D1OxHQ=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/BHxw1yBoaAtiJjeNt43TsU1R-DUX22xYmvvobw9PEhIRVzH3gUV8WHEhZwil-vvkF5INhqAQ-Nw4D1OxHQ=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "173M plays",
+   "communityVoteStatus": null,
+   "duration": "6:23",
+   "duration_seconds": 383,
+   "creditsBrowseId": "MPTCVd9i5F0OOJ8"
+  },
+  {
+   "videoId": "2n5OwsJtrfg",
+   "title": "Supersonic",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Definitely Maybe",
+    "id": "MPREb_Hl8XJR59OrY"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpL52QV20JmKnWmz9-gpE66e6AEO1Iaxrnb8z70cpUwdjhWZiR_V5N2BaMtYxK6Lw235L8ygFPqoHnTzocrKbjN2z8CPTQ"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/AQHkMsob37t4X5pBGKNbyfv7gQzEQmvexCkJ6pCsmPhz_3H7Gg4helc_oMvFiL_oiJM8vGUrC4ml0KlVyA=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "153M plays",
+   "communityVoteStatus": null,
+   "duration": "4:44",
+   "duration_seconds": 284,
+   "creditsBrowseId": "MPTC2n5OwsJtrfg"
+  },
+  {
+   "videoId": "1HqpFoHv6qg",
+   "title": "Live Forever",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Definitely Maybe (Deluxe Edition Remastered)",
+    "id": "MPREb_VXk6OaxfNsY"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpLSldh_43TDUGEPhMUik4XZZFRbvcVP1E6h6FehXUN7wbuG6uFUAwlgEJyOXWoc0Dgr5XugY72loJQdriBwrJze2UUQkw"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "130M plays",
+   "communityVoteStatus": null,
+   "duration": "4:37",
+   "duration_seconds": 277,
+   "creditsBrowseId": "MPTC1HqpFoHv6qg"
+  },
+  {
+   "videoId": "pvLs4ESdCNA",
+   "title": "Don't Go Away",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Be Here Now",
+    "id": "MPREb_2emx3fyDmIj"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpLa7hBKFnfp8uhnetKMvoAbQLbJb1wBXVfnjUC69xkAaey3pU8UldRYhM1nrKFSZNGgczEz8DZv8LXFb1NhW3MD5YnwbQ"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/pg8L1-x9H9A9n2lHvDQ59QU7MnRrO_5bbKot8JMM5mLBqA2ccJ9g4izk_ICCjQnN4393CeDok8OY4Te4=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/pg8L1-x9H9A9n2lHvDQ59QU7MnRrO_5bbKot8JMM5mLBqA2ccJ9g4izk_ICCjQnN4393CeDok8OY4Te4=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "133M plays",
+   "communityVoteStatus": null,
+   "duration": "4:49",
+   "duration_seconds": 289,
+   "creditsBrowseId": "MPTCpvLs4ESdCNA"
+  },
+  {
+   "videoId": "Hj0aJ1R2UAw",
+   "title": "Wonderwall (Unplugged)",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "(What's The Story) Morning Glory? (30th Anniversary Deluxe Edition)",
+    "id": "MPREb_9rUb85NwrKk"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpI6xB-npLgL2wl3g0q1iG_j9jK-y7O4pM6oWREJFWa5GJA6ZnucLPUlfKc1Ikdd1CHG2Hie4yh5N2aff_tpnFYashm9zA"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/CYRTncU6MzK5YXfEkdG0vY5d_TAN8p6DTAhSN8TPm1wq9XZBlcbg9-OSyDKvC97EccclOe3tZLeUh_Ab=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/CYRTncU6MzK5YXfEkdG0vY5d_TAN8p6DTAhSN8TPm1wq9XZBlcbg9-OSyDKvC97EccclOe3tZLeUh_Ab=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "9.9M plays",
+   "communityVoteStatus": null,
+   "duration": "4:12",
+   "duration_seconds": 252,
+   "creditsBrowseId": "MPTCHj0aJ1R2UAw"
+  },
+  {
+   "videoId": "HPXECWpvXkY",
+   "title": "Slide Away",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Definitely Maybe (Deluxe Edition Remastered)",
+    "id": "MPREb_VXk6OaxfNsY"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpLfvm8gEd07nFv53tx1oQGKiH6MmCqiKJ8JQtCOHStEo9PONvO4I2fH6Z3PUJnbkqbcBS0zR0r58hkuDzoK3KChy_xLiQ"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "57M plays",
+   "communityVoteStatus": null,
+   "duration": "6:33",
+   "duration_seconds": 393,
+   "creditsBrowseId": "MPTCHPXECWpvXkY"
+  },
+  {
+   "videoId": "o-cMaASaU4Q",
+   "title": "Married With Children",
+   "artists": [
+    {
+     "name": "Oasis",
+     "id": "UCmMUZbaYdNH0bEd1PAlAqsA"
+    }
+   ],
+   "album": {
+    "name": "Definitely Maybe (Deluxe Edition Remastered)",
+    "id": "MPREb_VXk6OaxfNsY"
+   },
+   "likeStatus": "INDIFFERENT",
+   "inLibrary": false,
+   "pinnedToListenAgain": false,
+   "feedbackTokens": {
+    "add": null,
+    "remove": "AB9zfpIUNsUSnEgaCFn2nz1Uwujmp7hZzb_rZsMwBB46IRMgBOZJVYEPV2i3jVX__fS2K4C_AHigq8xiKcupEIQU4qEDcyJ5UA"
+   },
+   "thumbnails": [
+    {
+     "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w60-h60-l90-rj",
+     "width": 60,
+     "height": 60
+    },
+    {
+     "url": "https://yt3.googleusercontent.com/UL0h9FfYwEZZVGdgCBoyOR22JR7ZXYkbNfDscMNdAck-PZcCLiydJkqTdIWUrncJbi_BSBt-UUIcKbFL=w120-h120-l90-rj",
+     "width": 120,
+     "height": 120
+    }
+   ],
+   "isAvailable": true,
+   "isExplicit": false,
+   "videoType": "MUSIC_VIDEO_TYPE_ATV",
+   "views": "41M plays",
+   "communityVoteStatus": null,
+   "duration": "3:13",
+   "duration_seconds": 193,
+   "creditsBrowseId": "MPTCo-cMaASaU4Q"
+  }
+ ],
+ "duration_seconds": 41803
+}

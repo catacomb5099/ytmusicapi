@@ -258,6 +258,17 @@ def _top_song_rows(raw: dict[str, Any]) -> list[dict[str, Any]]:
     return [s for s in rows if isinstance(s, dict)] if isinstance(rows, list) else []
 
 
+# The artist page shows 5 and expands to 10 (Spotify's "Popular"); the rest is one click away on the playlist.
+TOP_SONGS_LIMIT = 10
+
+
+def top_song_rows(top_songs: Any) -> list[dict[str, Any]]:
+    """The first TOP_SONGS_LIMIT tracks of get_playlist() on an artist's "Top songs" playlist; [] when that
+    call failed or the playlist is empty."""
+    rows = top_songs.get("tracks") if isinstance(top_songs, dict) else None
+    return [t for t in rows if isinstance(t, dict)][:TOP_SONGS_LIMIT] if isinstance(rows, list) else []
+
+
 def top_song_album_ids(raw: dict[str, Any]) -> list[str]:
     """get_artist() top songs carry views None but name their album, whose get_album() track rows
     do carry the play count ("1.7B plays"). The distinct albums worth fetching, in order."""
@@ -281,11 +292,16 @@ def map_artist_detail(
     requested_channel_id: str,
     albums: dict[str, Any] | None = None,
     all_albums: Any = None,
+    top_songs: Any = None,
 ) -> ArtistDetail:
     """`albums` maps a top song's album browseId to its get_album() dict (None when that call
-    failed); it only fills topSongs' `views`, which get_artist() leaves null. `all_albums` is
-    get_artist_albums()'s list (the full discography, in the order it was asked for) and stands in
-    for the page's ten-newest albums shelf; empty or None keeps the shelf."""
+    failed); it only fills the page's topSongs' `views`, which get_artist() leaves null. `all_albums`
+    is get_artist_albums()'s list (the full discography, in the order it was asked for) and stands in
+    for the page's ten-newest albums shelf; empty or None keeps the shelf. `top_songs` is get_playlist()
+    on the songs bucket's "Top songs" playlist: its first ten rows stand in for the page's five;
+    empty or None keeps the page's."""
+    songs_bucket = raw.get("songs") or {}
+    songs_playlist_id = songs_bucket.get("browseId") if isinstance(songs_bucket, dict) else None
     albums_bucket = raw.get("albums") or {}
     singles_bucket = raw.get("singles") or {}
     videos_bucket = raw.get("videos") or {}
@@ -311,7 +327,9 @@ def map_artist_detail(
         monthlyListeners=raw.get("monthlyListeners"),
         views=raw.get("views"),
         thumbnailUrl=_thumbnail_url(raw.get("thumbnails")),
-        topSongs=[_map_top_song(s, albums or {}) for s in _top_song_rows(raw)],
+        topSongs=_map_tracks(top_song_rows(top_songs))
+        or [_map_top_song(s, albums or {}) for s in _top_song_rows(raw)],
+        songsPlaylistId=songs_playlist_id if isinstance(songs_playlist_id, str) and songs_playlist_id else None,
         albums=_map_album_stubs(all_albums)
         or _map_album_stubs(albums_bucket.get("results") if isinstance(albums_bucket, dict) else None),
         singles=_map_album_stubs(singles_bucket.get("results") if isinstance(singles_bucket, dict) else None),
