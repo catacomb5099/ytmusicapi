@@ -102,6 +102,14 @@ hardcoded years/albumIds in the current mapper).
   `mappers.py` that reads a raw ytmusicapi dict (a header, before the library discards the string);
   if a library bump drops the name it logs a WARN and skips, so `views` goes null and startup is
   unaffected. Upstream `main` still has the same lossy line, so do not expect a bump to fix it.
+- **An artist's own playlists ("Playlists by Tame Impala").** ytmusicapi 1.12.2's
+  `Parser.parse_channel_contents` matches shelf titles exactly against "playlists", and YouTube now
+  titles that row "Playlists by <artist>", so `get_artist()` has no `playlists` bucket. The fourth
+  library wrap (`_keep_artist_playlists_shelf` in `app/ytmusic_client.py`) adds it from the shelf
+  whose title links to a full list and whose first card opens a playlist (`VL…`); that rule works in
+  any language. "Featured on" has no title link and is never picked. The title link's `params` go
+  stale within minutes, so read the full list (`get_user_playlists`) with the params of the same
+  `get_artist()` answer, never cached ones (a stale one answers `[]`).
 - **Album-level `isExplicit` disagrees with its own tracks.** `good kid, m.A.A.d city` returns
   album `isExplicit: false` while all 14 tracks are `explicit: true`. It's mapped faithfully as
   `AlbumDetail.explicit`, but don't render it as a badge — prefer the per-track flag.

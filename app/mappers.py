@@ -13,7 +13,7 @@ from typing import Any
 
 from app.models.album import AlbumDetail, RelatedAlbum
 from app.models.artist import ArtistDetail, RelatedArtist
-from app.models.common import AlbumRef, AlbumStub, ArtistRef, TrackDto, VideoStub
+from app.models.common import AlbumRef, AlbumStub, ArtistRef, PlaylistStub, TrackDto, VideoStub
 from app.models.playlist import PlaylistDetail
 from app.models.search import SearchResultItem
 from app.models.song import CreditsSection, SongDetails, SongMetadata
@@ -109,6 +109,29 @@ def map_album_stubs_from_artist_albums(raw: Any) -> list[AlbumStub]:
     """get_artist_albums() returns the same {browseId, title, year, thumbnails} shape as the
     albums bucket inside get_artist(), just with an extra `playlistId` we don't need here."""
     return _map_album_stubs(raw)
+
+
+def _card_views(description: Any) -> str | None:
+    """"Playlist • Tame Impala • 2.1M views" -> "2.1M views": the last part, when it holds a number."""
+    if not isinstance(description, str):
+        return None
+    last = description.split(" • ")[-1].strip()
+    return last if any(ch.isdigit() for ch in last) else None
+
+
+def _map_playlist_stubs(raw: Any) -> list[PlaylistStub]:
+    if not raw or not isinstance(raw, list):
+        return []
+    return [
+        PlaylistStub(
+            playlistId=p.get("playlistId"),
+            title=p.get("title"),
+            thumbnailUrl=_thumbnail_url(p.get("thumbnails")),
+            views=_card_views(p.get("description")),
+        )
+        for p in raw
+        if isinstance(p, dict)
+    ]
 
 
 def _map_video_stub(raw: dict[str, Any]) -> VideoStub:
@@ -294,12 +317,14 @@ def map_artist_detail(
     all_albums: Any = None,
     top_songs: Any = None,
     all_singles: Any = None,
+    all_playlists: Any = None,
 ) -> ArtistDetail:
     """`albums` maps a top song's album browseId to its get_album() dict (None when that call
     failed); it only fills the page's topSongs' `views`, which get_artist() leaves null. `all_albums`
     is get_artist_albums()'s list (the full discography, in the order it was asked for) and stands in
     for the page's ten-newest albums shelf; empty or None keeps the shelf. `all_singles` is the same for
-    singles (newest first). `top_songs` is get_playlist()
+    singles (newest first), and `all_playlists` (get_user_playlists()) for the artist's own playlists
+    shelf, which app.ytmusic_client adds to get_artist(). `top_songs` is get_playlist()
     on the songs bucket's "Top songs" playlist: its first ten rows stand in for the page's five;
     empty or None keeps the page's."""
     songs_bucket = raw.get("songs") or {}
@@ -307,6 +332,7 @@ def map_artist_detail(
     albums_bucket = raw.get("albums") or {}
     singles_bucket = raw.get("singles") or {}
     videos_bucket = raw.get("videos") or {}
+    playlists_bucket = raw.get("playlists") or {}
     related_bucket = raw.get("related") or {}
 
     related_raw = related_bucket.get("results") if isinstance(related_bucket, dict) else None
@@ -337,6 +363,8 @@ def map_artist_detail(
         singles=_map_album_stubs(all_singles)
         or _map_album_stubs(singles_bucket.get("results") if isinstance(singles_bucket, dict) else None),
         videos=_map_video_stubs(videos_bucket.get("results") if isinstance(videos_bucket, dict) else None),
+        playlists=_map_playlist_stubs(all_playlists)
+        or _map_playlist_stubs(playlists_bucket.get("results") if isinstance(playlists_bucket, dict) else None),
         related=related,
     )
 

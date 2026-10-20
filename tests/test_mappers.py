@@ -351,6 +351,14 @@ class TestArtistDetailMapping:
         detail = map_artist_detail(raw, "UC")
         assert (detail.songsPlaylistId, detail.topSongs) == (None, [])
 
+    def test_artist_playlist_cards_keep_their_view_count_only(self, load_fixture):
+        raw = {**load_fixture("artist_detail"), "playlists": {"results": [
+            {"playlistId": "PL1", "title": "Currents", "description": "Playlist • Tame Impala • 652K views"},
+            {"playlistId": "PL2", "title": "Lonerism", "description": "Playlist • Tame Impala"},
+            {"playlistId": "PL3", "title": "No subtitle"},
+        ]}}
+        assert [p.views for p in map_artist_detail(raw, "UC").playlists] == ["652K views", None, None]
+
     def test_artist_with_no_albums_bucket_returns_empty_list(self, load_fixture):
         raw = load_fixture("artist_detail_no_albums")
         detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])

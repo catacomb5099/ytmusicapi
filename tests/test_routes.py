@@ -237,6 +237,32 @@ class TestArtistRoutes:
         singles_shelf = [a["browseId"] for a in artist_raw["singles"]["results"]]
         assert [a["browseId"] for a in resp.json()["singles"]] == singles_shelf
 
+    def test_get_artist_playlists_are_the_artists_own_full_list(self, client_with):
+        """The "Playlists by <artist>" bucket (added by app.ytmusic_client) shows ten; its link gives all."""
+        artist_raw = {**_load("artist_detail"), "playlists": {"browseId": "UCOWN", "params": "P", "results": []}}
+        full = _load("artist_user_playlists")
+        client, fake = client_with(get_artist=lambda channel_id: artist_raw, get_user_playlists=lambda *a: full)
+        body = client.get("/v1/artists/UCEXAMPLE").json()
+        assert [p["playlistId"] for p in body["playlists"]] == [p["playlistId"] for p in full]
+        assert body["playlists"][0] == {
+            "playlistId": "PLr9Yx3twkzdK2GF5xVgpsM8PvREBdzf5c",
+            "title": "THE SLOW RUSH",
+            "thumbnailUrl": full[0]["thumbnails"][-1]["url"],
+            "views": "2.1M views",
+        }
+        assert ("get_user_playlists", ("UCOWN", "P"), {}) in fake.calls
+
+    def test_get_artist_keeps_the_playlists_shelf_when_the_full_list_fails(self, client_with):
+        shelf = _load("artist_user_playlists")[:3]
+        artist_raw = {**_load("artist_detail"), "playlists": {"browseId": "UCOWN", "params": "P", "results": shelf}}
+        client, _ = client_with(get_artist=lambda channel_id: artist_raw, get_user_playlists=_raise(ValueError("drift")))
+        assert [p["title"] for p in client.get("/v1/artists/UCEXAMPLE").json()["playlists"]] == [p["title"] for p in shelf]
+
+    def test_get_artist_without_a_playlists_shelf_sends_none(self, client_with):
+        client, fake = client_with(get_artist=lambda channel_id: _load("artist_detail"))
+        assert client.get("/v1/artists/UCEXAMPLE").json()["playlists"] == []
+        assert "get_user_playlists" not in [c[0] for c in fake.calls]
+
     def test_get_artist_without_albums_params_asks_for_no_discography(self, client_with):
         client, fake = client_with(get_artist=lambda channel_id: _load("artist_detail_no_albums"))
         resp = client.get("/v1/artists/UCEXAMPLE")

@@ -1,0 +1,971 @@
+[
+ {
+  "musicCarouselShelfRenderer": {
+   "header": {
+    "musicCarouselShelfBasicHeaderRenderer": {
+     "title": {
+      "runs": [
+       {
+        "text": "Singles & EPs",
+        "navigationEndpoint": {
+         "browseEndpoint": {
+          "browseId": "MPADUCGz-eguN8tcic5kUG4s1ZgA",
+          "params": "ggMIegYIAhoCAQI%3D",
+          "browseEndpointContextSupportedConfigs": {
+           "browseEndpointContextMusicConfig": {
+            "pageType": "MUSIC_PAGE_TYPE_ARTIST_DISCOGRAPHY"
+           }
+          }
+         }
+        }
+       }
+      ]
+     },
+     "accessibilityData": {
+      "accessibilityData": {
+       "label": "Singles & EPs"
+      }
+     },
+     "headerStyle": "MUSIC_CAROUSEL_SHELF_BASIC_HEADER_STYLE_DISPLAY_TWO"
+    }
+   },
+   "contents": [
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/9U8oOKXg5Q9nsqScuWMyqITQc5VxtHkG8ZbVRWZgpjFuBEcmkn2AvohK-SQWRGuLr3Fa2esEIU79RgOK=w226-h226-l90-rj",
+           "width": 226,
+           "height": 226
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/9U8oOKXg5Q9nsqScuWMyqITQc5VxtHkG8ZbVRWZgpjFuBEcmkn2AvohK-SQWRGuLr3Fa2esEIU79RgOK=w544-h544-l90-rj",
+           "width": 544,
+           "height": 544
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Flower In A Hurricane (feat. Tame Impala, SZA, King Gizzard & the Lizard Wizard) [from GTAVI]",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "MPREb_AoD8dkgVD8o",
+           "params": "ggMrGilPTEFLNXV5X24zYnB4Z3RRRlpZcVJadUszOTN3U1JJSTNVQjRENV9jaw%3D%3D",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ALBUM"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Single"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "2026"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "MPREb_AoD8dkgVD8o",
+        "params": "ggMrGilPTEFLNXV5X24zYnB4Z3RRRlpZcVJadUszOTN3U1JJSTNVQjRENV9jaw%3D%3D",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_ALBUM"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/y9IOemD-WqW2NtgZhl8ZTpHqZUnvAL_WL7Zwf6nPH4QMzi1O9rgpX60mojwL1c-CDQ_ff4NrfU-3E6bYzg=w226-h226-l90-rj",
+           "width": 226,
+           "height": 226
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/y9IOemD-WqW2NtgZhl8ZTpHqZUnvAL_WL7Zwf6nPH4QMzi1O9rgpX60mojwL1c-CDQ_ff4NrfU-3E6bYzg=w544-h544-l90-rj",
+           "width": 544,
+           "height": 544
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Hummer",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "MPREb_dNuUq2fw9fR",
+           "params": "ggMrGilPTEFLNXV5X21yQ1c1SjA4WWN2dmJKQ2ZxSXllbUx2WTZ4bnB0V1h0QQ%3D%3D",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ALBUM"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Single"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "2026"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "MPREb_dNuUq2fw9fR",
+        "params": "ggMrGilPTEFLNXV5X21yQ1c1SjA4WWN2dmJKQ2ZxSXllbUx2WTZ4bnB0V1h0QQ%3D%3D",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_ALBUM"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/1MPn9ht36qNLHt3jXggs9cXufJ9fTNgLs3QZCsy700kcK5KAAJBk5wPwOVeYYnDC4IW-d78wbAFFBqxX=w226-h226-l90-rj",
+           "width": 226,
+           "height": 226
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/1MPn9ht36qNLHt3jXggs9cXufJ9fTNgLs3QZCsy700kcK5KAAJBk5wPwOVeYYnDC4IW-d78wbAFFBqxX=w544-h544-l90-rj",
+           "width": 544,
+           "height": 544
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Dracula (Boys Noize Disko Version) (feat. JENNIE)",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "MPREb_ui28dzUISy9",
+           "params": "ggMrGilPTEFLNXV5X2trWEd4cklJZDU1WG41ZWlVcU1VdG4zeW8yS2VLSUZjaw%3D%3D",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ALBUM"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Single"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "2026"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "MPREb_ui28dzUISy9",
+        "params": "ggMrGilPTEFLNXV5X2trWEd4cklJZDU1WG41ZWlVcU1VdG4zeW8yS2VLSUZjaw%3D%3D",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_ALBUM"
+         }
+        }
+       }
+      }
+     }
+    }
+   ],
+   "itemSize": "COLLECTION_STYLE_ITEM_SIZE_MEDIUM"
+  }
+ },
+ {
+  "musicCarouselShelfRenderer": {
+   "header": {
+    "musicCarouselShelfBasicHeaderRenderer": {
+     "title": {
+      "runs": [
+       {
+        "text": "Videos",
+        "navigationEndpoint": {
+         "browseEndpoint": {
+          "browseId": "VLOLAK5uy_nvXeu6uzSZBxW4xzwTf_fkqoXKcuLBdMs",
+          "params": "ggMCCAI%3D",
+          "browseEndpointContextSupportedConfigs": {
+           "browseEndpointContextMusicConfig": {
+            "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+           }
+          }
+         }
+        }
+       }
+      ]
+     },
+     "accessibilityData": {
+      "accessibilityData": {
+       "label": "Videos"
+      }
+     },
+     "headerStyle": "MUSIC_CAROUSEL_SHELF_BASIC_HEADER_STYLE_DISPLAY_TWO"
+    }
+   },
+   "contents": [
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://i.ytimg.com/vi/s3a4OQR-10M/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3moiXmQDq1xsKSsvWsrYJDXiWkLzw",
+           "width": 400,
+           "height": 225
+          },
+          {
+           "url": "https://i.ytimg.com/vi/s3a4OQR-10M/hq720.jpg?sqp=-oaymwEKCKAGEMIDIABIWg&rs=AMzJL3k6ScWdO3Qk650ZK1vNaPvbxI23rg",
+           "width": 800,
+           "height": 450
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_RECTANGLE_16_9",
+      "title": {
+       "runs": [
+        {
+         "text": "Loser"
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Tame Impala",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "UCGz-eguN8tcic5kUG4s1ZgA",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+            }
+           }
+          }
+         }
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "67M views"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "watchEndpoint": {
+        "videoId": "s3a4OQR-10M",
+        "playlistId": "OLAK5uy_nvXeu6uzSZBxW4xzwTf_fkqoXKcuLBdMs",
+        "index": 0,
+        "watchEndpointMusicSupportedConfigs": {
+         "watchEndpointMusicConfig": {
+          "musicVideoType": "MUSIC_VIDEO_TYPE_OMV"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://i.ytimg.com/vi/xnP7qKxwzjg/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3knCsSJNMXpoww8JHoVVNmR_C-3oQ",
+           "width": 400,
+           "height": 225
+          },
+          {
+           "url": "https://i.ytimg.com/vi/xnP7qKxwzjg/hq720.jpg?sqp=-oaymwEKCKAGEMIDIABIWg&rs=AMzJL3lU-AVnWwOiUrhs9TsPijZz6Ynnnw",
+           "width": 800,
+           "height": 450
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_RECTANGLE_16_9",
+      "title": {
+       "runs": [
+        {
+         "text": "Dracula"
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Tame Impala",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "UCGz-eguN8tcic5kUG4s1ZgA",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+            }
+           }
+          }
+         }
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "80M views"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "watchEndpoint": {
+        "videoId": "xnP7qKxwzjg",
+        "playlistId": "OLAK5uy_nvXeu6uzSZBxW4xzwTf_fkqoXKcuLBdMs",
+        "index": 1,
+        "watchEndpointMusicSupportedConfigs": {
+         "watchEndpointMusicConfig": {
+          "musicVideoType": "MUSIC_VIDEO_TYPE_OMV"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://i.ytimg.com/vi/0UPDBODtxzw/hqdefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCggAEOADGC0guwJIWg&rs=AMzJL3lQSUjnFQbMy8yRztkcbNFELb0leQ",
+           "width": 400,
+           "height": 225
+          },
+          {
+           "url": "https://i.ytimg.com/vi/0UPDBODtxzw/hq720.jpg?sqp=-oaymwEKCKAGEMIDIABIWg&rs=AMzJL3lRWko-gbXnpG5DSQ4kYizHszBEOQ",
+           "width": 800,
+           "height": 450
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_RECTANGLE_16_9",
+      "title": {
+       "runs": [
+        {
+         "text": "Dracula (Remix) (feat. JENNIE)"
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Tame Impala",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "UCGz-eguN8tcic5kUG4s1ZgA",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+            }
+           }
+          }
+         }
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "52M views"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "watchEndpoint": {
+        "videoId": "0UPDBODtxzw",
+        "playlistId": "OLAK5uy_nvXeu6uzSZBxW4xzwTf_fkqoXKcuLBdMs",
+        "index": 2,
+        "watchEndpointMusicSupportedConfigs": {
+         "watchEndpointMusicConfig": {
+          "musicVideoType": "MUSIC_VIDEO_TYPE_OMV"
+         }
+        }
+       }
+      }
+     }
+    }
+   ],
+   "itemSize": "COLLECTION_STYLE_ITEM_SIZE_MEDIUM"
+  }
+ },
+ {
+  "musicCarouselShelfRenderer": {
+   "header": {
+    "musicCarouselShelfBasicHeaderRenderer": {
+     "title": {
+      "runs": [
+       {
+        "text": "Featured on"
+       }
+      ]
+     },
+     "accessibilityData": {
+      "accessibilityData": {
+       "label": "Featured on"
+      }
+     },
+     "headerStyle": "MUSIC_CAROUSEL_SHELF_BASIC_HEADER_STYLE_DISPLAY_TWO"
+    }
+   },
+   "contents": [
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/2bOvl0lHJurpdEK8hdqrGp5B5GSVl-UPn1dI7nuFAv7YJ5JIbvg83mXD1BVRm_diKx9qkq0j7WZi2hA=w226-h226-l90-rj",
+           "width": 226,
+           "height": 226
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/2bOvl0lHJurpdEK8hdqrGp5B5GSVl-UPn1dI7nuFAv7YJ5JIbvg83mXD1BVRm_diKx9qkq0j7WZi2hA=w544-h544-l90-rj",
+           "width": 544,
+           "height": 544
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Presenting Tame Impala",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "VLRDCLAK5uy_lncN931oN6KUNOw36oAtvAGDRdrlj4LGY",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Playlist"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "YouTube Music"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "VLRDCLAK5uy_lncN931oN6KUNOw36oAtvAGDRdrlj4LGY",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/LtaTAqnxCFvYCxAtcd1gX99a4t70RrAg7KFDznJZDBDWJURluGZQ6IuP4JVXu5S2s-59wnFCqXKjdi1L=w226-h226-l90-rj",
+           "width": 226,
+           "height": 226
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/LtaTAqnxCFvYCxAtcd1gX99a4t70RrAg7KFDznJZDBDWJURluGZQ6IuP4JVXu5S2s-59wnFCqXKjdi1L=w544-h544-l90-rj",
+           "width": 544,
+           "height": 544
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Halloween Trends",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "VLRDCLAK5uy_ncdy9INY4N5JFp0ItzuneK8zUkj5L8hF8",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Playlist"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "YouTube Music"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "VLRDCLAK5uy_ncdy9INY4N5JFp0ItzuneK8zUkj5L8hF8",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/M8BJddpvZ6hyESXq1gKAJLLbeMlwpeBkQZgqqo70l1ZmmsQfHM14CsC7xbKl4Ez8bPpF4jGzArFo6PI=w226-h226-l90-rj",
+           "width": 226,
+           "height": 226
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/M8BJddpvZ6hyESXq1gKAJLLbeMlwpeBkQZgqqo70l1ZmmsQfHM14CsC7xbKl4Ez8bPpF4jGzArFo6PI=w544-h544-l90-rj",
+           "width": 544,
+           "height": 544
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Alt on Repeat",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "VLRDCLAK5uy_nGTZ-bU3GDTL3y16JZY8OVn1rXIEgqkOM",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Playlist"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "YouTube Music"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "VLRDCLAK5uy_nGTZ-bU3GDTL3y16JZY8OVn1rXIEgqkOM",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+         }
+        }
+       }
+      }
+     }
+    }
+   ],
+   "itemSize": "COLLECTION_STYLE_ITEM_SIZE_MEDIUM"
+  }
+ },
+ {
+  "musicCarouselShelfRenderer": {
+   "header": {
+    "musicCarouselShelfBasicHeaderRenderer": {
+     "title": {
+      "runs": [
+       {
+        "text": "Playlists by Tame Impala",
+        "navigationEndpoint": {
+         "browseEndpoint": {
+          "browseId": "UCGz-eguN8tcic5kUG4s1ZgA",
+          "params": "6gPgAUdxVUJXcFlCQ3BNQkNpUjVkRjl3WVdkbFgzTnVZWEJ6YUc5MFgyMTFjMmxqWDNCaFoyVmZjbVZuYVc5dVlXd1NIemczZVdoWVJUZGlVbXRGWm5kTFEzcEJiVU5RYzNKbWVqaHlaVFpHVW04YVNnQUFaVzRBQVVkQ0FBRkhRZ0FCQUVaRmJYVnphV05mWkdWMFlXbHNYMkZ5ZEdsemRBQUJBVU1BQUFFQUFBRUJBRlZEUjNvdFpXZDFUamgwWTJsak5XdFZSelJ6TVZwblFRQUI4dHF6cWdvR1FBZElBRkFN",
+          "browseEndpointContextSupportedConfigs": {
+           "browseEndpointContextMusicConfig": {
+            "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+           }
+          }
+         }
+        }
+       }
+      ]
+     },
+     "accessibilityData": {
+      "accessibilityData": {
+       "label": "Playlists by Tame Impala"
+      }
+     },
+     "headerStyle": "MUSIC_CAROUSEL_SHELF_BASIC_HEADER_STYLE_DISPLAY_TWO"
+    }
+   },
+   "contents": [
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.ggpht.com/6-aBSNwp2ec8RdMKsHCdr_RtDdNmOOENG8E0FeUHrC1fYjrVq1N3Pon6GapxQB_FiyLREs7K4hg=s192",
+           "width": 192,
+           "height": 192
+          },
+          {
+           "url": "https://yt3.ggpht.com/6-aBSNwp2ec8RdMKsHCdr_RtDdNmOOENG8E0FeUHrC1fYjrVq1N3Pon6GapxQB_FiyLREs7K4hg=s576",
+           "width": 576,
+           "height": 576
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "THE SLOW RUSH",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "VLPLr9Yx3twkzdK2GF5xVgpsM8PvREBdzf5c",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Playlist"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "Tame Impala",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "UCdI8MAC5HoPJSJ4zrgDDI-Q",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+            }
+           }
+          }
+         }
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "2.1M views"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "VLPLr9Yx3twkzdK2GF5xVgpsM8PvREBdzf5c",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/0dvrNR8ffLJRgagEvtyBhOxYSH0_cQGNCYmhViVOexpaJaSIVchxZ8xwHXlhIyTNO_pi_e2o7rMg=s192",
+           "width": 192,
+           "height": 192
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/0dvrNR8ffLJRgagEvtyBhOxYSH0_cQGNCYmhViVOexpaJaSIVchxZ8xwHXlhIyTNO_pi_e2o7rMg=s576",
+           "width": 576,
+           "height": 576
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Music Videos",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "VLPLr9Yx3twkzdKeHHys5idVo9awbhK2eoKC",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Playlist"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "Tame Impala",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "UCdI8MAC5HoPJSJ4zrgDDI-Q",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+            }
+           }
+          }
+         }
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "1.1M views"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "VLPLr9Yx3twkzdKeHHys5idVo9awbhK2eoKC",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "musicTwoRowItemRenderer": {
+      "thumbnailRenderer": {
+       "musicThumbnailRenderer": {
+        "thumbnail": {
+         "thumbnails": [
+          {
+           "url": "https://yt3.googleusercontent.com/11oLqjWVvCrLhwsG7eSq6_18gz3haQK_L0bsm13tevj8L8mOZI7vK7GKBFLCA3A3GSV2lFnUXg=s192",
+           "width": 192,
+           "height": 192
+          },
+          {
+           "url": "https://yt3.googleusercontent.com/11oLqjWVvCrLhwsG7eSq6_18gz3haQK_L0bsm13tevj8L8mOZI7vK7GKBFLCA3A3GSV2lFnUXg=s576",
+           "width": 576,
+           "height": 576
+          }
+         ]
+        },
+        "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+        "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FILL"
+       }
+      },
+      "aspectRatio": "MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE",
+      "title": {
+       "runs": [
+        {
+         "text": "Deadbeat",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "VLPLr9Yx3twkzdLSbbSQfqkS9Cdg03wQFaYb",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+            }
+           }
+          }
+         }
+        }
+       ]
+      },
+      "subtitle": {
+       "runs": [
+        {
+         "text": "Playlist"
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "Tame Impala",
+         "navigationEndpoint": {
+          "browseEndpoint": {
+           "browseId": "UCdI8MAC5HoPJSJ4zrgDDI-Q",
+           "browseEndpointContextSupportedConfigs": {
+            "browseEndpointContextMusicConfig": {
+             "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+            }
+           }
+          }
+         }
+        },
+        {
+         "text": " \u2022 "
+        },
+        {
+         "text": "661K views"
+        }
+       ]
+      },
+      "navigationEndpoint": {
+       "browseEndpoint": {
+        "browseId": "VLPLr9Yx3twkzdLSbbSQfqkS9Cdg03wQFaYb",
+        "browseEndpointContextSupportedConfigs": {
+         "browseEndpointContextMusicConfig": {
+          "pageType": "MUSIC_PAGE_TYPE_PLAYLIST"
+         }
+        }
+       }
+      }
+     }
+    }
+   ],
+   "itemSize": "COLLECTION_STYLE_ITEM_SIZE_MEDIUM"
+  }
+ }
+]
