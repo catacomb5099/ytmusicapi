@@ -4,9 +4,12 @@ import threading
 
 import requests
 import ytmusicapi.mixins.playlists as _ytm_playlists
+import ytmusicapi.parsers.i18n as _ytm_i18n
 import ytmusicapi.parsers.playlists as _ytm_playlist_rows
 import ytmusicapi.parsers.search as _ytm_search
 from ytmusicapi import YTMusic
+from ytmusicapi.navigation import CAROUSEL, CAROUSEL_TITLE, NAVIGATION_BROWSE, TITLE, nav
+from ytmusicapi.parsers.browsing import parse_content_list, parse_playlist
 
 from app.config import settings
 from app.errors import NotFoundError
@@ -142,9 +145,64 @@ def _plays_column_text(data) -> str | None:
     return None
 
 
+def _keep_artist_playlists_shelf() -> None:
+    """Keep an artist page's "Playlists by <artist>" shelf, which ytmusicapi no longer finds.
+
+    ytmusicapi 1.12.2's `Parser.parse_channel_contents` matches each shelf's title exactly against
+    the word "playlists"; YouTube now titles it "Playlists by Tame Impala" ("Playlists von ..." in
+    German), so get_artist() never has a `playlists` bucket. This wraps that method and, when the
+    library found none, adds one from the shelf that works in any language: its title links to a
+    full list, and its first card opens a playlist (`VL...`). Albums and singles cards open
+    `MPREb_...`, videos a watch page, "Featured on" has no title link, fans-might-also-like opens
+    `UC...`. The bucket has the library's own shape ({browseId, params, results}), so
+    get_user_playlists(browseId, params) reads the full list. Same safety net as the wrappers above.
+    """
+    parser = getattr(_ytm_i18n, "Parser", None)
+    original = getattr(parser, "parse_channel_contents", None)
+    if original is None:
+        logger.warning("ytmusicapi has no Parser.parse_channel_contents; artists' own playlists will be missing")
+        return
+    if getattr(original, "_keeps_views_text", False):
+        return
+
+    @functools.wraps(original)
+    def with_playlists(self, results, *args, **kwargs):
+        artist = original(self, results, *args, **kwargs)
+        if isinstance(artist, dict) and "playlists" not in artist:
+            try:
+                shelf = _playlists_shelf(results)
+            except Exception as exc:  # noqa: BLE001 -- one missing row must never fail the artist page
+                logger.warning("Could not read an artist's playlists shelf: %r", exc)
+                shelf = None
+            if shelf:
+                artist["playlists"] = shelf
+        return artist
+
+    with_playlists._keeps_views_text = True  # type: ignore[attr-defined]
+    parser.parse_channel_contents = with_playlists  # type: ignore[union-attr]
+
+
+def _playlists_shelf(results) -> dict | None:
+    for row in results if isinstance(results, list) else []:
+        title = nav(row, CAROUSEL + CAROUSEL_TITLE, True)
+        if not isinstance(title, dict) or "navigationEndpoint" not in title:
+            continue
+        carousel = row["musicCarouselShelfRenderer"]
+        first = nav(carousel, ["contents", 0, "musicTwoRowItemRenderer", *TITLE, "navigationEndpoint", "browseEndpoint", "browseId"], True)
+        if isinstance(first, str) and first.startswith("VL"):
+            link = nav(title, NAVIGATION_BROWSE)
+            return {
+                "browseId": link.get("browseId"),
+                "params": link.get("params"),
+                "results": parse_content_list(carousel["contents"], parse_playlist),
+            }
+    return None
+
+
 _keep_playlist_views_text()
 _keep_playlist_row_views_text()
 _keep_playlist_item_plays_text()
+_keep_artist_playlists_shelf()
 
 # ytmusicapi does not raise a typed "not found" error for an invalid/deleted id on these
 # methods -- YouTube serves a differently-shaped page and the library's own parser fails with

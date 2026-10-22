@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.models.common import AlbumStub, TrackDto, VideoStub
+from app.models.common import AlbumStub, PlaylistStub, TrackDto, VideoStub
 
 
 class RelatedArtist(BaseModel):
@@ -25,4 +25,6 @@ class ArtistDetail(BaseModel):
     albums: list[AlbumStub] = []
     singles: list[AlbumStub] = []
     videos: list[VideoStub] = []
+    # The artist's own channel playlists ("Playlists by Tame Impala"), not the ones it is featured on.
+    playlists: list[PlaylistStub] = []
     related: list[RelatedArtist] = []

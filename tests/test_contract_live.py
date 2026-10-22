@@ -119,6 +119,15 @@ class TestSearchContract:
             artist_albums = yt.get_artist_albums(albums_bucket["browseId"], albums_bucket["params"])
             assert isinstance(artist_albums, list)
 
+    def test_artist_page_keeps_its_own_playlists_shelf(self, yt):
+        # Tame Impala: "Playlists by Tame Impala", which ytmusicapi alone does not parse (app.ytmusic_client adds it).
+        artist = yt.get_artist("UCGz-eguN8tcic5kUG4s1ZgA")
+        bucket = artist["playlists"]
+        assert bucket["results"] and bucket["results"][0]["playlistId"].startswith("PL")
+        assert len(yt.get_user_playlists(bucket["browseId"], bucket["params"])) >= len(bucket["results"])
+        singles = artist["singles"]
+        assert len(yt.get_artist_albums(singles["browseId"], singles["params"])) > 10
+
     def test_community_playlist_search_feeds_get_playlist(self, yt):
         results = yt.search("indie rock hits", filter="community_playlists", limit=5)
         assert results, "expected at least one playlist result"

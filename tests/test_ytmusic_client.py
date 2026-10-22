@@ -4,12 +4,14 @@ from unittest.mock import MagicMock
 
 import pytest
 from ytmusicapi.mixins import playlists as ytm_playlists
+from ytmusicapi.parsers import i18n as ytm_i18n
 from ytmusicapi.parsers import playlists as ytm_playlist_rows
 from ytmusicapi.parsers import search as ytm_search
 
 from app.errors import NotFoundError
 from app.ytmusic_client import (
     YTMusicClient,
+    _keep_artist_playlists_shelf,
     _keep_playlist_item_plays_text,
     _keep_playlist_row_views_text,
     _keep_playlist_views_text,
@@ -210,3 +212,51 @@ class TestPlaylistItemPlaysText:
         with caplog.at_level(logging.WARNING):
             _keep_playlist_item_plays_text()
         assert "Top songs playlist rows' plays will be null" in caplog.text
+
+
+class TestArtistPlaylistsShelf:
+    """Importing app.ytmusic_client also wraps ytmusicapi's artist-page shelf parser so the "Playlists by
+    <artist>" shelf survives (the library looks for a shelf titled exactly "playlists")."""
+
+    @staticmethod
+    def _parse(results):
+        import gettext
+
+        return ytm_i18n.Parser(gettext.NullTranslations()).parse_channel_contents(results)
+
+    @staticmethod
+    def _retitled(shelves, text):
+        import copy
+
+        shelves = copy.deepcopy(shelves)
+        shelves[-1]["musicCarouselShelfRenderer"]["header"]["musicCarouselShelfBasicHeaderRenderer"]["title"]["runs"][0]["text"] = text
+        return shelves
+
+    def test_playlists_by_shelf_becomes_the_playlists_bucket(self, load_fixture):
+        shelves = load_fixture("artist_raw_shelves")  # Tame Impala, 20-10-2026: Singles, Videos, Featured on, Playlists by
+        artist = self._parse(shelves)
+        bucket = artist["playlists"]
+        assert (bucket["browseId"], bucket["params"][:6]) == ("UCGz-eguN8tcic5kUG4s1ZgA", "6gPgAU")
+        assert bucket["results"][0]["playlistId"] == "PLr9Yx3twkzdK2GF5xVgpsM8PvREBdzf5c"
+        assert set(artist) == {"singles", "videos", "playlists"}  # "Featured on" (no title link) is not it
+
+    def test_any_language_title_is_found(self, load_fixture):
+        shelves = self._retitled(load_fixture("artist_raw_shelves"), "Playlists von „Tame Impala“")
+        assert self._parse(shelves)["playlists"]["results"][0]["title"] == "THE SLOW RUSH"
+
+    def test_a_bucket_the_library_found_itself_is_left_alone(self, load_fixture):
+        shelves = self._retitled(load_fixture("artist_raw_shelves"), "Playlists")
+        assert len(self._parse(shelves)["playlists"]["results"]) == 3  # parsed once, by the library
+
+    def test_page_without_the_shelf_has_no_bucket(self, load_fixture):
+        assert "playlists" not in self._parse(load_fixture("artist_raw_shelves")[:3])
+
+    def test_wrapping_twice_wraps_once(self):
+        _keep_artist_playlists_shelf()
+        assert not hasattr(ytm_i18n.Parser.parse_channel_contents.__wrapped__.__wrapped__, "__wrapped__")
+
+    def test_missing_library_internal_logs_and_skips_instead_of_failing_startup(self, monkeypatch, caplog):
+        monkeypatch.delattr(ytm_i18n.Parser, "parse_channel_contents")
+        with caplog.at_level(logging.WARNING):
+            _keep_artist_playlists_shelf()
+        assert "artists' own playlists will be missing" in caplog.text

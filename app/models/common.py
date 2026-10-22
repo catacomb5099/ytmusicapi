@@ -39,3 +39,11 @@ class VideoStub(BaseModel):
     videoId: str | None = None
     title: str | None = None
     thumbnailUrl: str | None = None
+
+
+class PlaylistStub(BaseModel):
+    playlistId: str | None = None  # bare "PL...", the id /v1/playlists opens
+    title: str | None = None
+    thumbnailUrl: str | None = None
+    # YouTube Music's own wording with its noun ("2.1M views"), verbatim, as the card shows it; None when it shows none.
+    views: str | None = None

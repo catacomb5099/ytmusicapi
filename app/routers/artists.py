@@ -43,6 +43,18 @@ def _all_releases_or_none(client: YTMusicClient, artist_raw: dict[str, Any], she
         return None
 
 
+def _all_playlists_or_none(client: YTMusicClient, artist_raw: dict[str, Any]) -> Any:
+    """The "Playlists by <artist>" shelf shows ten; its title link opens them all (Taylor Swift: 17)."""
+    bucket = artist_raw.get("playlists")
+    if not isinstance(bucket, dict) or not bucket.get("browseId") or not bucket.get("params"):
+        return None
+    try:
+        return client.call("get_user_playlists", bucket["browseId"], bucket["params"])
+    except Exception as exc:  # noqa: BLE001 -- the shelf's ten are a fine fallback
+        logger.warning("get_user_playlists for the artist's own playlists failed, keeping the shelf: %r", exc)
+        return None
+
+
 def _top_songs_or_none(client: YTMusicClient, artist_raw: dict[str, Any]) -> Any:
     """get_artist()'s songs bucket lists five; its browseId is YouTube's own "Top songs" playlist
     (`VLOLAK5uy_...`, about 150 songs), whose first rows are those five in the same order and whose
@@ -70,7 +82,8 @@ def _album_or_none(client: YTMusicClient, album_id: str) -> Any:
 def get_artist(channel_id: str, client: YTMusicClient = Depends(get_ytmusic)) -> ArtistDetail:
     """get_artist(), plus in parallel: get_artist_albums() for the full discography by popularity
     (replaces the ten-newest shelf in `albums`), get_artist_albums() for every single, newest first
-    (replaces the ten-newest shelf in `singles`), and get_playlist() on the "Top songs" playlist (its
+    (replaces the ten-newest shelf in `singles`), get_user_playlists() for the artist's own playlists
+    (replaces that shelf's ten in `playlists`), and get_playlist() on the "Top songs" playlist (its
     first ten rows, with their play counts, replace the page's five `topSongs`). Only when that
     playlist gives nothing: one get_album per distinct album among the page's five top songs, which
     carry no play count while their album's track rows do. All best-effort -- a failed call leaves
@@ -83,6 +96,7 @@ def get_artist(channel_id: str, client: YTMusicClient = Depends(get_ytmusic)) ->
         all_albums = pool.submit(_all_releases_or_none, client, raw, "albums", order="Popularity")
         # Newest first, YouTube's own order for singles: its first ten are exactly the page shelf.
         all_singles = pool.submit(_all_releases_or_none, client, raw, "singles")
+        all_playlists = pool.submit(_all_playlists_or_none, client, raw)
         top_songs = pool.submit(_top_songs_or_none, client, raw).result()
         album_ids = [] if top_song_rows(top_songs) else top_song_album_ids(raw)
         found = pool.map(lambda album_id: _album_or_none(client, album_id), album_ids)
@@ -93,6 +107,7 @@ def get_artist(channel_id: str, client: YTMusicClient = Depends(get_ytmusic)) ->
         albums=albums,
         all_albums=all_albums.result(),
         all_singles=all_singles.result(),
+        all_playlists=all_playlists.result(),
         top_songs=top_songs,
     )
 
