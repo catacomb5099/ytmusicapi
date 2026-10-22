@@ -4,11 +4,13 @@ from unittest.mock import MagicMock
 
 import pytest
 from ytmusicapi.mixins import playlists as ytm_playlists
+from ytmusicapi.parsers import playlists as ytm_playlist_rows
 from ytmusicapi.parsers import search as ytm_search
 
 from app.errors import NotFoundError
 from app.ytmusic_client import (
     YTMusicClient,
+    _keep_playlist_item_plays_text,
     _keep_playlist_row_views_text,
     _keep_playlist_views_text,
 )
@@ -175,3 +177,36 @@ class TestPlaylistRowViewsText:
         with caplog.at_level(logging.WARNING):
             _keep_playlist_row_views_text()
         assert "playlist search rows' views will be null" in caplog.text
+
+
+class TestPlaylistItemPlaysText:
+    """Importing app.ytmusic_client also wraps ytmusicapi's playlist ROW parser so an artist's "Top songs"
+    playlist keeps each song's "1.7B plays" (the library reads that column only on album pages)."""
+
+    @staticmethod
+    def _without_plays(raw: dict) -> dict:
+        import copy
+
+        row = copy.deepcopy(raw)
+        del row["flexColumns"][2]
+        return row
+
+    def test_top_songs_row_keeps_its_play_count(self, load_fixture):
+        raw = load_fixture("playlist_raw_row_top_songs")  # Oasis "Top songs", row 1, recorded 20-10-2026
+        (song,) = ytm_playlist_rows.parse_playlist_items([{"musicResponsiveListItemRenderer": raw}])
+        assert (song["title"], song["views"]) == ("Wonderwall", "1.7B plays")
+        assert song["album"]["name"] == "(What's The Story) Morning Glory?"  # the library's own work is untouched
+
+    def test_row_without_a_plays_column_stays_none(self, load_fixture):
+        raw = self._without_plays(load_fixture("playlist_raw_row_top_songs"))
+        assert ytm_playlist_rows.parse_playlist_item(raw)["views"] is None
+
+    def test_wrapping_twice_wraps_once(self):
+        _keep_playlist_item_plays_text()
+        assert not hasattr(ytm_playlist_rows.parse_playlist_item.__wrapped__, "__wrapped__")
+
+    def test_missing_library_internal_logs_and_skips_instead_of_failing_startup(self, monkeypatch, caplog):
+        monkeypatch.delattr(ytm_playlist_rows, "parse_playlist_item")
+        with caplog.at_level(logging.WARNING):
+            _keep_playlist_item_plays_text()
+        assert "Top songs playlist rows' plays will be null" in caplog.text

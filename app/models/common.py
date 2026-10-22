@@ -24,7 +24,7 @@ class TrackDto(BaseModel):
     # Kept verbatim on purpose -- do NOT run it through _to_int, which strips non-digits
     # and would silently turn "2.2B plays" into 22. Only get_song()'s SongMetadata.viewCount
     # carries an exact integer. Populated on album tracks and on artist topSongs (read from each
-    # song's album); null on playlist tracks.
+    # song's album) and on an artist's "Top songs" playlist rows; null on other playlists' tracks.
     views: str | None = None
 
 
