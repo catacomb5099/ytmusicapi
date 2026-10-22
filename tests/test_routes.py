@@ -389,3 +389,23 @@ class TestRadioRoutes:
     def test_limit_out_of_range_is_422(self, client_with):
         client, _ = client_with()
         assert client.get("/v1/radio/zzzzzzzzzzz", params={"limit": 0}).status_code == 422
+
+
+def test_health_checks_logged_only_at_debug(monkeypatch):
+    import logging
+
+    from app.config import settings
+
+    log = logging.getLogger("uvicorn.access")
+
+    def passes(path):
+        args = ("127.0.0.1:1", "GET", path, "1.1", 200)
+        r = log.makeRecord(log.name, logging.INFO, "", 0, '%s - "%s %s HTTP/%s" %d', args, None)
+        return all(f.filter(r) for f in log.filters), r.levelname
+
+    monkeypatch.setattr(settings, "log_level", "INFO")
+    assert passes("/health") == (False, "DEBUG")
+    assert passes("/health/ready") == (False, "DEBUG")
+    assert passes("/v1/search") == (True, "INFO")
+    monkeypatch.setattr(settings, "log_level", "DEBUG")
+    assert passes("/health") == (True, "DEBUG")
