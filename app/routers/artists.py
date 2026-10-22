@@ -6,7 +6,13 @@ from fastapi import APIRouter, Depends, Query
 
 from app.deps import get_ytmusic
 from app.errors import NotFoundError
-from app.mappers import map_album_stubs_from_artist_albums, map_artist_detail, top_song_album_ids
+from app.mappers import (
+    TOP_SONGS_LIMIT,
+    map_album_stubs_from_artist_albums,
+    map_artist_detail,
+    top_song_album_ids,
+    top_song_rows,
+)
 from app.models.artist import ArtistDetail
 from app.models.common import AlbumStub
 from app.ytmusic_client import YTMusicClient
@@ -38,6 +44,21 @@ def _all_albums_or_none(client: YTMusicClient, artist_raw: dict[str, Any]) -> An
         return None
 
 
+def _top_songs_or_none(client: YTMusicClient, artist_raw: dict[str, Any]) -> Any:
+    """get_artist()'s songs bucket lists five; its browseId is YouTube's own "Top songs" playlist
+    (`VLOLAK5uy_...`, about 150 songs), whose first rows are those five in the same order and whose
+    rows carry the play count (app.ytmusic_client keeps it)."""
+    bucket = artist_raw.get("songs")
+    browse_id = bucket.get("browseId") if isinstance(bucket, dict) else None
+    if not isinstance(browse_id, str) or not browse_id:
+        return None
+    try:
+        return client.call("get_playlist", browse_id.removeprefix("VL"), limit=TOP_SONGS_LIMIT)
+    except Exception as exc:  # noqa: BLE001 -- the page's five top songs are a fine fallback
+        logger.warning("get_playlist for the Top songs playlist failed, keeping the page's top songs: %r", exc)
+        return None
+
+
 def _album_or_none(client: YTMusicClient, album_id: str) -> Any:
     try:
         return client.call("get_album", album_id)
@@ -49,21 +70,25 @@ def _album_or_none(client: YTMusicClient, album_id: str) -> Any:
 @router.get("/{channel_id}", response_model=ArtistDetail)
 def get_artist(channel_id: str, client: YTMusicClient = Depends(get_ytmusic)) -> ArtistDetail:
     """get_artist(), plus in parallel: get_artist_albums() for the full discography by popularity
-    (replaces the ten-newest shelf in `albums`), and one get_album per distinct album among the
-    top songs (YouTube lists five, so up to five calls): top songs carry no play count, their
-    album's track rows do. All best-effort -- a failed call leaves the shelf as YouTube's page
-    shows it or a song's `views` null, and never fails the artist response."""
+    (replaces the ten-newest shelf in `albums`) and get_playlist() on the "Top songs" playlist (its
+    first ten rows, with their play counts, replace the page's five `topSongs`). Only when that
+    playlist gives nothing: one get_album per distinct album among the page's five top songs, which
+    carry no play count while their album's track rows do. All best-effort -- a failed call leaves
+    the shelf as YouTube's page shows it or a song's `views` null, and never fails the artist response."""
     raw = client.call("get_artist", channel_id)
     if not raw:
         raise NotFoundError(f"No artist found for channelId '{channel_id}'")
-    album_ids = top_song_album_ids(raw)
     # The client's semaphore still bounds total upstream concurrency across requests.
     with ThreadPoolExecutor(max_workers=4) as pool:
         all_albums = pool.submit(_all_albums_or_none, client, raw)
+        top_songs = pool.submit(_top_songs_or_none, client, raw).result()
+        album_ids = [] if top_song_rows(top_songs) else top_song_album_ids(raw)
         found = pool.map(lambda album_id: _album_or_none(client, album_id), album_ids)
         albums = dict(zip(album_ids, found, strict=True))
         all_albums = all_albums.result()
-    return map_artist_detail(raw, requested_channel_id=channel_id, albums=albums, all_albums=all_albums)
+    return map_artist_detail(
+        raw, requested_channel_id=channel_id, albums=albums, all_albums=all_albums, top_songs=top_songs
+    )
 
 
 @router.get("/{channel_id}/albums", response_model=list[AlbumStub])

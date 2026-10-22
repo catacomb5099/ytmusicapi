@@ -340,6 +340,17 @@ class TestArtistDetailMapping:
         }
         assert map_artist_detail(raw, "UC", {morning_glory: both}).topSongs[0].views == "1.7B plays"
 
+    def test_mangled_top_songs_playlist_keeps_the_pages_five(self, load_fixture):
+        raw = load_fixture("artist_detail")
+        page = [s["videoId"] for s in raw["songs"]["results"]]
+        for mangled in (None, {}, {"tracks": None}, {"tracks": ["not a row"]}):
+            assert [t.videoId for t in map_artist_detail(raw, "UC", top_songs=mangled).topSongs] == page
+
+    def test_artist_without_a_songs_shelf_has_no_songs_playlist(self, load_fixture):
+        raw = {**load_fixture("artist_detail"), "songs": {"browseId": None}}  # ytmusicapi's shape when the page has none
+        detail = map_artist_detail(raw, "UC")
+        assert (detail.songsPlaylistId, detail.topSongs) == (None, [])
+
     def test_artist_with_no_albums_bucket_returns_empty_list(self, load_fixture):
         raw = load_fixture("artist_detail_no_albums")
         detail = map_artist_detail(raw, requested_channel_id=raw["requestedChannelId"])

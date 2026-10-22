@@ -106,6 +106,14 @@ class TestSearchContract:
         assert detail.monthlyListeners
         assert detail.views
 
+        # The "Top songs" playlist the artist page links to: its rows must keep their play count.
+        songs_playlist = artist["songs"]["browseId"]
+        assert songs_playlist.startswith("VL")
+        top = yt.get_playlist(songs_playlist.removeprefix("VL"), limit=10)
+        assert len(top["tracks"]) >= 10
+        assert top["tracks"][0]["videoId"] == artist["songs"]["results"][0]["videoId"]
+        assert sum(1 for t in top["tracks"][:10] if (t.get("views") or "").endswith(" plays")) >= 9
+
         albums_bucket = artist.get("albums")
         if albums_bucket and albums_bucket.get("params"):
             artist_albums = yt.get_artist_albums(albums_bucket["browseId"], albums_bucket["params"])

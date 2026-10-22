@@ -161,6 +161,36 @@ class TestArtistRoutes:
         assert [s["views"] for s in songs[1:]] == [None] * 4
         assert sorted(c[1][0] for c in fake.calls if c[0] == "get_album") == sorted(outcomes)
 
+    def test_get_artist_top_songs_are_the_first_ten_of_the_top_songs_playlist(self, client_with):
+        """The page lists five; YouTube's "Top songs" playlist (the songs bucket's browseId) lists
+        them first, then more, each with its play count -- so no album lookups are needed."""
+        artist_raw = _load("artist_detail")
+        playlist = _load("artist_top_songs_playlist")
+        client, fake = client_with(get_artist=lambda channel_id: artist_raw, get_playlist=lambda *a, **k: playlist)
+        resp = client.get("/v1/artists/UCmMUZbaYdNH0bEd1PAlAqsA")
+        assert resp.status_code == 200
+        body = resp.json()
+        assert [s["videoId"] for s in body["topSongs"]] == [t["videoId"] for t in playlist["tracks"][:10]]
+        assert body["topSongs"][0]["views"] == "1.7B plays"
+        assert body["songsPlaylistId"] == artist_raw["songs"]["browseId"]
+        (call,) = [c for c in fake.calls if c[0] == "get_playlist"]
+        assert call[1] == (artist_raw["songs"]["browseId"].removeprefix("VL"),)
+        assert "get_album" not in [c[0] for c in fake.calls]
+
+    def test_get_artist_keeps_the_pages_top_songs_when_the_playlist_fails(self, client_with):
+        artist_raw = _load("artist_detail")
+
+        def boom(*a, **k):
+            raise YTMusicServerError("Server returned HTTP 503")
+
+        client, fake = client_with(get_artist=lambda channel_id: artist_raw, get_playlist=boom, get_album=lambda b: None)
+        resp = client.get("/v1/artists/UCEXAMPLE")
+        assert resp.status_code == 200
+        body = resp.json()
+        assert [s["videoId"] for s in body["topSongs"]] == [s["videoId"] for s in artist_raw["songs"]["results"]]
+        assert body["songsPlaylistId"] == artist_raw["songs"]["browseId"]  # the link still works when YouTube recovers
+        assert "get_album" in [c[0] for c in fake.calls]  # plays come from the albums, as before
+
     def test_get_artist_albums_are_the_full_discography_by_popularity(self, client_with):
         """The page's own albums bucket is ten-newest-first; the response carries get_artist_albums()
         asked for by popularity instead, resolved from the bucket's params."""
