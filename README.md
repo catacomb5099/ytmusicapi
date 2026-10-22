@@ -105,7 +105,8 @@ docker build -t ytmusic-adapter:local .
 docker run -p 8000:8000 ytmusic-adapter:local
 ```
 
-`python:3.12-slim`, non-root user, 2 gunicorn workers (`uvicorn.workers.UvicornWorker`), a
+`python:3.12-slim`, non-root user, one `uvicorn` process (about 40 MB idle; it still answers
+requests in parallel, with at most `YTM_MAX_CONCURRENCY` YouTube calls at once), a
 liveness `HEALTHCHECK` hitting `/health` (no upstream call, no `curl` dependency — the base image
 doesn't ship one, so the healthcheck uses Python's own `urllib`).
 
